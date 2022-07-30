@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+main {
+  width: 340px;
+  margin: 0 auto;
+}
+h1 {
+  margin: 20px 0;
+  max-width: 340px;
+}
+form {
+  /* max-width: 340px; */
+}
+input {
+  border: 1.5px solid black;
+  padding: 10px 50px 10px 5px;
+  border-radius: 10px;
+  outline: none;
+  margin: 10px 0; /* margin for spaces btw labels and inputs*/
+}
+label {
+  display: block;
+}
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0 10px 0;
+}
+
+button {
+  padding: 15px 40px;
+  font-weight: bold;
+  color: rgb(247, 244, 244);
+  background-color: rgb(180, 178, 178);
+  border: none;
+  border-radius: 10px;
+}
+p {
+  text-align: center;
+}
