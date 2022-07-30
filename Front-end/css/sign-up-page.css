@@ -11,9 +11,9 @@ h1 {
   margin: 20px 0;
   max-width: 340px;
 }
-form {
-  /* max-width: 340px; */
-}
+/* form {
+  max-width: 340px;
+} */
 input {
   border: 1.5px solid black;
   padding: 10px 50px 10px 5px;
