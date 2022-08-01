@@ -4,3 +4,4 @@ Name                                        TASK
 1) Abdulbasit                        User authentication
 2) Greenie                           Social authentication
 3) JosephIbochi                      Database Schema
+4) Topseboi                          Model creation

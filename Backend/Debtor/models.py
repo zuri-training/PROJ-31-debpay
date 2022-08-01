@@ -1,121 +1,107 @@
-import profile
-from tkinter import CASCADE
-from unicodedata import name
 from django.db import models
-from django.forms import PasswordInput
+from django.utils import timezone
+from shortuuid.django_fields import ShortUUIDField
 
-#model for schools this is to create instance into the database
+
+class Locality (models.Model):
+    Country = models.CharField(max_length=100)
+    State = models.CharField(max_length=100)
+    City = models.CharField(max_length=100)
+    Local_Government = models.CharField(max_length=100)
+    
+    def __str__(self):
+        return self.Local_Government
+
 class School (models.Model):
     School_owner = models.CharField(max_length=255)
     School_name = models.CharField(max_length=255)
+    school_id = ShortUUIDField(
+        length= 5,
+        max_length = 7,
+        prefix = 'DebPay',
+        alphabet = "123456efghij",
+        primary_key = True
+    )
     Reg_number = models.CharField(max_length=255)
-    Locality = models.CharField( max_length=255)
-    Debtor = models.CharField(max_length=255, primary_key=True, blank=False)
-    Email = models.CharField(max_length=255, help_text='Enter valid email')
-    Password = models.CharField( max_length=20, help_text='Enter valid password')
-        
-    # this method allow us to return str rather than object
-    # in the database we will have  school name
+    Locality = models.ForeignKey(Locality, on_delete=models.CASCADE)
+    debtor = models.ManyToManyField('Debtor', blank=True)
+    Email = models.EmailField(max_length=255, unique=True)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+  
     def __str__(self):
         return self.School_name
 
 
-#model for school profile
 class School_Profile (models.Model):
-    School = models.ForeignKey(School, on_delete=models.CASCADE)
-    profile_pics = models.ImageField()
+    school = models.OneToOneField(School, on_delete=models.CASCADE)
+    profile_pics = models.ImageField(default='default.png',  upload_to='profile_pics')
 
-    #function to return school instead of obj
     def __str__(self):
-        return self.School
+        return self.school
 
-
-#model for locality 
-class Locality (models.Model):
-    Country = models.CharField(max_length=50)
-    State = models.CharField(max_length=50)
-    City = models.CharField(max_length=50)
-    Local_Government = models.CharField(max_length=50)
-
-    #return local government 
-    def __str__(self):
-        return self.Local_Government
-
-
-#model for debtor
 class Debtor (models.Model):
-    Student_id = models.CharField(max_length=12, unique=True, primary_key=True)
-    Sponsor_email = models.CharField(max_length=50)
-    Sponsor_No = models.CharField(max_length=15, default=+234, editable= True)
+    Student_name = models.CharField(max_length=100)
+    Student_id = models.CharField(max_length=100)
+    Sponsor_email = models.EmailField(max_length=100, unique=True)
+    Sponsor_No = models.CharField(max_length=15, default=+234)
     Sponsor_location = models.CharField(max_length=255)
     Full_name = models.CharField(max_length=255)
     Debt = models.CharField(max_length=50)
-    Student_class =models.CharField(max_length=20)
+    Student_class =models.ForeignKey('Level', on_delete=models.CASCADE)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
 
-    #return student ID as the str method
     def __str__(self):
         return self.Student_id
 
-
-#model for level
 class Level (models.Model):
     Name = models.CharField(max_length=50, blank=True, null=True)
-
-
-#model for debtor's profile
-class Deptors_profile (models.Model):
-    Deptor = models.ForeignKey(Debtor, on_delete=models.CASCADE)
-    Profile_pics = models.ImageField()
-
-    #return deptor 
+    
     def __str__(self):
-        return self.Deptor
+        return self.Name
 
+class Deptors_profile (models.Model):
+    debtor = models.ForeignKey(Debtor, on_delete=models.CASCADE)
+    profile_pics = models.ImageField(default='default.png',  upload_to='debt_profile_pics')
 
-#model for post by schools
+    def __str__(self):
+        return self.debtor
+
 class Post (models.Model):
     Title = models.CharField(max_length=255)
-    School = models.ForeignKey(School, on_delete=models.CASCADE)
+    school_post = models.ForeignKey(School, on_delete=models.CASCADE)
     Body = models.TextField(help_text='Enter post here...')
-    # I dont get this desptors field
-    Deptors = models.CharField(max_length=255)
-    image = models.ImageField()
-    Date = models.DateTimeField(auto_created=True)
+    deptors_list = models.ForeignKey(Debtor, on_delete=models.CASCADE)
+    image = models.ImageField(upload_to='post_pics', blank=True, null=True)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
 
-    #return title or school --------------later discuss
     def __str__(self):
-        return self.Title, #self.School
+        return self.Title
 
-
-#model for comments
 class Comment (models.Model):
-    Post = models.ForeignKey(Post, on_delete=models.CASCADE)
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
     Body = models.TextField(help_text='Enter your comments here...')
-    Date = models.DateTimeField(auto_created=True)
+    created = models.DateTimeField(auto_now_add=True)
 
-    #return body
     def __str__(self):
         return self.Body
 
 
-#model for contend
 class Contend (models.Model):
-    School = models.ForeignKey(School, on_delete=models.CASCADE)
-    Email = models.CharField(max_length=50)
-    Student_id = models.CharField(max_length=12, unique=True, primary_key=True)
+    school = models.ForeignKey(School, on_delete=models.CASCADE)
+    Email = models.EmailField(max_length=100)
+    Student_id = models.CharField(max_length=50)
     How_to_be_contacted = models.CharField(max_length=255, help_text='specify email or phone number')
     Complain = models.TextField(help_text='Enter your complain here...')
 
-    #return student ID
     def __str__(self):
         return self.Student_id
 
-
-#model for help
 class Help (models.Model):
     Title = models.CharField(max_length=255)
     Body = models.TextField(help_text='Enter help here')
 
-    #return title
     def __str__(self):
         return self.Title
