@@ -13,7 +13,21 @@
       <img src="../assets/login-and-signup-image design.jpg" alt="" />
     </div>
     <main>
-      <h1>Create an account</h1>
+      <h1>Welcome!</h1>
+      <div class="sign-in-options-container">
+        <div class="sign-in-options-google">
+          <img src="" alt="">
+          <span>Sign in with Google</span>
+        </div>
+        <div class="sign-in-options-fb">
+          <img src="" alt="">
+          <span>Sign in with Facebook</span>
+        </div>  
+      </div>
+      
+      <div class="or"> <span></span> Or <span></span></div>
+
+      <p>Create a new account</p>
       <form action="">
         <div>
           <label>Full Name</label>
@@ -40,12 +54,12 @@
         <div></div>
         <label
           ><input type="checkbox" name="tos" /> I have read and agreed to the
-          terms and conditions</label
+          <span class="tos--blue">terms and conditions</span> </label
         >
-        <div class="button-container">
-          <button type="submit">Create a free account</button>
-        </div>
         <p>Already have an account? <a href="#">Login</a></p>
+        <div class="button-container">
+          <button type="submit">Register</button>
+        </div>
       </form>
     </main>
   </body>
