@@ -9,7 +9,9 @@
   </head>
   <body>
     <!-- image for desktop screen, invisible for mobile screen -->
-    <div class="aside-img"></div>
+    <div class="aside-img-container">
+      <img src="../assets/login-and-signup-image design.jpg" alt="" />
+    </div>
     <main>
       <h1>Create an account</h1>
       <form action="">
@@ -19,11 +21,21 @@
         </div>
         <div>
           <label>Email address</label>
-          <input type="email" name="email" placeholder="email@example.com" />
+          <input
+            type="email"
+            name="email"
+            placeholder="email@example.com"
+            class="email"
+          />
         </div>
         <div>
           <label>Password</label>
-          <input type="password" name="password" placeholder="*******" />
+          <input
+            type="password"
+            name="password"
+            placeholder="*******"
+            class="password"
+          />
         </div>
         <div></div>
         <label
