@@ -19,6 +19,7 @@ main {
 }
 .aside-img-container img {
   display: none;
+  height: 100vh;
 }
 h1 {
   color: #000000;
