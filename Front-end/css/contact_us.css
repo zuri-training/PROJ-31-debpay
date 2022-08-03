@@ -377,7 +377,7 @@ textarea {
   font-size: 16px;
   line-height: 22px;
   color: #007EA7;
-  border-color:#007EA7;
+  border-color: #007EA7;
   flex: none;
   order: 0;
   flex-grow: 0;
@@ -434,7 +434,7 @@ textarea {
   font-size: 16px;
   line-height: 22px;
   color: #007EA7;
-  border-color:#007EA7;
+  border-color: #007EA7;
   flex: none;
   order: 0;
   flex-grow: 0;
@@ -444,7 +444,7 @@ textarea {
 
 
 footer {
-  color: #fff;
+  color: #FFFFFF;
   background-color: #00171F;
 }
 
@@ -475,7 +475,7 @@ footer {
 }
 
 .footer_flexbox-box1 {
-  flex: 30%;
+  flex: 40%;
   text-align: center;
 }
 
@@ -497,13 +497,64 @@ footer {
 
 #page_bottom {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 }
 
 #page_bottom a {
-  padding: 20px;
+  padding: 20px 20px;
 }
+
+.bottom-social {
+  display: block;
+  justify-content:space-evenly;
+}
+
+.bottom-social a {
+  color: #FFFFFF;
+  margin: 0;
+  padding: 0;
+}
+
+.bottom-social {
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.bottom-social .fa:hover {
+  color: #007EA7;
+  background-color:#E0E0E0;
+}
+
+.bottom-social .fa-facebook {
+  width: 21.46px;
+  height: 17.44px;
+  text-align: center;
+  border-radius: 50%;
+}
+
+.bottom-social .fa-twitter {
+  width: 21.46px;
+  text-align: center;
+  border-radius: 50%;
+  height: 17.44px;
+}
+
+.bottom-social .fa-whatsapp {
+  width: 21.46px;
+  text-align: center;
+  border-radius: 50%;
+  height: 17.44px;
+}
+
+.bottom-social .fa-instagram {
+  width: 21.46px;
+  text-align: center;
+  border-radius: 50%;
+  height: 17.44px;
+}
+
+  
 /* Medium devices (mobile phones, 375px and up) */
 @media only screen and (min-width: 375px) {}
 
