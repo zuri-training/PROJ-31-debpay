@@ -5,6 +5,9 @@ Josefin Sans */
   margin: 0;
   padding: 0;
 }
+body, html{
+  height: 100vh;
+}
 body {
   font-family: "Josefin Sans";
   display: flex;
@@ -16,12 +19,13 @@ main {
 }
 .aside-img-container img {
   display: none;
+  height: 100vh;
 }
 h1 {
   color: #000000;
   text-align: center;
   font-size: 32px;
-  margin-top: 96px;
+  margin-top: 80px;
 
 }
 p{
@@ -40,7 +44,7 @@ a{
 .sign-in-options-container{
   display: flex;
   justify-content: space-between;
-  margin-top: 90px;
+  margin-top: 58px;
 }
 .sign-in-options-google{
   border: 1px solid #282828;
@@ -57,7 +61,7 @@ a{
 .or{
   position: relative;
   max-width: 500px;
-  margin: 100px auto;
+  margin: 30px auto;
   text-align: center;
 }
 .or::before{
