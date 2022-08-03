@@ -15,7 +15,6 @@ main {
   margin: 0 auto;
 }
 .aside-img-container img {
-  height: 100vh;
   display: none;
 }
 h1 {
@@ -55,10 +54,33 @@ a{
   border-radius: 12px;
   padding: 10px;
 }
-.or span{
-  width: 1px;
-  height: 1px;
-  color: black;
+.or{
+  position: relative;
+  max-width: 500px;
+  margin: 100px auto;
+  text-align: center;
+}
+.or::before{
+  content: "";
+  height: 2px;
+  width: 130px;
+  background-color: black;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 0;
+
+}
+
+.or::after{
+  content: "";
+  height: 2px;
+  width: 130px;
+  background-color: black;
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 0;
 }
 /* form {
   max-width: 340px;
