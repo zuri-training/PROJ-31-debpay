@@ -2,7 +2,6 @@ from django.db import models
 from django.utils import timezone
 from shortuuid.django_fields import ShortUUIDField
 
-
 class Locality (models.Model):
     Country = models.CharField(max_length=100)
     State = models.CharField(max_length=100)
