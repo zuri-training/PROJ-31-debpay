@@ -1,12 +1,54 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib import messages
-from .forms import*
+from .forms import ContendForm, HelpForm, DebtorForm, PostForm
 from .models import*
-from django.views.generic import TemplateView #A test view to be deleted
-# Create your views here.
-
 
 #Just a test view to be deleted later
-class ModelView(TemplateView):
-    template_name = "home.html"
+def contend_view(request):
+    context = {}
+
+    form = ContendForm(request.POST)
+
+    #To check if form is valid
+    if form.is_valid():
+        form.save()
+
+    context['form'] = form
+    return render(request, "contend.html", context)
+
+def help_view(request):
+    context = {}
+
+    form = HelpForm(request.POST)
+
+    #To check if form is valid
+    if form.is_valid():
+        form.save()
+
+    context['form'] = form
+    return render(request, "help_page.html", context)
+
+def debtor_form_view(request):
+    context = {}
+
+    form = DebtorForm(request.POST)
+
+    #To check if form is valid
+    if form.is_valid():
+        form.save()
+
+    context['form'] = form
+    return render(request, "debtor_form.html", context)
+
+def debtor_form_view(request):
+    context = {}
+
+    form = PostForm(request.POST)
+
+    #To check if form is valid
+    if form.is_valid():
+        form.save()
+
+    context['form'] = form
+    return render(request, "post.html", context)
