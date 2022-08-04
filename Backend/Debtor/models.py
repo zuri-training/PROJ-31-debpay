@@ -2,7 +2,6 @@ from django.db import models
 from django.utils import timezone
 from shortuuid.django_fields import ShortUUIDField
 
-
 class Locality (models.Model):
     country = models.CharField(max_length=100)
     ctate = models.CharField(max_length=100)
@@ -103,5 +102,5 @@ class Help (models.Model):
     title = models.CharField(max_length=255)
     body = models.TextField(help_text='Enter help here')
 
-    def __str__(self):
+    def __str__(self)
         return self.title
