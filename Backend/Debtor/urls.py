@@ -5,6 +5,6 @@ urlpatterns = [
     path('', contend_view, name='home'),
     path('help/', help_view, name='help'),
     path('debtor_reg/', debtor_form_view, name='debtor_reg'),
-    path('post/', debtor_form_view, name='post')
+    #path('post/', debtor_form_view, name='post')
 ]
 

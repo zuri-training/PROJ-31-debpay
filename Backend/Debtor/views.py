@@ -15,7 +15,7 @@ def contend_view(request):
         form.save()
 
     context['form'] = form
-    return render(request, "contend.html", context)
+    return render(request, "home.html", context)
 
 def help_view(request):
     context = {}
@@ -40,15 +40,3 @@ def debtor_form_view(request):
 
     context['form'] = form
     return render(request, "debtor_form.html", context)
-
-def debtor_form_view(request):
-    context = {}
-
-    form = PostForm(request.POST)
-
-    #To check if form is valid
-    if form.is_valid():
-        form.save()
-
-    context['form'] = form
-    return render(request, "post.html", context)
