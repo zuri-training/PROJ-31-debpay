@@ -102,5 +102,5 @@ class Help (models.Model):
     title = models.CharField(max_length=255)
     body = models.TextField(help_text='Enter help here')
 
-    def __str__(self)
+    def __str__(self):
         return self.title

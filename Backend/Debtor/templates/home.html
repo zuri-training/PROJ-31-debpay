@@ -10,5 +10,10 @@
             <a href="{% provider_login_url 'google' %}">Login with Google</a>
         
         {% endif %}
+
+        <form>
+            {{ form.as_p }}
+            <input type = 'submit' value = 'Save'>
+        </form> 
     </body>
 </html>
