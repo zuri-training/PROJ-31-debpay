@@ -556,11 +556,228 @@ footer {
 
   
 /* Medium devices (mobile phones, 375px and up) */
-@media only screen and (min-width: 375px) {}
+@media (max-width: 375px) {
+  
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media  (max-width: 1200px) {
+  .contact-details {
+    width: 365px;
+    height: 591px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    background: #007EA7;
+    color: #FFFFFF;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    margin: 111px 850px 31px 225px;
+    position: absolute;
+    z-index: 1;
+    right: -7em;
+}
+
+.container {
+  position: absolute;
+  font-family: 'Josefin Sans';
+  font-style: normal;
+  width: 858px;
+  height: 653px;
+  left: 228px;
+  top: 573px;
+  padding-left: 301px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  z-index: 0;
+}
+}
 
 
 /* Large devices (landscape tablets, 834px and up) */
-@media only screen and (min-width: 834px) {}
+@media  (max-width: 834px) {
+  .content p {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    color: #000000;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    width: 728px;
+    height: 48px;
+    margin: 0px 552px 0px 66px;
+}
 
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {}
+
+.container {
+  position: absolute;
+  font-family: 'Josefin Sans';
+  font-style: normal;
+  width: 572px;
+  height: 653px;
+  left: 176px;
+  top: 573px;
+  padding-left: 301px;
+  background: #FFFFFF;
+  box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  z-index: 0;
+}
+
+
+.contact-details {
+  width: 344px;
+  height: 591px;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  background: #007EA7;
+  color: #FFFFFF;
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  margin: 111px 850px 31px 225px;
+  position: absolute;
+  z-index: 1;
+  right: -26em;
+}
+
+.call-us {
+  display: block;
+  margin-top: 813px;
+  flex: 50%;
+}
+
+.chat-us {
+  width: 31%;
+  display: block;
+  flex: 50%;
+  margin-top: 813px;
+}
+
+.container input[type=submit] {
+  border: none;
+  margin-left: 74px;
+  margin-top: 50px;
+  align-items: center;
+  padding: 16px 24px;
+  gap: 16px;
+  width: 157px;
+  height: 55px;
+  background: #007EA7;
+  border-radius: 12px;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  cursor: pointer;
+  font-family: 'Josefin Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  color: #FFFFFF;
+}
+
+.chat-us h4 {
+  margin: 0;
+  margin-left: 65px;
+  width: 465px;
+  height: 32px;
+  font-family: 'Josefin Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 35px;
+  color: #00171F;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+.chat-us p {
+  margin: 16px 0 32px 62px;
+  width: 354px;
+  height: 48px;
+  font-family: 'Josefin Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: #000000;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+.btn_chat {
+  margin: 26px 0 32px 69px;
+  width: 172px;
+  height: 53px;
+  padding: 16px 2px;
+  gap: 16px;
+  font-family: 'Josefin Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  color: #007EA7;
+  border-color: #007EA7;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  border-radius: 12px;
+  margin-left: 60px;
+}
+
+.call-us h4 {
+  margin: 0;
+  margin-left: 65px;
+  width: 398px;
+  height: 36px;
+  font-family: 'Josefin Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 29px;
+  line-height: 35px;
+  color: #00171F;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
+
+.call-us p {
+  margin: 16px 0 32px 64px;
+  width: 241px;
+  height: 48px;
+  font-family: 'Josefin Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  color: #000000;
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+.btn_call {
+  margin: 22px 0 32px 69px;
+  width: 120px;
+  height: 53px;
+  padding: 16px 2px;
+  gap: 16px;
+  font-family: 'Josefin Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  color: #007EA7;
+  border-color: #007EA7;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  border-radius: 12px;
+  margin-left: 60px;
+}
+}
+
