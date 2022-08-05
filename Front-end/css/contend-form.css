@@ -1,0 +1,41 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    height: 100vh;
+}
+li{
+    list-style: none;
+}
+label {
+    display: block;
+}
+input {
+    padding: 10px 50px 10px 5px;
+    border: 1.5px solid rgba(46, 46, 46, 0.6);
+    border-radius: 8px;
+    outline: none;
+    margin: 10px 0; /* margin for spaces btw labels and inputs*/
+  }
+textarea {
+    margin-top: 10px;
+}
+.button-container {
+    display: flex;
+    margin: 20px 0 10px 0;
+    justify-content: center;
+  }
+  
+  button {
+    border: none;
+    border-radius: 12px;
+    padding: 10px 130px;
+    font-weight: bold;
+    color: #ffffff;
+    background: #007ea7;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+  }
