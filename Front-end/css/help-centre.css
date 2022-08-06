@@ -7,6 +7,7 @@
 html,
 body {
   height: 100vh;
+  font-family: "Josefin Sans", sans-serif;
 }
 /* header */
 
@@ -127,8 +128,10 @@ footer{
 
 .footer_container{
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: center;
+  padding: 20px;
 }
 
 .footer_container h4{
@@ -153,29 +156,34 @@ footer{
 .footer_container-box1{
   flex: 30%;
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .footer_container-box2{
   flex: 20%;
+  margin-bottom: 20px;
   text-align: left;
+  margin-top: -35%;
 }
 
 .footer_container-box3{
   flex: 20%;
-  margin-top: -35px;
+  margin-bottom: 20px;
   text-align: left;
 }
 
 .footer_container-box4{
   flex: 20%;
+  margin-bottom: 20px;
   text-align: left;
 }
 
-#page_bottom{
+#page_bottom {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
-  margin-left: 50px;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 #page_bottom a{
@@ -185,4 +193,13 @@ footer{
 #icons{
   display: flex;
   margin-right: 50px;
+}
+
+
+@media(min-width:1024px){
+  .footer_container{
+   flex-direction: row;
+   align-items: center;
+  }
+ 
 }
