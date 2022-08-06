@@ -8,10 +8,107 @@ html,
 body {
   height: 100vh;
 }
+/* header */
+
+ul li{
+  list-style: none;
+  display: inline;
+}
+
 a{
   text-decoration: none;
   color: #FFF;
 }
+
+.login_btn{
+  display: inline;
+  width: 100px;
+  border: 1px solid #fff;
+  height: 40px;
+  color: #007EA7;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 28px;
+  background-color: #FFF;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.register_btn{
+  display: inline;
+  width: 120px;
+  height: 40px;
+  border: 1px solid #fff;
+  color: #fff;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 28px;
+  background-color: #007EA7;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+#headerContainer{
+  display: flex;
+  margin: 0;
+  width: 100%;
+  height: 88px;
+  background-color: #007EA7;
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22.4px; 
+}
+
+.headerBox1{
+  flex: 50%;
+  width: 100%;
+  padding: 20px;
+  margin-top: -70px;
+  margin-left: 40px;
+}
+
+.headerBox2{
+  flex: 50%;
+  margin-left: -180px;
+  margin-top: 22px;
+  width: 100%;
+}
+
+.headerBox2 li{
+  padding: 14px;
+  font-size: 20px;
+}
+
+.dropbtn{
+  color: #fff;
+  padding: 15px;
+  font-size: 20px;
+  line-height: 22.4px;
+  font-weight: 700;
+}
+
+.dropdown{
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content{
+  display: none;
+  position: absolute;
+  text-align: left;
+  padding: 10px;
+  background-color: #918c8c;
+  min-width: 250px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content{
+  display: block;
+}
+
+/* header */
 
 .faq-accordions div {
   background-color: #ffffff;
