@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Debtor',
 
-    'django.contrib.sites',
+     'django.contrib.sites',
 
     # Authentication apps
     'allauth',
@@ -108,7 +108,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
+AUTH_USER_MODEL='Debtor.School'
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
@@ -140,7 +140,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
-    'allauth.account.auth_backends.AuthenticationBackend',
+     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
 SOCIALACCOUNT_PROVIDERS = {
@@ -150,7 +150,7 @@ SOCIALACCOUNT_PROVIDERS = {
     }
 }
 
-#SITE_ID = 
+SITE_ID = 1 
 
-LOGIN_REDIRECT_URL = 'home'
-LOGOUT_REDIRECT_URL = 'home'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'

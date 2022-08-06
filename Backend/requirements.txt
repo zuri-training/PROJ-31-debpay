@@ -1,0 +1,3 @@
+django (pip install django)
+shortuuid (pip install shortuuid)
+pillow  (pip install pillow)
