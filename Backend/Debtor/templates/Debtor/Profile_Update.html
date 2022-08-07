@@ -1,0 +1,11 @@
+
+        <form method='post' action='' enctype='multipart/form-data'>
+  
+            {% csrf_token %}
+            {{u_form.as_p}}
+            {{p_form.as_p}}
+         
+            <br>
+            <button type='submit'> Update </button>
+            </form>
+    

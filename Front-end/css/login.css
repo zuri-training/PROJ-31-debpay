@@ -1,68 +1,96 @@
-/* 'Inter'
-Josefin Sans */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-body, html{
+
+body,
+html {
   height: 100vh;
 }
+
 body {
   font-family: "Josefin Sans", sans-serif;
   display: flex;
   flex-direction: row-reverse;
 }
+
 main {
   width: 340px;
   margin: 0 auto;
 }
+
+.me {
+  text-align: center;
+}
+
 .aside-img-container img {
   display: none;
   height: 100vh;
 }
+
 h1 {
   color: #000000;
   text-align: center;
   font-size: 32px;
-  margin-top: 80px;
-
+  margin-top: 60px;
 }
-p{
+
+h2 {
+  color: #4f4f4f;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 28px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.mine {
+  margin-top: 40px;
+  text-align: center;
+}
+
+p {
   color: #4f4f4f;
   margin: 20px 0 15px 0;
   max-width: 340px;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 400;
   font-size: 16px;
   line-height: 22px;
 }
-a{
+
+a {
   text-decoration: none;
   color: #007ea7;
 }
-.sign-in-options-container{
+
+.Login-in-options-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   margin-top: 58px;
 }
-.sign-in-options-google{
+
+.Login-in-options-google {
   border: 1px solid #282828;
   border-radius: 12px;
   padding: 10px;
   margin-bottom: 20px;
 }
-.sign-in-options-fb{
+
+.Login-in-options-fb {
   border: 1px solid #846767;
   color: #fef4f4;
-   background-color: #007ea7;
+  background-color: #007ea7;
   border-radius: 12px;
   padding: 10px;
+
 }
 
-.sign-in-options-google, .sign-in-options-fb{
+.Login-in-options-google,
+.Login-in-options-fb {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -70,13 +98,14 @@ a{
 
 }
 
-.or{
+.or {
   position: relative;
   max-width: 500px;
   margin: 30px auto;
   text-align: center;
 }
-.or::before{
+
+.or::before {
   content: "";
   height: 2px;
   width: 130px;
@@ -85,10 +114,9 @@ a{
   position: absolute;
   top: 50%;
   left: 0;
-
 }
 
-.or::after{
+.or::after {
   content: "";
   height: 2px;
   width: 130px;
@@ -98,17 +126,17 @@ a{
   top: 50%;
   right: 0;
 }
-/* form {
-  max-width: 340px;
-} */
+
 input {
   padding: 10px 50px 10px 5px;
   border: 1.5px solid rgba(46, 46, 46, 0.6);
   border-radius: 8px;
   outline: none;
-  margin: 10px 0; /* margin for spaces btw labels and inputs*/
+  margin: 10px 0;
   /* width: 100%; */
+
 }
+
 label {
   display: block;
   font-style: normal;
@@ -117,29 +145,54 @@ label {
   line-height: 20px;
   color: #292232;
 }
-.name, .email, .password{
-  width: 100%;
+
+/* .google {
+  width: 16px;
+  height: auto;
 }
+
+.fb {
+  width: 16px;
+  height: auto;
+} */
+
 .email {
   background-image: url("../assets/email-icon.png");
   background-position-x: 90%;
   background-position-y: 50%;
   background-repeat: no-repeat;
 }
+
 .password {
   background-image: url("../assets/eye-icon.png");
   background-position-x: 90%;
   background-position-y: 50%;
   background-repeat: no-repeat;
 }
-.tos--blue{
+
+.email,
+.password {
+  width: 100%;
+}
+
+.tos--blue {
   color: #007ea7;
+
 }
 
 .button-container {
   display: flex;
   justify-content: flex-end;
   margin: 40px 0 10px 0;
+}
+
+.checkbox-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.checkmark {
+  padding: 10px;
 }
 
 button {
@@ -154,23 +207,26 @@ button {
   line-height: 22px;
 }
 
-
 @media (min-width: 1024px) {
-  main{
+  main {
     width: 434px;
   }
-  .aside-img-container{
+
+  .aside-img-container {
     max-width: 50%;
   }
-  .aside-img-container img{
+
+  .aside-img-container img {
     display: block;
   }
-.sign-in-options-container{
-  flex-direction: row;
-  justify-content: space-around;
-}
-.sign-in-options-google{
-  margin-bottom: 0;
-  margin-right: 10px;
-}
+
+  .Login-in-options-container {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .Login-in-options-google {
+    margin-bottom: 0;
+    margin-right: 10px;
+  }
 }

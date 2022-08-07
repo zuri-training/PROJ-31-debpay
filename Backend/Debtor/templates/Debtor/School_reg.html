@@ -1,0 +1,15 @@
+<style>
+    li{color:red; list-style:none;} 
+</style>
+{%for message in messages%}
+<h4>{{message}}</h4>
+{%endfor%} 
+<form method='post' action=''>
+  
+    {% csrf_token %}
+    {{form.as_p}}
+ 
+    <br>
+    <button type='submit'> Sign up </button>
+    </form>
+    <a href='/'> Go back </a>
