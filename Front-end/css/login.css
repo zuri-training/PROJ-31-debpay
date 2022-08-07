@@ -68,7 +68,7 @@ a {
 .Login-in-options-container {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-between;
   margin-top: 58px;
 }

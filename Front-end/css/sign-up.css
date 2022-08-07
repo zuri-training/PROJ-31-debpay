@@ -79,7 +79,7 @@ a{
 .or::before{
   content: "";
   height: 2px;
-  width: 160px;
+  width: 130px;
   background-color: black;
   display: block;
   position: absolute;
@@ -91,7 +91,7 @@ a{
 .or::after{
   content: "";
   height: 2px;
-  width: 160px;
+  width: 130px;
   background-color: black;
   display: block;
   position: absolute;
