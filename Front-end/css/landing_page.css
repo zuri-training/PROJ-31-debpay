@@ -235,7 +235,11 @@ a{
 }
 
 #container3{
-    height: 2040px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 1580px;
     background: #fff; 
 }
 
@@ -243,7 +247,6 @@ a{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 680px;
     padding: 30px;
 }
 
@@ -266,7 +269,6 @@ a{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 680px;
     padding: 30px;
 }
 
@@ -289,7 +291,6 @@ a{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 680px;
     padding: 30px;
 }
 
@@ -568,7 +569,21 @@ footer{
         height: 123.04px;
 
     }
-
+    #container3{
+        padding: 10px;
+    }
+    #container3-A{
+        flex-direction: column;
+        padding: 10px;
+    }
+    #container3-B{
+        flex-direction: column;
+        padding: 10px;
+    }
+    #container3-C{
+        flex-direction: column;
+        padding: 10px;
+    }
     #container4{
         height: 1400px;
         padding: 10px;
