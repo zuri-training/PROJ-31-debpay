@@ -4,7 +4,8 @@ html, body{
 }
 
 #search{
-    padding: 20px;
+    padding-top: 25px;
+    padding-left: 50px;
 }
 
 #search input{
@@ -80,4 +81,5 @@ html, body{
     font-size: 20px;
     line-height: 24px;
     border-radius: 5px;
+    cursor: pointer;
 }
