@@ -1,0 +1,107 @@
+body{
+    font-size: 1.5rem;
+    margin: 0;
+}
+.active{
+    background-color:rgba(0, 0, 0, 0.619);
+    border-radius: 5px;
+}
+
+
+#navbarSupportedContent{
+    padding-right: 3%;    
+}
+#topNav{
+    background-color: #007EA7;
+    margin: 0;
+    padding: 0;
+    padding-left: 10px;
+}
+.nav-item a{
+    margin: 5px;
+}
+.btn-login{
+    background-color: white;
+    color: #007EA7;
+}
+#topNav img{
+    width: 50%;
+}
+
+#drop{
+    background-color: black;
+}
+.dropdown-menu a{
+    color: white;
+    margin: 0;
+}
+.nav-link {
+    color: white;
+}
+
+.back-links{
+    text-align: center;
+    margin-top: 5rem;
+}
+.back-links a {
+    text-decoration: none;
+    filter: 0.6;
+    color: white;
+    padding: 16px 28px;
+    font-size: 22px;
+    border-radius: 7px;
+    margin: 30px;
+    border-color: #007EA7;
+    border: 1px solid black;
+    background-color: white;
+  }
+.back-links a:hover{
+    background-color: #ddd;
+    color: grey;
+}
+.back-links a.blue {
+    background-color: #007EA7;
+    border: 0;
+
+    
+}
+.back-links a.contact-{
+    color: #007EA7;
+    border-color: #007EA7 1px solid;
+    
+    
+}
+@media screen and (max-width: 750px){
+    .back-links a{
+        margin: 10px;
+    }
+}    
+@media screen and (max-width: 620px){
+    .back-links a{
+        display: list-item;
+        list-style: none;
+    }
+}    
+.container{
+    width: 65%;
+    margin-left: auto;
+    margin-right: auto;
+    border: #ddd 1px solid;
+    padding: 4rem;
+    top: -70px;
+    position: relative;
+    background-color: white;
+}
+
+.heading{
+    background-color: #E5F2F6;
+    padding-top: 0.5rem;
+    padding-bottom: 5rem;
+    text-align: center;
+    font-size: 2.5rem;
+    position: relative;
+    color: #007EA7;
+}
+.overlap{
+    margin-top: 3rem;
+}
