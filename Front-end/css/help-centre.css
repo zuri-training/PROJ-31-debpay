@@ -10,7 +10,6 @@ body {
   font-family: "Josefin Sans", sans-serif;
 }
 main {
-  padding: 0 10px;
   max-width: 430px;
   margin: 0 auto;
 }
@@ -133,6 +132,7 @@ a {
 .help-centre-container {
   text-align: center;
   margin-bottom: 24px;
+  padding: 0 10px;
 }
 .help-centre-container > h1 {
   color: #007ea7;
@@ -159,6 +159,7 @@ a {
 
 .faq-accordions {
   margin-bottom: 24px;
+  padding: 0 10px;
 }
 .faq-accordions div {
   background-color: #ffffff;
@@ -172,6 +173,9 @@ a {
 .faq-accordions div > img {
   margin-right: 20px;
   margin-left: 20px;
+}
+.help-info {
+  padding: 0 10px;
 }
 .help-info div {
   max-width: 240px;
@@ -298,26 +302,30 @@ footer {
 @media (min-width: 1024px) {
   main {
     max-width: 100%;
-    padding: 0 64px;
   }
   .footer_container {
     flex-direction: row;
   }
   .hi-user-container {
     display: flex;
+    padding: 0 64px;
     justify-content: space-between;
   }
   .faq-accordions {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    padding: 0 64px;
     justify-content: space-evenly;
   }
   .help-info {
     display: flex;
     justify-content: flex-start;
     flex-direction: row;
+    padding: 0 64px;
     flex-wrap: wrap;
+    border-top: 2px solid #e5f2f6;
+    padding-top: 32px;
   }
   .help-info > div {
     margin-right: 88px;
@@ -325,5 +333,22 @@ footer {
   .help-info div > p {
     margin-bottom: 24px;
     border-bottom: none;
+  }
+  .chat-section div > h2,
+  .chat-section div > p {
+    display: none;
+  }
+  .chat-section {
+    display: flex;
+    background-color: #e5f2f6;
+    padding-top: 33px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .want-to-speak-with-us {
+    margin-right: auto;
+  }
+  .chat-section div > button {
+    margin-right: 10px;
   }
 }
