@@ -9,9 +9,9 @@ urlpatterns = [
     
     #Default authentication home
     path('', views.land, name='land'), 
-    path('register', views.School_Register, name='register'),
-    path('logout', views.School_Logout, name='logout'),
-    path('login', views.School_Login, name='login'),
+    path('register/', views.School_Register, name='register'),
+    path('logout/', views.School_Logout, name='logout'),
+    path('login/', views.School_Login, name='login'),
     path('accounts/', include('django.contrib.auth.urls')),#Django built-in authentication system
     path('School_Profile_Update', views.School_Profile_Update, name='School_Profile_Update'), 
 
