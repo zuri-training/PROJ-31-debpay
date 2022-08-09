@@ -71,6 +71,7 @@ textarea {
   border-radius: 8px;
   padding: 16px 100px 97px 8px;
   border: 1.5px solid #282828;
+  height: 110px;
 }
 input,
 textarea {
@@ -82,7 +83,7 @@ textarea {
 }
 .button-container {
   margin-top: 34px;
-  margin-bottom: 221px;
+  margin-bottom: 60px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -143,7 +144,17 @@ button {
 
 /* media queries */
 @media (min-width: 1024px) {
-  main {
+  body {
     background: #e5f2f6;
+  }
+  main {
+    background-color: #ffffff;
+    border-radius: 16px;
+    border: 1px solid #282828;
+    margin: 64px;
+  }
+  input,
+  textarea {
+    width: 590px;
   }
 }
