@@ -11,6 +11,8 @@ body {
 }
 main {
   padding: 0 10px;
+  max-width: 430px;
+  margin: 0 auto;
 }
 /* header */
 
@@ -128,6 +130,10 @@ a {
 .help-centre-container > input {
   padding: 8px 82px 8px 8px;
   outline: none;
+  font-weight: 400;
+  color: #bdbdbd;
+  border-radius: 8px;
+  border: 1px solid #828282;
 }
 
 .hi-user-container > h2 {
@@ -135,6 +141,11 @@ a {
 }
 .hi-user-container > p {
   color: #828282;
+  margin-bottom: 16px;
+}
+
+.faq-accordions {
+  margin-bottom: 24px;
 }
 .faq-accordions div {
   background-color: #ffffff;
@@ -148,18 +159,52 @@ a {
   margin-right: 20px;
   margin-left: 20px;
 }
-
+.help-info div {
+  max-width: 340px;
+  margin-bottom: 24px;
+}
 .help-info div > h1 {
   color: #2e2e2e;
   font-size: 18px;
   font-weight: 700;
+  margin-bottom: 8px;
 }
 .help-info div > p {
   font-size: 14px;
   font-weight: 400;
   border-bottom: 1px solid #e0e0e0;
-  max-width: 340px;
+  margin-bottom: 6px;
 }
+
+.want-to-speak-with-us {
+  color: #007ea7;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 26.4px;
+  margin-bottom: 16px;
+}
+.chat-section div {
+  /* I used the flexbox to position the button to the right */
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 29px;
+}
+.chat-section div > h2 {
+  color: #282828;
+}
+.chat-section div > p {
+  color: #282828;
+}
+.chat-section div > button {
+  background-color: transparent;
+  color: #007ea7;
+  border: 1px solid #007ea7;
+  padding: 12.5px 24px;
+  border-radius: 12px;
+  text-align: right;
+  align-self: flex-end;
+}
+
 /* main */
 
 /* footer */
@@ -237,7 +282,15 @@ footer {
 /* footer */
 
 @media (min-width: 1024px) {
+  main {
+    max-width: 100%;
+    padding: 0 64px;
+  }
   .footer_container {
     flex-direction: row;
+  }
+  .hi-user-container {
+    display: flex;
+    justify-content: space-between;
   }
 }
