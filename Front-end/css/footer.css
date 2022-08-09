@@ -3,7 +3,10 @@
   margin: 0;
   padding: 0;
 }
-
+a {
+  text-decoration: none;
+  color: #fff;
+}
 footer {
   color: #fff;
   background-color: #00171f;
