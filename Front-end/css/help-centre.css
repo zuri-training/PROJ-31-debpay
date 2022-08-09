@@ -25,6 +25,19 @@ a {
   text-decoration: none;
   color: #fff;
 }
+/* add this class below when the menu is clicked */
+.nav__links--open {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  position: absolute;
+  top: 10px;
+  right: 0;
+}
+
+.hidden {
+  display: none;
+}
 
 .login_btn {
   display: inline;
@@ -152,6 +165,7 @@ a {
   box-shadow: 0px 2px 4px rgb(0 0 0 / 15%);
   padding: 10px;
   display: flex;
+  align-items: center;
   max-width: 340px;
   margin-bottom: 10px;
 }
@@ -160,7 +174,7 @@ a {
   margin-left: 20px;
 }
 .help-info div {
-  max-width: 340px;
+  max-width: 240px;
   margin-bottom: 24px;
 }
 .help-info div > h1 {
@@ -173,7 +187,7 @@ a {
   font-size: 14px;
   font-weight: 400;
   border-bottom: 1px solid #e0e0e0;
-  margin-bottom: 6px;
+  margin-bottom: 8px;
 }
 
 .want-to-speak-with-us {
@@ -292,5 +306,24 @@ footer {
   .hi-user-container {
     display: flex;
     justify-content: space-between;
+  }
+  .faq-accordions {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  .help-info {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .help-info > div {
+    margin-right: 88px;
+  }
+  .help-info div > p {
+    margin-bottom: 24px;
+    border-bottom: none;
   }
 }
