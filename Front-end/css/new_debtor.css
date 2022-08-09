@@ -1,0 +1,85 @@
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+#search{
+    padding-top: 25px;
+    padding-left: 50px;
+}
+
+#search input{
+    padding: 10px;
+    width: 90%;
+    border-radius: 5px;
+    border: 1px solid #BDBDBD;
+}
+
+.back-button{
+    padding-left: 22px;
+}
+
+.back-button a{
+    text-decoration: none;
+    color: #007EA7;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+#form h5{
+    padding-left: 22px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 26px;
+    color: #828282;
+}
+
+#form{
+    padding: 30px;
+}
+
+.sub_form{
+    padding: 20px;
+}
+
+.sub_form label{
+    display: block;
+    padding-bottom: 15px;
+    color: #007EA7;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.sub_form input{
+    height: 25px;
+    width: 50%;
+    border-radius: 5px;
+    border: 1px solid #BDBDBD;
+}
+
+.sub_form textarea{
+    width: 50%;
+    height: 114px;
+    border: 1px solid #BDBDBD;
+    border-radius: 5px;
+}
+
+.submit_btn{
+    float: right;
+    padding: 20px;
+}
+
+.submit_btn button{
+    width: 249px;
+    height: 48px;
+    background-color: #007EA7;
+    color: #fff;
+    border: none;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    border-radius: 5px;
+    cursor: pointer;
+}
