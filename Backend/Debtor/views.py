@@ -1,3 +1,4 @@
+from audioop import reverse
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import auth
 from django.contrib import messages
@@ -39,30 +40,35 @@ def help_view(request):
 
 def School_Register(request):
 
-    form = SchoolRegForm()
+    # form = SchoolRegForm()
     if request.method == 'POST':
         form = SchoolRegForm(request.POST)
         email = request.POST['email']
         username = request.POST['username']
-        School_name = request.POST['School_name']
-        School_owner = request.POST['School_owner']
-        Reg_number = request.POST['Reg_number']
+        # School_name = request.POST['School_name']
+        # School_owner = request.POST['School_owner']
+        # Reg_number = request.POST['Reg_number']
         password1 = request.POST['Password']
-        password2 = request.POST['Confirm_password']
+        # password2 = request.POST['Confirm_password']
        
         
         if form.is_valid():
-            if password1 == password2:
-                user = School.objects.create_user(email=email, password=password1, School_name=School_name, School_owner =School_owner ,
-                                                  username=username, Reg_number=Reg_number,
+            # if password1 == password2:
+                user = School.objects.create_user(email=email, password=password1, username=username
                         )
                 user.is_active = False
                 user.save()
+                #auth.login(request,user)
+                login(request, user, backend='django.contrib.auth.backends.ModelBackend')
+                # messages.success(request, 'School created successfully')
+                contexta = {"messages": messages, "user": user}
+                # return redirect('dashboard', contexta)
                 messages.success(request, 'School created successfully, kindly wait till the admin verify your details')
                 return redirect('/')
+
           
-            else:
-               messages.error(request, 'password mismatch')
+        else:
+            messages.error(request, 'password mismatch')
     else:
         form = SchoolRegForm()
     context ={'form':form}
@@ -74,7 +80,7 @@ def School_Register(request):
 
 #Logout view for school
 def School_Logout(request):
-    logout(request)
+    logout(request) 
     return redirect('/')
 #Home page view
 def land(request):
@@ -85,7 +91,6 @@ def School_Login(request):
     if request.method == 'POST':
         email = request.POST['email']
         password = request.POST['password']
-        
         try:
             user = School.objects.get(email=email)
         except:
@@ -95,6 +100,8 @@ def School_Login(request):
             login(request, user, backend='django.contrib.auth.backends.ModelBackend')
             # login(request, user)
             return redirect('/')
+        elif request.user.is_authenticated:
+            return redirect('dashboard.html')
         else:
             messages.error(request, 'user does not exist')
     return render(request, 'Debtor/School_login.html')
@@ -118,6 +125,9 @@ def School_Profile_Update(request):
     context = {'p_form': p_form, 'u_form':u_form}
     return render(request,'Debtor/Profile_Update.html', context ) 
     
+
+def school_dashboard(request):
+    return render(request, 'dashboard.html' )
        
 def dashboard(request):
     run = request.GET.get('test') if request.GET.get('test') !=None else''
@@ -383,3 +393,4 @@ def debtor_upd(request, pk):
  
     context = {'form':form, 'page':page}
     return render(request, "Debtor/debtor_form.html", context)
+

@@ -1,0 +1,6 @@
+{{user.School_name}} ({{user.school_id}}) {{user.email}}
+</h1>{{user.school_profile.locality}}
+<br>
+<img src="{{user.school_profile.profile_pics.url}}" alt="pol" width='100px' height='100px'><br>
+<a href='logout'> Logout </a> || <a href='{% url "password_change" %}'> Change Password</a><br>
+<a href='{% url "School_Profile_Update" %}'> Update profile data </a>

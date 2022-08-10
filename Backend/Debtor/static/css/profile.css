@@ -1,0 +1,482 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+span {
+    text-align: center;
+    margin-left: 17em;
+}
+
+
+body{
+    font-family: 'Josefin Sans', sans-serif;
+
+}
+h1 {
+    text-align: center;
+    margin-bottom: 0em;
+}
+
+.inside p {
+    margin-bottom: 1em;
+    font-size: 1.4rem;
+    text-align: left;
+    padding-left: 3em;
+}
+
+h4 {
+    font-size: 3.5rem;
+}
+
+.form {
+    background-image: url(img/School\ background.svg);
+    background-repeat: no-repeat;
+    background-size: 144%;
+    /* background-position-y: -68em;
+    background-position-x: -55em;
+    background-color: rgba(204, 229, 237, 0.5);
+ */
+    padding: 2em 5em;
+} 
+
+.form .inside{
+    padding: 1em;
+    width: 59%;
+    margin: 3em auto 1em;
+    background-color: #E5F2F6;
+    border-radius: 1em;
+}
+
+.inside img{
+    margin: 4em 14em 2em;
+}
+
+a {
+    text-decoration: none;
+    margin-right: 0em;
+    color: white;
+}
+
+body {
+    padding: 1em;
+    background-color: #F5F5F5;
+}
+
+.contain {
+    width: 80%;
+    background-color: white;
+    margin: 5em auto;
+}
+
+
+
+
+.header {
+    display: flex;
+    gap: 32em;
+    padding: 0em;
+   
+    background-color: #007EA7;
+}
+
+li {
+    display: inline-block;
+}
+
+.dropmenu li{
+    display: block;
+}
+
+img#img {
+    width: 14em;
+    /* border-radius: 1em; */
+    padding-left: 2em;
+}
+
+div#links {
+    padding: 4em 0 0 0;
+    width: 29em;
+    color: white;
+    font-size: 1.3rem;
+}
+
+h5 {
+    font-size: 2rem;
+    margin-bottom: 1em;
+}
+
+h4 {
+    font-size: 1.4rem;
+    margin-bottom: 1em;
+    /* text-align: left; */
+    padding-left: 3em;
+    font-weight: 700;
+}
+
+#bottom a{
+    color: black;
+    font-weight: 700;
+}
+
+
+
+@media (max-width: 1200px) {
+
+    a{
+        font-size: 1.2rem;
+    }
+    
+    span {
+        margin-left: 12em;
+        font-size: 1rem;
+    }
+
+
+    h1 {
+        text-align: center;
+        margin-bottom: 0em;
+        font-size: 1.5rem;
+    }
+    
+    
+   
+    
+    
+    
+    h4 {
+        font-size: 1.4rem;
+        padding-leftsd : 3em;
+    }
+    
+    
+    
+    .form .inside{
+        width: 69%;
+       
+    }
+    
+    .inside img{
+        margin: 4em 12em 2em;
+    }
+    
+   
+   
+  
+    
+    .contain {
+        width: 80%;
+        background-color: white;
+        margin: 5em auto;
+    }
+    
+    
+    
+    .header {
+        display: flex;
+        gap: 25em;
+        padding: 0em;
+        background-color: #007EA7;
+    }
+
+
+    li {
+        display: inline-block;
+    }
+    
+   
+    
+    img#img {
+        width: 14em;
+        /* border-radius: 1em; */
+        padding-left: 2em;
+    }
+    
+    div#links {
+        width: 49em;
+        font-size: 1rem;
+        padding: 6em 0 0 0px;
+
+    }
+    
+  
+    #bottom a{
+        color: black;
+        font-weight: 700;
+        font-size: 1rem;
+    }
+    
+
+    
+    
+    
+}
+
+
+@media (max-width: 834px) {
+
+    span {
+        margin-left: 20em;
+        font-size: 0.7rem;
+    }
+    
+    
+   
+    h1 {
+        text-align: center;
+        margin-bottom: 0em;
+    }
+    
+    .inside p {
+        margin-bottom: 1em;
+        font-size: 1.4rem;
+        text-align: left;
+        padding-left: 3em;
+    }
+    
+    h4 {
+        font-size: 3.5rem;
+    }
+    
+    
+    
+    .form .inside{
+       
+        width: 69%;
+       
+    }
+
+
+    .inside img{
+        margin: 4em 14em 2em;
+    }
+    
+    a {
+        text-decoration: none;
+        margin-right: 0em;
+        color: white;
+    }
+    
+   
+    
+    .contain {
+        width: 80%;
+        background-color: white;
+        margin: 5em auto;
+    }
+
+    img#img {
+        width: 11em;
+       
+    }
+    
+    
+    
+    
+    .header {
+        display: flex;
+        gap: 9em;
+        padding: 0em;
+        background-color: #007EA7;
+    }
+    
+    li {
+        display: inline-block;
+    }
+    
+    .dropmenu li{
+        display: block;
+    }
+    
+    
+    
+    div#links {
+        width: 49em;
+        font-size: 1rem;
+        padding: 4em 0 0 0px;
+    }
+    
+    h5 {
+        font-size: 2rem;
+        margin-bottom: 1em;
+    }
+    
+    h4 {
+        font-size: 1.4rem;
+        margin-bottom: 1em;
+        /* text-align: left; */
+        padding-left: 3em;
+        font-weight: 700;
+    }
+    
+    #bottom a{
+        color: black;
+        font-weight: 700;
+        font-size: 0.7rem;
+    }
+
+    .form .inside {
+        padding: 1em;
+        width: 59%;
+        margin: 1em auto 1em;
+        background-color: #E5F2F6;
+        border-radius: 1em;
+    }
+
+    .inside img {
+        margin: 1em 5em 2em;
+        width: 7em;
+    }
+    .inside p {
+        margin-bottom: 1em;
+        font-size: 1rem;
+        text-align: left;
+        padding-left: 1em;
+    }
+
+    h4 {
+        font-size: 1.4rem;
+        margin-bottom: 1em;
+        /* text-align: left; */
+        padding-left: 1em;
+        font-weight: 700;
+    }
+
+    .form {
+        background-image: url(img/School\ background.svg);
+        background-repeat: no-repeat;
+        background-size: 165%;
+        padding: 2em 2em;
+    }
+
+    span {
+        margin-left: 13em;
+        font-size: 0.7rem;
+    }
+   
+    
+
+}
+    
+@media (max-width: 375px) {
+
+   
+    span {
+        text-align: center;
+        margin-left: 4em;
+        font-size: 0.5rem;
+    }
+    
+    
+    body{
+        font-family: 'Josefin Sans', sans-serif;
+    
+    }
+    h1 {
+        text-align: center;
+        margin-bottom: 0em;
+    }
+    
+    .inside p {
+        margin-bottom: 1em;
+        font-size: 0.8rem;
+        text-align: left;
+        padding-left: 1em;
+    }
+    
+    h4 {
+        font-size: 0.8rem;
+    }
+    
+    .form {
+        background-image: url(img/School\ background.svg);
+        background-repeat: no-repeat;
+        background-size: 348%;
+        padding: 2em 0;
+    }
+
+    img#img {
+        width: 5em;
+        padding-left: 1em;
+    }
+
+    .header {
+        
+        gap: 2em;
+        
+    }
+
+    .inside img {
+        margin: 1em 3.5em 1em;
+        width: 6em;
+    }
+    a {
+        font-size: 0.6rem;
+    }
+
+    .form .inside {
+        padding: 1em;
+        width: 74%;
+        margin: 1em auto 1em;
+        background-color: #E5F2F6;
+        border-radius: 1em;
+    }
+
+    #bottom a {
+        color: black;
+        font-weight: 700;
+        font-size: 0.5rem;
+    }
+
+    div#links {
+        width: 49em;
+        font-size: 1rem;
+        padding: 1.7em 0 0 0px;
+    }
+}
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+

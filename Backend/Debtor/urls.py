@@ -9,6 +9,11 @@ urlpatterns = [
     
     #Default authentication home
     path('', views.land, name='land'), 
+
+
+
+   
+    path('dashboard/', views.school_dashboard, name='dashboard'),
     path('dashboard', views.dashboard, name='dashboard'),
     path('register', views.School_Register, name='register'),
     path('logout', views.School_Logout, name='logout'),
