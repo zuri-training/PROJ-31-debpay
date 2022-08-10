@@ -1,0 +1,30 @@
+<h2> Title: {{post.title}} </h2>
+<h4> posted by {{post.school_post}} </h4>
+<h2>Debtor: {{post.deptors_list}}</h2>
+<p> Body : {{post.body}} </p>
+
+
+{%if post.image %}
+
+<img src="{{post.image.url}}" alt='debtor image'>
+<a href='{% url "dashboard" %}'> Go back </a> <br> <br>
+<br>
+{%endif%}
+<form method ="post">
+{% csrf_token %}
+<input type='text' name='body' placeholder='comment here ....'>
+
+</form>
+
+<br> <hr>
+
+
+{% for post_comment in post_comment %}
+{{post_comment}} <br>
+<img src="{{post_comment.school.school_profile.profile_pics.url}}" alt='school'>
+<small> comment by {{post_comment.school}} , {{post_comment.created|timesince}} ago </small> 
+<br>
+<a href= " {%url 'ReplyComment' post_comment.id %} "> Reply or view replies </a>
+
+<hr>
+{%endfor%}

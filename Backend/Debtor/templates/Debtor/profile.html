@@ -1,0 +1,108 @@
+<style>
+    section{
+        display:grid;
+        grid-template-columns: 1fr 3fr;
+    }
+    img{
+        width:80px;
+        height:80px;
+        border-radius:100%;
+    }
+    .lop {
+        width:200px;
+        height:200px;
+    }
+    aside{
+        display:flex;
+    }
+
+  
+</style>
+
+<section>
+
+<div>
+{% include 'Debtor/Profile/side.html' %}
+</div>
+
+<div>
+    
+    {% if page == 'home'%}
+{% comment %} Dashboard page {% endcomment %}
+
+    {% include 'Debtor/Profile/dashboard.html' %}
+
+{%elif page == 'post' %}
+
+{% comment %} Post create page {% endcomment %}
+
+{% include 'Debtor/Profile/PostCreate.html' %}
+
+    {% elif page == 'list' %}
+    {% comment %} Each  post with its comment  {% endcomment %}
+
+    {% include 'Debtor/Profile/OnePost.html' %}
+
+{%elif page == 'reply' %}
+
+{% comment %} Reply to a comment {% endcomment %}
+
+{% include 'Debtor/Profile/CommentReply.html' %}
+
+    {%elif page == 'upd' %}
+    {% comment %} Post update form {% endcomment %}
+    {% include 'Debtor/Profile/PostUpdate.html' %}
+
+
+    {% elif page == 'all' %}
+    {% comment %} All post {% endcomment %}
+    {% include 'Debtor/Profile/AllPost.html' %}
+
+{% comment %} {% elif page == 'post_all_search' %}
+{% comment %} Search all post {% endcomment %}
+{% comment %} {% include 'Debtor/Profile/SearchAllPost.html' %} {% endcomment %} 
+
+
+    {%elif page == 'debt' %}
+    {% comment %} list of all debtors that belong to a school  {% endcomment %}
+    {% include 'Debtor/Profile/UserDebtor.html' %}
+
+    {%elif page == 'one' %}
+    {% comment %} Debtor Profile {% endcomment %}
+    {% include 'Debtor/Profile/DebtorProfile.html' %}
+
+
+    {% elif page == 'throw' %}
+    {% comment %} All debtors {% endcomment %}
+    {% include 'Debtor/Profile/AllDebtor.html' %}
+
+    {% elif page == 'lion' %}
+
+    {{post.title}}
+    {{post.body}}
+
+    {%elif page == 'all_school' %}
+    {% comment %} All School {% endcomment %}
+    {% include 'Debtor/Profile/AllSchool.html' %}
+
+    {%elif page == 'one_school' %}
+    {% include 'Debtor/Profile/A_School.html' %}
+
+    {%elif page == 'meeting' %}
+    {% include 'Debtor/Profile/CreateMeeting.html' %}
+
+    {%elif page == 'each_meeting' %}
+    {% include 'Debtor/Profile/EachMeeting.html' %}
+
+    {%elif page == 'each_comment' %}
+    {% include 'Debtor/Profile/EachComment.html' %}
+    {%elif page == 'meeting_update' %}
+    {% include 'Debtor/Profile/CommentUpdate.html' %}
+       {%endif%}
+
+
+       
+      
+</div>
+
+</section>

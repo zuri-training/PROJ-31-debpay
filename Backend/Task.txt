@@ -19,3 +19,8 @@ Name                                 TASK
 5) Success-Vera                      URLS routing
 6) Tamunonengiyeofori                Facebook social authentication
                 
+
+
+client_id = 130021875277-criodi3hekhqbta61h5fd297ad2r7chd.apps.googleusercontent.com
+
+                secret: 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

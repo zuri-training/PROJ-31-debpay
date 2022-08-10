@@ -1,0 +1,27 @@
+
+{% comment %} <img src=" {{commented.post.image.url}}" alt='school'>
+<h1> {{commented.post}}</h1>
+{{commented.post.body}}
+<hr> {% endcomment %}
+<img src=" {{commented.school.school_profile.profile_pics.url}} " alt='school image'>
+<h5> Comment by {{commented.school}} on <a href=" {%url 'list' commented.post.id %} "> {{commented.post}} </a> post posted by  {{commented.post.school_post}} School </h5>
+<h1> {{commented}}</h1>
+
+
+<br>
+<br> <br>
+<form method ="post">
+    {% csrf_token %}
+    <input type='text' name='reply_body' placeholder='reply here ....'>
+ 
+</form>
+<br> <hr>
+
+
+{% for comment_reply in comment_reply %}
+<div class='push'>
+{{comment_reply}} <br>
+<img src=" {{comment_reply.school.school_profile.profile_pics.url}}" alt='school'>
+<small> Reply by {{comment_reply.school}} , {{comment_reply.created|timesince}} ago </small> <hr>
+</div>
+{%endfor%}
