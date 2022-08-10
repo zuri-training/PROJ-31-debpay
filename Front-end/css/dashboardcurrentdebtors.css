@@ -4,8 +4,33 @@
     box-sizing: border-box;
 }
 
+img#ellipse {
+    position: relative;
+    right: 0.8vw;
+    top: 0.5vh;
+}
+
+img#not {
+    position: relative;
+    top: 1vh;
+}
+
+img#search {
+    position: relative;
+    right: 3vw;
+    top: 0.5vw;
+}
+
+.logo #top{
+    width: ;
+    position: relative;
+    bottom: 3vw;
+}
+
 section.logo {
     margin-bottom: 1em;
+    padding-bottom: C:\Users\user\Desktop\map\Project-31\VIEW DEBT\dashboardcurrentdebtors.html;
+    height: 7vh;
 }
 
 h1 {
@@ -49,8 +74,7 @@ td img {
     margin-left: 2vw;
 }
 
-img {
-}
+#deb {position: relative;bottom: 14vw;width: 10.5vw;}
 
 .up img{
     position: relative;
