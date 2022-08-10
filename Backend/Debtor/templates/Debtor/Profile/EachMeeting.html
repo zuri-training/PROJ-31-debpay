@@ -1,0 +1,45 @@
+{%if request.user == one_meeting.meeting_host %}
+<h1> Welcome, Host </h1>
+{%else%}
+<h1> Welcome {{request.user}}</h1>
+{%endif%}
+<h2>Host: {{one_meeting.meeting_host}} </h2>
+<h2>Title: {{one_meeting.title}} </h2>
+<h2>Description: {{one_meeting.description}} </h2>
+{% if one_meeting.meeting_profile_image%}
+<img src="{{one_meeting.meeting_profile_image.url}}" alt='school image'>
+{%endif%}
+
+{%if request.user == one_meeting.meeting_host %}
+<a href="{%url 'MeetingUpdate' one_meeting.id %}"> Update meeting </a>
+{%endif%}
+<form method='post' enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type='submit'> Submit </button>
+</form>
+{%if participants %}
+<h1> Participants</h1>
+{%for  participants in  participants %}
+{{participants}}
+{%endfor%}
+{%endif%}
+<hr>
+<br>
+{%for meeting_comment in meeting_comment%}
+{% if meeting_comment.attendee == one_meeting.meeting_host%}
+<h1> Host</h1>
+{%else%}
+<h2> {{meeting_comment.attendee}} </h2>
+{%endif%}
+<p> {{meeting_comment}} </p>
+<small> {{meeting_comment.created|timesince}} ago </small>
+{% if meeting_comment.image %}
+
+<img src="{{meeting_comment.image.url}}" alt="king">
+
+{%endif%}
+<a href=" {%url 'EachComment' meeting_comment.id %} "> Reply or view replies </a>
+<hr>
+{%endfor%}
+

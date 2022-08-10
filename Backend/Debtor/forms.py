@@ -14,18 +14,32 @@ class HelpForm(forms.ModelForm):
         model = Help
         fields = "__all__"
 
-class DebtorForm(forms.ModelForm):
+class PostCreateForm(forms.ModelForm):
 
     class Meta:
-        model = Debtor
+        model = Post
         fields = "__all__"
-
+        exclude =['school_post', ]
+        
 class PostForm(forms.ModelForm):
 
     class Meta:
         model = Post
         fields = "__all__"
-        
+        exclude =['school_post', ]
+
+class DebtorForm(forms.ModelForm):
+    class Meta:
+        model = Debtor
+        fields = '__all__'
+        exclude = ['school', ]        
+
+
+class DebtorUpdateForm(forms.ModelForm):
+    class Meta:
+        model = Debtor
+        fields = '__all__'
+        exclude = ['school', ]   
         
 #School registration form
 class SchoolRegForm(forms.Form):
@@ -88,3 +102,36 @@ class SchoolProfileUpdateForm(forms.ModelForm):
             model = School_Profile
             fields = "__all__"  
             exclude = ['school']
+            
+            
+            
+            
+class MeetingCreationForm(forms.ModelForm):
+    class Meta:
+        model = Meeting
+        fields = ['title', 'description', 'meeting_profile_image']
+        
+class MeetingUpdateForm(forms.ModelForm):
+    class Meta:
+        model = Meeting
+        fields = "__all__"
+        exclude = ['meeting_host', ]
+        
+
+class MeetingCommentForm(forms.ModelForm):
+    class Meta:
+        model = Meeting_Comment
+        fields = "__all__"
+        exclude = ['updated', 'created', 'attendee', 'meeting' ]
+        
+        
+
+
+# class Metting_Comment_ReplyForm(forms.ModelForm):
+#     class Meta:
+#         model = MettingCommentReply
+#         fields = ['body', 'image']
+
+        
+
+  

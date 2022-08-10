@@ -1,0 +1,27 @@
+
+    <img src="{{user.school_profile.profile_pics.url}} "> <h4>{{user.School_owner}}</h4>
+<hr>
+<form action=' {%url "dashboard" %} '> 
+  <input type="text" name="test" placeholder="search a post....">
+</form>
+{%if fork %}
+{% for fork in fork %}
+<a href="{%url 'list' fork.id %}"> <li> {{fork}} </li> </a>
+
+{%endfor%}
+{%else%}
+No result....
+{%endif%}
+<hr>
+
+    <h4> <a href= "{% url 'dashboard' %}">My dashboard </a></h4>
+    <h4> <a href= " {%url 'AllSchool' %} "> All School </a> </h4>
+<h4> <a href= "{% url 'Post_all' %}">All Post </a></h4> 
+{% comment %} <h4> <a href= "Post_all">All Post </a></h4> {% endcomment %}
+<h4> <a href= "{% url 'debtor_all' %}">All Debtor </a></h4>
+   <h4> <a href= "{% url 'logout' %}"> Logout</a></h4>
+   <h4> <a href= "{% url 'debtor_reg' %}">Add Debtor </a></h4>
+   <h4> <a href= "{% url 'CreateMeeting' %}">Create Meeting</a></h4>
+ <h1> Total post {{mine}} </h1>
+   <h4> <a href=" {% url 'debt' %} "> Current Debtor {{debtor_list}} </a> </h4>
+ 

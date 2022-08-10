@@ -1,0 +1,15 @@
+{% if debtor.debtor_image  %}
+<img src=" {{debtor.debtor_image.url}} " alt="debtor">
+{%endif%}
+<h1> Student name: {{debtor.student_name}} </h1>
+<h3> Student id: {{debtor.student_id}} </h3>
+<h3> Student School: {{debtor.school}} </h3>
+<h3> Student Class:{{debtor.student_class}} </h3>
+<h3> Sponsor name: {{debtor.sponsor_name}} </h3>
+<h3> Sponsor location: {{debtor.sponsor_location}} </h3>
+<h3> Sponsor relationship: {{debtor.sponsor_relationship}} </h3>
+<h3> Debt: #{{debtor.debt}} </h3>
+{% if request.user == debtor.school %}
+<a href=" {%url 'debtor_upd' debtor.id %} "> Update debtor</a>
+<a href=" {%url 'debtor_delete' debtor.id %} "> Delete debtor</a>
+{% endif %}

@@ -4,11 +4,13 @@
 {%endfor%}
     <h1> Welcome 
         {% if user.is_authenticated %}
-        {{user.School_name}} ({{user.school_id}}) {{user.email}}
+        {{user.School_name}} ({{user.School_id}}) {{user.email}}
     </h1>{{user.school_profile.locality}}
     <br>
     <img src="{{user.school_profile.profile_pics.url}}" alt="pol" width='100px' height='100px'>
     <a href='logout'> Logout </a> || <a href='{% url "password_change" %}'> Change Password</a>
+    || <a href='{% url "dashboard" %}'> Dashboard</a>
+
     || <a href='{% url "School_Profile_Update" %}'> Update profile data </a>
     {%else%}
     , Kindly register
