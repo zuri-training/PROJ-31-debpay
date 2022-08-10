@@ -7,10 +7,13 @@
 html, body{
     margin: 0;
     height: 100%;
-    font-family: 'Josefin Sans', sans-serif;
     overflow-x: hidden;
     width: 100%;
     overflow-x: hidden;
+}
+
+main{
+    font-family: 'Josefin Sans', sans-serif;
     background-color: #dce9f3;
 }
 
@@ -24,93 +27,41 @@ a{
     color: #FFF;
 }
 
-.login_btn{
-    display: inline;
-    width: 100px;
-    border: 1px solid #fff;
-    height: 40px;
-    color: #007EA7;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 28px;
-    background-color: #FFF;
-    border-radius: 12px;
-    cursor: pointer;
+.active{
+    background-color:rgba(0, 0, 0, 0.619);
+    border-radius: 5px;
 }
 
-.register_btn{
-    display: inline;
-    width: 120px;
-    height: 40px;
-    border: 1px solid #fff;
-    color: #fff;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 28px;
+
+#navbarSupportedContent{
+    padding-right: 3%;    
+}
+#topNav{
     background-color: #007EA7;
-    border-radius: 12px;
-    cursor: pointer;
-}
-
-#headerContainer{
-    display: flex;
     margin: 0;
-    width: 100%;
-    height: 88px;
-    background-color: #007EA7;
-    color: #fff;
-    font-weight: 700;
-    font-size: 16px;
-    line-height: 22.4px; 
+    padding: 0;
+    padding-left: 10px;
+}
+.nav-item a{
+    margin: 5px;
+}
+.btn-login{
+    background-color: white;
+    color: #007EA7;
+}
+#topNav img{
+    width: 50%;
 }
 
-.headerBox1{
-    flex: 50%;
-    width: 100%;
-    padding: 20px;
-    margin-top: -70px;
-    margin-left: 40px;
+#drop{
+    background-color: black;
 }
-
-.headerBox2{
-    flex: 50%;
-    margin-left: -200px;
-    text-align: right;
-    margin-top: 22px;
-    width: 100%;
+.dropdown-menu a{
+    color: white;
+    margin: 0;
 }
-
-.headerBox2 li{
-    padding: 14px;
-    font-size: 20px;
-}
-
-.dropbtn{
-    color: #fff;
-    padding: 15px;
-    font-size: 20px;
-    line-height: 22.4px;
-    font-weight: 700;
-}
-
-.dropdown{
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-content{
-    display: none;
-    position: absolute;
-    text-align: left;
-    padding: 10px;
-    background-color: #918c8c;
-    min-width: 250px;
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
-    z-index: 1;
-}
-
-.dropdown:hover .dropdown-content{
-    display: block;
+.nav-link {
+    color: white;
 }
 
 #container{
@@ -119,26 +70,31 @@ a{
     justify-content: center;
     margin: 30px auto;
     width: 90%;
+    margin: 0;
+    padding: 20px;
 }
 
 .box1{
     flex: 60%;
+    color: #007EA7;
+}
+
+.box1 h3{
     font-style: normal;
     font-weight: 700;
     font-size: 40px;
     line-height: 44px;
-    color:  #007EA7;
 }
 
 .box2{
     flex: 40%;
+    width: 90%;
 }
 
 .box2 input{
     width: 80%;
     height: 50px;
-    border-radius: 10px 0 0 10px;
-    border-right: none;
+    border-radius: 10px;
     font-weight: 700;
     font-size: 16px;
     line-height: 22px;
@@ -147,31 +103,16 @@ a{
     border: 1.5px solid rgba(46, 46, 46, 0.6);
 }
 
-form.example button{
-    height: 50px;
-    border-left: none;
-    border: 1px solid rgba(46, 46, 46, 0.6);
-    width: 10%;
-    margin-left: -5px;
-    margin-bottom: 10px;
-    border-radius: 0 10px 10px 0;
+.box2 input{
     padding: 10px;
-    cursor: pointer;
-    background-color: none;
-}
-
-form.example button:hover{
-    background-color: #007EA7;
-}
-
-form.example::after{
-    content: " ";
-    clear: both;
-    display: table;
+    width: 100%;
+    border-radius: 5px;
+    position: relative;
 }
 
 #accordion{
     margin: 30px auto;
+    margin-bottom: 0;
     width: 90%;
 }
 
@@ -249,6 +190,8 @@ footer{
     margin-left: -10px;
     font-size: 16px;
     line-height: 22px;
+    text-decoration: none;
+    color: #FFF;
 }
 
 .footer_container-box1{
@@ -277,13 +220,98 @@ footer{
     justify-content: space-between;
     align-items: center;
     margin-left: 50px;
+    padding: 10px;
 }
 
 #page_bottom a{
     padding: 15px;
+    text-decoration: none;
+    color: #FFF;
 }
 
 #icons{
     display: flex;
     margin-right: 50px;
+}
+
+@media(max-width:800px){
+    .box1{
+        flex: 50%;
+    }
+    .box1 h3{
+        font-size: 10.9417px;
+        line-height: 12px;
+    }
+    .box2{
+        flex: 50%;
+    }
+    .box2 input{
+        height: 30px;
+        font-size: 8px;
+    }
+    #accordion li label{
+        font-size: 10px;
+        line-height: 12px;
+    }
+    #accordion .content{
+        font-weight: 400;
+        font-size: 8px;
+        line-height: 10px;
+    }
+    #accordion li label span{
+        font-size: 10px;
+    }
+    .footer_container{
+        flex-direction: column;
+        padding: 10px;
+   }
+   .footer_container-box1{
+        flex: 10%;
+        padding: 10px;
+        margin-left: -105px;
+        margin-top: -50px;
+   }
+   .footer_container-box2{
+        flex: 20%;
+        padding: 10px;
+        margin-left: -135px;
+        margin-top: -190px;
+   }
+   .footer_container-box3{
+        flex: 20%;
+        padding: 10px;
+        margin-top: 5px;
+        margin-left: -175px;
+   }
+   .footer_container-box4{
+        flex: 20%;
+        padding: 10px;
+        margin-left: -145px;
+   }
+   #icons1{
+       display: flex;
+       margin-left: -205px;
+   }
+   #icons2{
+        display: none;
+   }
+   #page_bottom{
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+        margin-top: 1px solid #fff;
+   }
+   #page_bottom a{
+        font-size: 14px;
+        line-height: 20px;
+   }
+   #page_bottom1{
+        display: flex;
+        justify-content: space-between;
+   }
+   #page_bottom2{
+        display: flex;
+        justify-content: space-between;
+   }
 }
