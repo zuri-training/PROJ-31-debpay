@@ -1,3 +1,4 @@
+from audioop import reverse
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import auth
 from django.contrib import messages
@@ -48,31 +49,31 @@ def debtor_form_view(request):
 
 def School_Register(request):
 
-    form = SchoolRegForm()
+    # form = SchoolRegForm()
     if request.method == 'POST':
         form = SchoolRegForm(request.POST)
         email = request.POST['email']
         username = request.POST['username']
-        School_name = request.POST['School_name']
-        School_owner = request.POST['School_owner']
-        Reg_number = request.POST['Reg_number']
+        # School_name = request.POST['School_name']
+        # School_owner = request.POST['School_owner']
+        # Reg_number = request.POST['Reg_number']
         password1 = request.POST['Password']
-        password2 = request.POST['Confirm_password']
+        # password2 = request.POST['Confirm_password']
        
         
         if form.is_valid():
-            if password1 == password2:
-                user = School.objects.create_user(email=email, password=password1, School_name=School_name, School_owner =School_owner ,
-                                                  username=username, Reg_number=Reg_number,
+            # if password1 == password2:
+                user = School.objects.create_user(email=email, password=password1, username=username
                         )
                 user.save()
                 #auth.login(request,user)
                 login(request, user, backend='django.contrib.auth.backends.ModelBackend')
                 messages.success(request, 'School created successfully')
-                return redirect('/')
+                contexta = {"messages": messages, "user": user}
+                return redirect('dashboard', contexta)
           
-            else:
-               messages.error(request, 'password mismatch')
+        else:
+            messages.error(request, 'password mismatch')
     else:
         form = SchoolRegForm()
     context ={'form':form}
@@ -82,7 +83,7 @@ def School_Register(request):
 
 #Logout view for school
 def School_Logout(request):
-    logout(request)
+    logout(request) 
     return redirect('/')
 #Home page view
 def land(request):
@@ -127,4 +128,4 @@ def School_Profile_Update(request):
     return render(request,'Debtor/Profile_Update.html', context ) 
     
 def school_dashboard(request):
-    return (request, 'dashboard.html', )
+    return render(request, 'dashboard.html' )

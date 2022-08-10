@@ -32,9 +32,9 @@ class SchoolRegForm(forms.Form):
     # School_name = forms.CharField(max_length=100)
     # School_owner = forms.CharField(max_length=255)
     # Reg_number = forms.CharField(max_length=255)
-    username = forms.CharField(max_length=255)
-    email = forms.EmailField(max_length=255)
-    Password = forms.CharField(widget=forms.PasswordInput, min_length=5, max_length=20)
+    username = forms.CharField(max_length=255, widget=forms.TextInput(attrs={"class": "name", "name":"fname", "placeholder":"Dave Shepherd"}))
+    email = forms.EmailField(max_length=255, widget=forms.EmailInput(attrs={"class": "email", "name":"email", "placeholder":"email@example.com"}))
+    Password = forms.CharField(widget=forms.PasswordInput(attrs={"placeholder":"*******", "class": "password", "name":"password",}), min_length=5, max_length=20)
     # Confirm_password = forms.CharField(widget=forms.PasswordInput, min_length=5, max_length=20)
     
     #Validations
