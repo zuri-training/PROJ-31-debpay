@@ -1,0 +1,45 @@
+<h1> Welcome to the School Post</h1>
+{%if total_post == 1 or 0 %}
+    <h2> Total post    ( {{total_post}} )</h2>
+    {%else%}
+    <h2> Total posts    ( {{total_post}} )</h2>
+    {%endif%}
+    {% comment %} <form action=" {%url 'post_all_search' %} ">
+  <input type='text' name='search_post' placeholder='search posts ..'>
+    </form> {% endcomment %}
+   <form> 
+    {{my_filter.form}}
+    <button type='submit'> Search </button>
+
+   </form>
+   {%if partial_count == 1 %}
+   <h4>{{partial_count}} post found </h4>
+   {%elif partial_count == 0 %}
+   <h4>{{partial_count}} post found </h4>
+   {%else%}
+   {{partial_count}} posts found
+
+
+   {%endif%}
+<hr>
+    
+{%for post in post%}
+<div>
+    {%if post.image %}
+
+    <img src="{{post.image.url}}" alt='debtor image'>
+    {%endif%}
+<h2> <a href=" {%url 'list' post.id %} "> Title: {{post.title}} </a> </h2> 
+<h4> posted by {{post.school_post}} </h4>
+<h2>Debtor: {{post.deptors_list}}</h2>
+<p> Body : {{post.body}} </p>
+<a href=" {%url 'list' post.id %} "> Comment </a>
+
+
+{%if request.user == post.school_post %}
+<a href="{% url 'upd' post.id%}"> Update <a> ||
+    <a href="{% url 'del' post.id%}"> Delete <a>
+        {%endif%}     
+</div>
+<hr>
+{%endfor%}

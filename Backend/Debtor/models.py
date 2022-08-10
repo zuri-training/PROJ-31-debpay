@@ -15,33 +15,43 @@ class Locality (models.Model):
 class School (AbstractUser):
     School_owner = models.CharField(max_length=255)
     School_name = models.CharField(max_length=255)
-    school_id = ShortUUIDField(
+    School_id = ShortUUIDField(
         length= 4,
         max_length = 10,
         prefix = 'DP',
         alphabet = "123456efghij",
         primary_key = True
     )
-    Reg_number = models.CharField(max_length=255)
+    Reg_number = models.CharField(max_length=255)         
     username = models.CharField(max_length=100)
     email = models.EmailField(max_length=255, unique=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS =['username']
+    REQUIRED_FIELDS = ['username']
     
     
   
     def __str__(self):
         return self.School_name
 
-
+class UserVerification(models.Model):
+    name = models.OneToOneField(School, on_delete=models.CASCADE)
+    created = models.DateTimeField(auto_now_add = True)
+    
+    class Meta:
+        ordering = ['created', ]
+        
+    def __str__(self):
+        return f' {self.name} user verification'
 class School_Profile (models.Model):
+ 
     school = models.OneToOneField(School, on_delete=models.CASCADE)
     profile_pics = models.ImageField(default='fixed.png', upload_to='profile_pics')
     locality = models.ForeignKey(Locality, on_delete=models.CASCADE,  blank=True, null=True)
     debtor = models.ManyToManyField('Debtor', blank=True)
+
 
     def __str__(self):
         return f'{self.school.School_name} Profile'
@@ -50,49 +60,57 @@ class Debtor (models.Model):
     student_name = models.CharField(max_length=100)
     student_id = models.CharField(max_length=100)
     sponsor_email = models.EmailField(max_length=100, unique=True)
+    school = models.ForeignKey(School, on_delete=models.CASCADE, null=True)
     sponsor_relationship = models.CharField(max_length=50)
     sponsor_name = models.CharField(max_length=255)
     sponsor_location = models.CharField(max_length=255)
-    full_name = models.CharField(max_length=255)
-    debt = models.CharField(max_length=50)
-    student_class =models.ForeignKey('Level', on_delete=models.CASCADE)
+    debtor_image = models.ImageField(upload_to='debtors pics',default='fixed.jpeg', null=True)
+    debt = models.IntegerField()
+    student_class =models.CharField(max_length=50)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.student_id
+        return self.student_name
 
-class Level (models.Model):
-    name = models.CharField(max_length=50, blank=True, null=True)
-    
-    def __str__(self):
-        return self.name
-    
-
-class Deptors_profile (models.Model):
-    debtor = models.ForeignKey(Debtor, on_delete=models.CASCADE)
-    profile_pics = models.ImageField(default='fixed.jpg', upload_to='debt_profile_pics')
-
-    def __str__(self):
-        return f'{self.debtor.Student_name} Profile'
     
 class Post (models.Model):
     title = models.CharField(max_length=255)
     school_post = models.ForeignKey(School, on_delete=models.CASCADE)
     body = models.TextField(help_text='Enter post here...')
-    deptors_list = models.ForeignKey(Deptors_profile, on_delete=models.CASCADE)
+    deptors_list = models.ForeignKey(Debtor, on_delete=models.CASCADE)
     image = models.ImageField(upload_to='post_pics', blank=True, null=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
+    
+    class Meta:
+        ordering = ['-updated', ]
+    
     def __str__(self):
         return self.title
 
 class Comment (models.Model):
+    school = models.ForeignKey(School, on_delete = models.CASCADE, null=True)
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
     body = models.TextField(help_text='Enter your comments here...')
     created = models.DateTimeField(auto_now_add=True)
 
+    
+    class Meta:
+        ordering = ['-created', ]
+    def __str__(self):
+        return self.body
+    
+class Reply (models.Model):
+    school = models.ForeignKey(School, on_delete = models.CASCADE, null=True)
+    comment = models.ForeignKey(Comment, on_delete=models.CASCADE)
+    body = models.TextField(help_text='Enter your comments here...')
+    created = models.DateTimeField(auto_now_add=True)
+
+    
+    class Meta:
+        ordering = ['-created', ]
     def __str__(self):
         return self.body
 
@@ -120,3 +138,52 @@ class Message(models.Model):
     Email_address = models.EmailField(max_length=255)
     Subject = models.CharField(max_length=255)
     message = models.TextField()
+
+
+class Meeting(models.Model):
+    title = models.CharField(max_length=50)
+    description = models.CharField(max_length=200)
+    meeting_host = models.OneToOneField(School, on_delete=models.CASCADE)
+    is_active = models.BooleanField(default=True)
+    participants = models.ManyToManyField(School, related_name='Main', blank=True)
+    meeting_profile_image = models.ImageField(upload_to='Meeting DP', default='fixed.jpg')
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+    
+    class Meta:
+        ordering = ['-created', ]
+        
+    def __str__(self):
+        return self.title
+    
+
+class Meeting_Comment(models.Model):
+    body = models.CharField(max_length=1000000000000000000)
+    image = models.ImageField(upload_to='MettingCommentImage', null=True, blank= True)
+    attendee = models.ForeignKey(School, on_delete=models.CASCADE)
+    meeting = models.ForeignKey(Meeting, on_delete=models.CASCADE)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+    
+    class Meta:
+        ordering = ['-created', ]
+        
+    def __str__(self):
+        return self.body
+    
+    
+class Meeting_Comment_Reply(models.Model):
+    body = models.CharField(max_length=100000000000000)
+    image = models.ImageField(upload_to='Metting_Comment_Reply_image', null=True, blank= True)
+    responder = models.ForeignKey(School, on_delete=models.CASCADE)
+    comment = models.ForeignKey(Meeting_Comment, on_delete=models.CASCADE)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+    
+    class Meta:
+        ordering = ['-created', ]
+        
+    def __str__(self):
+        return self.body
+    
+    

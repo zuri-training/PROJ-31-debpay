@@ -1,0 +1,33 @@
+{% comment %} <h1> All schools  </h1>
+ <form>
+{% csrf_token %}
+{{school_list.form}}
+<button type='submit'>Search </button>
+</form> 
+<hr>
+{% for all_school_profile in all_school_profile %}
+{% if  all_school_profile.school.is_superuser %}
+{%else%}
+<h1> School name: {{school.School_name}}</h1>
+<img src="{{school.school_profile.profile_pics.url}}" alt="school image" >
+<hr>
+{%endif%}
+{%endfor%} {% endcomment %}
+
+<h1> All schools  </h1>
+ <form>
+{% csrf_token %}
+{{school_list.form}}
+<button type='submit'>Search </button>
+</form> 
+<hr>
+{% for all_school_profile in all_school_profile %}
+{% if all_school_profile.school.is_superuser %}
+{%else%}
+<h1> School name: <a href=" {%url 'OneSchool' all_school_profile.school_id %} "> {{all_school_profile.school.School_name}} </a></h1>
+<h1> School locality: {{all_school_profile.locality}}</h1>
+<img src="{{all_school_profile.profile_pics.url}}" alt="school image" >
+<hr>
+{%endif%}
+{%endfor%}
+

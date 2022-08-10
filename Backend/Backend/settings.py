@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Debtor',
+    'django_filters',
 
      'django.contrib.sites',
 

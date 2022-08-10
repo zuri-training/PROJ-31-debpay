@@ -1,0 +1,21 @@
+{% comment %} {% if total_post_result == 0 %}
+<small> Not found </small>
+{% elif total_post_result == 1 %}
+<small>  {{total_post_result}} result found </small>
+{%else%}
+<small>  {{total_post_result}} results found </small>
+{%endif%}
+<br>
+{%if post_search %}
+{% for  post_search in  post_search %}
+<li><a href=" {%url 'list' post_search.id %} "> {{post_search}} </a> </li> <br>
+{%endfor%}
+{%else%}
+{% for  post_owner in  post_owner %}
+<li><a href=" {%url 'list' post_search.id %} "> {{post_owner}} </a> </li>
+{%endfor%}
+{%endif%}
+<a href='Post_all'> Go back </a>
+
+
+ {% endcomment %}

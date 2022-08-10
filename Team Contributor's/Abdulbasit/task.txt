@@ -1,0 +1,17 @@
+Name : Abdulbasit Abdulhakeem Olanrewaju
+Slack name : Abdulbasit
+Github usernme : gphics
+
+Task assigned :
+    task: Database Schema
+    link:
+
+
+    task: User authentication (Custom user model)
+    Issue link: https://github.com/zuri-training/PROJ-31-debpay/issues/10
+    commit history:https://github.com/gphics/PROJ-31-debpay/commit/e86f77d7825dde6f73fd405b65da2148f5876699
+
+
+    task: School profile page
+    Issue link:
+    commit history

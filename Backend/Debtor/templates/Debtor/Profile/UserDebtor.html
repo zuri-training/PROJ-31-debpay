@@ -1,0 +1,32 @@
+<style>
+    td,th{
+        margin:5px;
+        padding:10px;
+    }
+    tr{
+    
+        background:#EFEFEF;
+       
+    }
+    </style>
+    {%if school_debtors %}
+<h1> {{request.user}} debtors </h1>
+<h3> Total debtors {{total_debtors}} </h3>
+<h4> {{total_debt|title|slugify}} </h4>
+<table>
+
+<tr>
+    <th> Student name </th>
+    <th> Student id </th>
+    <th> Student debt </th>
+</tr>
+{% for debt in school_debtors %}
+<tr>
+    <td><a href=" {%url 'each_debtor' debt.id %} "> {{debt}} </td>
+    <td> {{debt.student_id}}</td>
+    <td> {{debt.debt}} </td>
+</tr>
+
+{%endfor%}
+</table>
+{%endif%}

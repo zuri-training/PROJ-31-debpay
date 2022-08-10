@@ -1,0 +1,43 @@
+<style>
+td,th{
+    margin:5px;
+    padding:10px;
+}
+tr{
+
+    background:#EFEFEF;
+   
+}
+</style>
+{% if  one_school.school.is_superuser %}
+
+
+{%else%}
+<img src="{{one_school.school_profile.profile_pics.url}}" alt="school image" >
+<h1> School name: {{ one_school.School_name}} </h1>
+<h1> School owner: {{ one_school.School_owner}} </h1>
+<h1> School locality: {{one_school.school_profile.locality}}</h1>
+{% if one_school_debtor %}
+<h2> {{one_school_debt|title|slugify}} </h2>
+<h1> School debtors:</h1>
+<table>
+
+    <tr>
+        <th> Student name </th>
+        <th> Student id </th>
+        <th> Student debt </th>
+    </tr>
+    {% for one_school_debtor in one_school_debtor %}
+    <tr>
+        <td><a href=" {%url 'each_debtor' one_school_debtor.id %} "> {{one_school_debtor}} </td>
+        <td> {{one_school_debtor.student_id}}</td>
+        <td> {{one_school_debtor.debt}} </td>
+    </tr>
+
+{%endfor%}
+</table>
+
+{%endif%}
+
+{%endif%}
+
