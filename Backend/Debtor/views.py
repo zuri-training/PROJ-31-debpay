@@ -93,7 +93,6 @@ def School_Login(request):
     if request.method == 'POST':
         email = request.POST['email']
         password = request.POST['password']
-        
         try:
             user = School.objects.get(email=email)
         except:
@@ -102,6 +101,8 @@ def School_Login(request):
         if user is not None:
             login(request, user)
             return redirect('/')
+        elif request.user.is_authenticated:
+            return redirect('dashboard.html')
         else:
             messages.error(request, 'user does not exist')
     return render(request, 'Debtor/School_login.html')
@@ -125,4 +126,5 @@ def School_Profile_Update(request):
     context = {'p_form': p_form, 'u_form':u_form}
     return render(request,'Debtor/Profile_Update.html', context ) 
     
-    
+def school_dashboard(request):
+    return (request, 'dashboard.html', )

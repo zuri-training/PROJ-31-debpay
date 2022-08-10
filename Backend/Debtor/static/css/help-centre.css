@@ -1,0 +1,329 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100vh;
+  font-family: "Josefin Sans", sans-serif;
+}
+main {
+  padding: 0 10px;
+  max-width: 430px;
+  margin: 0 auto;
+}
+/* header */
+
+ul li {
+  list-style: none;
+  display: inline;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+/* add this class below when the menu is clicked */
+.nav__links--open {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  position: absolute;
+  top: 10px;
+  right: 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.login_btn {
+  display: inline;
+  width: 100px;
+  border: 1px solid #fff;
+  height: 40px;
+  color: #007ea7;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 28px;
+  background-color: #fff;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.register_btn {
+  display: inline;
+  width: 120px;
+  height: 40px;
+  border: 1px solid #fff;
+  color: #fff;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 28px;
+  background-color: #007ea7;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+#headerContainer {
+  display: flex;
+  margin: 0;
+  width: 100%;
+  height: 88px;
+  background-color: #007ea7;
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22.4px;
+}
+
+.headerBox1 {
+  flex: 50%;
+  width: 100%;
+  padding: 20px;
+  margin-top: -70px;
+  margin-left: 40px;
+}
+
+.headerBox2 {
+  flex: 50%;
+  margin-left: -180px;
+  margin-top: 22px;
+  width: 100%;
+}
+
+.headerBox2 li {
+  padding: 14px;
+  font-size: 20px;
+}
+
+.dropbtn {
+  color: #fff;
+  padding: 15px;
+  font-size: 20px;
+  line-height: 22.4px;
+  font-weight: 700;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  text-align: left;
+  padding: 10px;
+  background-color: #918c8c;
+  min-width: 250px;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* header */
+
+/* main */
+.help-centre-container {
+  text-align: center;
+  margin-bottom: 24px;
+}
+.help-centre-container > h1 {
+  color: #007ea7;
+  font-weight: 700;
+  font-size: 16px;
+  margin: 24px 0 5px 0;
+}
+.help-centre-container > input {
+  padding: 8px 82px 8px 8px;
+  outline: none;
+  font-weight: 400;
+  color: #bdbdbd;
+  border-radius: 8px;
+  border: 1px solid #828282;
+}
+
+.hi-user-container > h2 {
+  color: #007ea7;
+}
+.hi-user-container > p {
+  color: #828282;
+  margin-bottom: 16px;
+}
+
+.faq-accordions {
+  margin-bottom: 24px;
+}
+.faq-accordions div {
+  background-color: #ffffff;
+  box-shadow: 0px 2px 4px rgb(0 0 0 / 15%);
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  max-width: 340px;
+  margin-bottom: 10px;
+}
+.faq-accordions div > img {
+  margin-right: 20px;
+  margin-left: 20px;
+}
+.help-info div {
+  max-width: 240px;
+  margin-bottom: 24px;
+}
+.help-info div > h1 {
+  color: #2e2e2e;
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.help-info div > p {
+  font-size: 14px;
+  font-weight: 400;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 8px;
+}
+
+.want-to-speak-with-us {
+  color: #007ea7;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 26.4px;
+  margin-bottom: 16px;
+}
+.chat-section div {
+  /* I used the flexbox to position the button to the right */
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 29px;
+}
+.chat-section div > h2 {
+  color: #282828;
+}
+.chat-section div > p {
+  color: #282828;
+}
+.chat-section div > button {
+  background-color: transparent;
+  color: #007ea7;
+  border: 1px solid #007ea7;
+  padding: 12.5px 24px;
+  border-radius: 12px;
+  text-align: right;
+  align-self: flex-end;
+}
+
+/* main */
+
+/* footer */
+
+footer {
+  color: #fff;
+  background-color: #00171f;
+}
+
+.footer_container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px;
+}
+
+.footer_container h4 {
+  font-size: 32px;
+  line-height: 35px;
+}
+
+.footer_container p {
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: bold;
+}
+
+.footer_container a {
+  display: block;
+  padding: 10px;
+  margin-left: -10px;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.footer_container-box1 {
+  flex: 30%;
+  text-align: center;
+}
+
+.footer_container-box2 {
+  flex: 20%;
+  text-align: left;
+  margin-top: -90px;
+  margin-bottom: 30px;
+}
+
+.footer_container-box3 {
+  flex: 20%;
+  margin-top: -35px;
+  text-align: left;
+}
+
+.footer_container-box4 {
+  flex: 20%;
+  text-align: left;
+}
+
+#page_bottom {
+  display: flex;
+  align-items: flex-start;
+  /* margin-left: 50px; */
+  flex-wrap: wrap;
+}
+
+#page_bottom a {
+  padding: 15px;
+}
+
+#icons {
+  display: flex;
+  margin-right: 50px;
+}
+
+/* footer */
+
+@media (min-width: 1024px) {
+  main {
+    max-width: 100%;
+    padding: 0 64px;
+  }
+  .footer_container {
+    flex-direction: row;
+  }
+  .hi-user-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  .faq-accordions {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  .help-info {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .help-info > div {
+    margin-right: 88px;
+  }
+  .help-info div > p {
+    margin-bottom: 24px;
+    border-bottom: none;
+  }
+}
