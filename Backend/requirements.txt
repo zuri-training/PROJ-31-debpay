@@ -1,3 +1,4 @@
 django (pip install django)
 shortuuid (pip install shortuuid)
 pillow  (pip install pillow)
+django-filter(pip install django-filter)

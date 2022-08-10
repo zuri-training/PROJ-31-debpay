@@ -1,0 +1,19 @@
+{%if page == 'update' %}
+    <form method='post' enctype='multipart/form-data'>
+        {% csrf_token %}
+        {{form.as_p}}
+    
+        <button type='submit'> Update a Debtor </button>
+
+    </form>
+    {%else%}
+    <form method='post' enctype='multipart/form-data'>
+        {% csrf_token %}
+        {{form.as_p}}
+    
+        <button type='submit'> Create a Debtor </button>
+
+    </form>
+    {%endif%}
+
+    

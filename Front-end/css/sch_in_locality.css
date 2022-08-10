@@ -1,0 +1,56 @@
+html, body{
+    margin: 0;
+    height: 100%;
+    font-family: 'Josefin Sans', sans-serif;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+#search{
+    padding-top: 25px;
+    padding-left: 50px;
+}
+
+#search input{
+    padding: 10px;
+    width: 90%;
+    border-radius: 5px;
+    border: 1px solid #BDBDBD;
+}
+
+#searchIcon{
+    margin-left: -35px;
+    margin-bottom: -13px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#searchIcon:hover{
+    background-color: #acd3e0;
+}
+
+#body{
+    padding: 30px;
+}
+
+
+.back-button{
+    padding-left: 22px;
+}
+
+.back-button a{
+    text-decoration: none;
+    color: #007EA7;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+#schools{
+    padding: 10px;
+}
+
+#schools p{
+    display: inline;
+}

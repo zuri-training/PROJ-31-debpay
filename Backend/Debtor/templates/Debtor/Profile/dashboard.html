@@ -1,0 +1,51 @@
+<img class="lop"  src="{{user.school_profile.profile_pics.url}}">
+    <br><br>
+    <h2> School name  ({{user.School_name}})  </h2>
+  
+    <h1> {{debtor|title|slugify}} </h1>
+
+
+    <h5> Total debtors {{debtors}} debtors</h5> 
+    <h1>
+        My meeting :</h1>
+        <h1>
+        {%for meet in meet %}
+       <a href=" {%url 'EachMeeting' meet.id %} "> {{meet}} </a>
+        {%endfor%} </h1>
+         
+   <hr>
+
+    
+       <h4> email: {{user.email}} </h4>
+       <h4> Registration number: {{user.Reg_number}} </h4>
+       <h4> Username: {{user.username}} </h4>
+       <h4> School_id  : {{user.School_id}} </h4>
+       {% if user.school.profile.locality != None %}
+       <h4> Locality  : {{user.school_profile.locality}} </h4>
+       {%endif%}
+       <a href= "{% url 'post_create' %}"> Create a post</a></h4>
+       <hr>
+       <h4> 
+        {% for post in post %}
+        {% if request.user ==  post.school_post  %}
+        <aside>
+            <div>
+            {% if post.image %}
+            <img src=" {{post.image.url}} " alt='king'>
+            {%endif%}
+            <h4>@ {{post.school_post}} </h4>
+            <a href="{% url 'upd' post.id%}"> Update <a> ||
+                <a href="{% url 'del' post.id%}"> Delete <a>
+            </div>
+            <div>
+        <a href="{% url 'list' post.id %}"> {{post.title}} <a>
+       
+        <p> {{post.body|truncatewords:5}}</p>
+       
+     
+        </div>
+    </aside>
+        <hr>
+
+        {%endif%}  
+        {%endfor%}

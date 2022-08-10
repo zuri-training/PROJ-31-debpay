@@ -1,0 +1,24 @@
+<h1> Message by {{each_comment.attendee}}: </h1>
+
+<p> {{each_comment}} </p>
+
+<hr>
+<form method='post' enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for='body'>Body </label>
+   <input type='text' name='body'> <br> <br>
+   <label for='body'>Image </label>
+   <input type='file' name='image'> <br> <br>
+    <button type='submit'> Submit </button>
+</form>
+<hr>
+<br>
+{%for rep_m in  rep_m %} 
+<small> replied by {{rep_m.responder}} </small> <br>
+<h1> {{rep_m}} </h1> <br>
+<small> {{rep_m.created|timesince}} ago </small>
+{% if rep_m.image %}
+<img src=" {{rep_m.image.url}} " alt ="reply image">
+{%endif%}
+<hr>
+{%endfor%}

@@ -9,7 +9,7 @@ body, html{
   height: 100vh;
 }
 body {
-  font-family: "Josefin Sans";
+  font-family: "Josefin Sans", sans-serif;
   display: flex;
   flex-direction: row-reverse;
 }
@@ -43,6 +43,8 @@ a{
 }
 .sign-in-options-container{
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: space-between;
   margin-top: 58px;
 }
@@ -50,6 +52,7 @@ a{
   border: 1px solid #282828;
   border-radius: 12px;
   padding: 10px;
+  margin-bottom: 20px;
 }
 .sign-in-options-fb{
   border: 1px solid #846767;
@@ -58,6 +61,15 @@ a{
   border-radius: 12px;
   padding: 10px;
 }
+
+.sign-in-options-google, .sign-in-options-fb{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* width: 200px; */
+
+}
+
 .or{
   position: relative;
   max-width: 500px;
@@ -95,6 +107,7 @@ input {
   border-radius: 8px;
   outline: none;
   margin: 10px 0; /* margin for spaces btw labels and inputs*/
+  /* width: 100%; */
 }
 label {
   display: block;
@@ -103,6 +116,9 @@ label {
   font-size: 14px;
   line-height: 20px;
   color: #292232;
+}
+.name, .email, .password{
+  width: 100%;
 }
 .email {
   background-image: url("../assets/email-icon.png");
@@ -140,7 +156,21 @@ button {
 
 
 @media (min-width: 1024px) {
+  main{
+    width: 434px;
+  }
+  .aside-img-container{
+    max-width: 50%;
+  }
   .aside-img-container img{
     display: block;
   }
+.sign-in-options-container{
+  flex-direction: row;
+  justify-content: space-around;
+}
+.sign-in-options-google{
+  margin-bottom: 0;
+  margin-right: 10px;
+}
 }

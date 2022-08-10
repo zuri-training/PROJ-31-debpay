@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends 'base.html' %}
 {%load static%}
 
@@ -131,4 +132,36 @@
     </main>
 
 {% endblock content%}
+=======
+{% load socialaccount %}
+{%for message in messages%}
+<h4>{{message}}</h4>
+{%endfor%}
+    <h1> Welcome 
+        {% if user.is_authenticated %}
+        {{user.School_name}} ({{user.School_id}}) {{user.email}}
+    </h1>{{user.school_profile.locality}}
+    <br>
+    <img src="{{user.school_profile.profile_pics.url}}" alt="pol" width='100px' height='100px'>
+    <a href='logout'> Logout </a> || <a href='{% url "password_change" %}'> Change Password</a>
+    || <a href='{% url "dashboard" %}'> Dashboard</a>
+
+    || <a href='{% url "School_Profile_Update" %}'> Update profile data </a>
+    {%else%}
+    , Kindly register
+     <a href='register'> Sign up</a>
+    || <a href='login'> Sign in</a> 
+    || <a href="{% provider_login_url 'google' %}">Login with Google</a>
+
+{%endif%}
+
+
+{% comment %} {% if user.is_authenticated %}
+<p>Welcome you are logged in as {{ user.username }}
+
+{% else %}
+
+
+{% endif %} {% endcomment %}
+>>>>>>> 2a534e8dbd9300dd1f36c38cef76cd6b8fe877c5
 
