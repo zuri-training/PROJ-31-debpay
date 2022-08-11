@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>new debtor</title>
-    <link rel="stylesheet" href="../css/new_debtor.css">
+    <title>settings - notification(filter preference)</title>
+    <link rel="stylesheet" href="../css/settingsFilterPreference.css">
 
     <!--Google font links-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,7 +18,6 @@
 <body>
     <main>
         <div id="section1">
-
             <section id="menu">
                 <div class="logo">
                     <img src="../assets/images/Logo1.png" alt="debpay logo">
@@ -50,49 +49,42 @@
         </div>
 
         <div id="section2">
-
             <div id="search">
                 <input type="text" placeholder="Search for a question" id="search_bar"><img src="../assets/Icon(search bar).svg" id="searchIcon"> <i class="fa-solid fa-bell" id="bell"></i>
             </div>
             <hr>
-            <section id="form">
-                <div class="back-button">
-                    <a href="#">&larr;Back</a>
+            
+            <section id="body">
+
+                <div class="top_text">
+                    <h6>Notifications Preferences</h6>
+                    <p>deyemi@gmail.com</p>
                 </div>
-                <h5>New Debtor</h5>
-                <form action="">
-                    <div class="sub_form">
-                        <label for="fullName">Full Name</label>
-                        <input type="text" name="fullName" placeholder="Okonta Chinecherem |" required>
-                    </div>
-                    <div class="sub_form">
-                        <label for="text">Student Id</label>
-                        <input type="text" name="StudentId" placeholder="B11085647 |" required>
-                    </div>
-                    <div class="sub_form">
-                        <label for="text">Amount Owed</label>
-                        <input type="text" name="Amount" placeholder="#47,000.00" required>
-                    </div>
-                    <div class="sub_form">
-                        <label for="name">Sponsor's Name</label>
-                        <input type="text" name="sponsorName" placeholder="Okonta Mariam |" required>
-                    </div>
-                    <div class="sub_form">
-                        <label for="telephone">Phone Number</label>
-                        <input type="tel" name="telephone" placeholder="080 568 |" required>
-                    </div>
-                    <div class="sub_form">
-                        <label for="Email">Email Address</label>
-                        <input type="email" name="Email" required>
-                    </div>
-                    <div class="sub_form">
-                        <label for="message">Note</label>
-                        <textarea name="message"></textarea>
-                    </div>
-                </form>
-                <div class="submit_btn">
-                    <button type="submit">Save</button>
+    
+                <div id="sub_section">
+                    <p>Push notifications</p>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
                 </div>
+                <hr>
+                <div id="sub_section">
+                    <p>SMS notifications</p>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <hr>
+                <div id="sub_section">
+                    <p>Email notifications</p>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <hr>
             </section>
         </div>
     </main>

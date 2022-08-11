@@ -2,7 +2,7 @@ html, body{
     margin: 0;
     padding: 0;
     font-family: 'Josefin Sans', sans-serif;
-    color: #4F4F4F;
+    color: #4f4f4f;
 }
 
 main{
@@ -130,7 +130,8 @@ hr.solid {
 }
 
 #search{
-    padding-top: 25px;
+    padding-top: 65px;
+    padding-bottom: 10px;
     padding-left: 50px;
 }
 
@@ -153,32 +154,75 @@ hr.solid {
     background-color: #acd3e0;
 }
 
+.top_text{
+    text-align: center;
+}
+
+.top_text h6{
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 22px;
+    margin-top: -15px;
+}
+
+.top_text p{
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 22px;
+    margin-top: -40px;
+}
+
 #body{
     padding: 30px;
 }
 
-
-.back-button{
-    padding-left: 22px;
-}
-
-.back-button a{
-    text-decoration: none;
-    color: #007EA7;
+#sub_section p{
     font-weight: 400;
-    font-size: 20px;
-    line-height: 24px;
+    font-size: 18px;
+    line-height: 20px;
 }
 
-#schools{
-    padding: 10px;
-}
-
-#schools p{
+.switch{
+    position: relative;
     display: inline;
+    width: 43px;
+    height: 24px;
+    float: right;
+    margin-top: -35px;
 }
 
-#threeDots{
-    float: right;
-    margin-top: 30px;
+.slider{
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.switch input{display: block;}
+
+.slider::before{
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    margin-bottom: -3px;
+    margin-left: -2px;
+    left: 5px;
+    bottom: 5px;
+    background-color: #FFFFFF;
+    transition: 0.4s;
+    border-radius: 50px;
+}
+
+input:checked + .slider{
+    background: #27AE60;
+}
+
+input:checked + .slider::before{
+    transform: translateX(90%);
 }
