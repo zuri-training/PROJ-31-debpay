@@ -12,6 +12,7 @@ urlpatterns = [
 
     path('dashboard', views.dashboard, name='dashboard'),
     path('register', views.School_Register, name='register'),
+    path('privacy&policy', views.privacy, name='p&p'),
     path('logout', views.School_Logout, name='logout'),
     path('login', views.School_Login, name='login'),
     path('post_create', views.CreatePost, name='post_create'),

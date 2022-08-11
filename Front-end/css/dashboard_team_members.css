@@ -1,20 +1,17 @@
-html, body{
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;700&display=swap');
+
+* {
     margin: 0;
     padding: 0;
-    font-family: 'Josefin Sans', sans-serif;
-    color: #4F4F4F;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans';
 }
 
-main{
+body {
+    width: 100%;
+    background: #FFFFFF;
+    position: relative;
     display: flex;
-}
-
-#section1{
-    flex: 10%;
-}
-
-#section2{
-    flex: 90%;
 }
 
 #menu {
@@ -129,56 +126,51 @@ hr.solid {
     margin-top: 600px;
 }
 
-#search{
-    padding-top: 25px;
-    padding-left: 50px;
-}
-
-#search input{
-    padding: 10px;
-    width: 90%;
-    border-radius: 5px;
+hr.solid1 {
+    position: relative;
+    width: 333px;
+    height: 0px;
+    left: 0px;
+    top: 593;
+    margin: 114px 0 46px 0;
     border: 1px solid #BDBDBD;
 }
 
-#searchIcon{
-    margin-left: -35px;
-    margin-bottom: -13px;
-    cursor: pointer;
-    padding: 10px;
-    border-radius: 5px;
+#interface {
+    width: calc(100% - 333px);
+    background: #F5F5F5;
 }
 
-#searchIcon:hover{
-    background-color: #acd3e0;
+#interface .navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 64px 0 16px 75px;
+    border-bottom: 2px solid #BDBDBD;
 }
 
-#body{
-    padding: 30px;
+#interface .navigation .search {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 553.2px;
+    border: 1px solid #007EA7;
+    border-radius: 10px;
 }
 
-
-.back-button{
-    padding-left: 22px;
+#interface .navigation .search {
+    width: 22.4px;
+    height: 22.4px;
+    color: #BDBDBD;
 }
 
-.back-button a{
-    text-decoration: none;
-    color: #007EA7;
-    font-weight: 400;
-    font-size: 20px;
-    line-height: 24px;
-}
+#interface .navigation .search input {
+    border: none;
+    outline: none;
+    width: 178px;
+    height: 24px;
+    margin: 10px 665.8px 10px 14px;
+    font-size: 14px;
+    background: #F5F5F5;
 
-#schools{
-    padding: 10px;
-}
-
-#schools p{
-    display: inline;
-}
-
-#threeDots{
-    float: right;
-    margin-top: 30px;
 }
