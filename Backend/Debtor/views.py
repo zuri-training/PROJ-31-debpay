@@ -86,6 +86,10 @@ def School_Logout(request):
 def land(request):
     return render(request, 'Debtor/home.html')
 
+#Privacy & Policy page view
+def privacy(request):
+    return render(request, 'Privacypolicy.html')
+
 #School login view
 def School_Login(request):
     if request.method == 'POST':
