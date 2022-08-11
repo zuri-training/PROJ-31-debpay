@@ -45,28 +45,18 @@ def School_Register(request):
         form = SchoolRegForm(request.POST)
         email = request.POST['email']
         username = request.POST['username']
-        # School_name = request.POST['School_name']
-        # School_owner = request.POST['School_owner']
-        # Reg_number = request.POST['Reg_number']
         password1 = request.POST['Password']
-        # password2 = request.POST['Confirm_password']
        
         
         if form.is_valid():
-            # if password1 == password2:
                 user = School.objects.create_user(email=email, password=password1, username=username
                         )
                 user.is_active = False
                 user.save()
                 #auth.login(request,user)
                 login(request, user, backend='django.contrib.auth.backends.ModelBackend')
-                # messages.success(request, 'School created successfully')
-                contexta = {"messages": messages, "user": user}
-                # return redirect('dashboard', contexta)
                 messages.success(request, 'School created successfully, kindly wait till the admin verify your details')
                 return redirect('/')
-
-          
         else:
             messages.error(request, 'password mismatch')
     else:
@@ -92,25 +82,28 @@ def privacy(request):
 
 #School login view
 def School_Login(request):
-    if request.method == 'POST':
-        email = request.POST['email']
-        password = request.POST['password']
-        try:
-            user = School.objects.get(email=email)
-        except:
-            messages.error(request, 'user does not exist')
-        user = authenticate(request, email=email, password=password)
-        if user is not None:
-            login(request, user, backend='django.contrib.auth.backends.ModelBackend')
-            # login(request, user)
-            return redirect('/')
-        elif request.user.is_authenticated:
-            return redirect('dashboard.html')
-        else:
-            messages.error(request, 'user does not exist')
-    return render(request, 'Debtor/School_login.html')
-        
-        
+    if request.method == 'GET':
+        if request.user.is_authenticated:
+            messages.success(request, 'successful logged in')
+            return redirect ('dashboard')
+        return render(request, 'registration/login.html')
+    else:
+        if request.method == 'POST':
+            email = request.POST['email']
+            password = request.POST['password']
+            try:
+                user = School.objects.get(email=email)
+            except:
+                messages.error(request, 'user does not exist')
+            user = authenticate(request, email=email, password=password)
+            if user is not None:
+                login(request, user, backend='django.contrib.auth.backends.ModelBackend')
+                return redirect('dashboard')
+            else:
+                messages.error(request, 'user does not exist')
+
+        return render(request, 'registration/login.html')
+            
 
 #School Profile update view
 def School_Profile_Update(request):
@@ -129,10 +122,6 @@ def School_Profile_Update(request):
     context = {'p_form': p_form, 'u_form':u_form}
     return render(request,'Debtor/Profile_Update.html', context ) 
     
-
-def school_dashboard(request):
-    return render(request, 'dashboard.html' )
-       
 def dashboard(request):
     run = request.GET.get('test') if request.GET.get('test') !=None else''
     fork = Post.objects.filter(Q(title__icontains=run)|
