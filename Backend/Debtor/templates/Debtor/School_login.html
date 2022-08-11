@@ -1,13 +1,37 @@
+{% load socialaccount %}
+
 {%for message in messages%}
 <h4>{{message}}</h4>
-{%endfor%}
-    <form method='post' action=''>
-        {% csrf_token %}
-      <label for='email'> Email </label>
-      <input type='email' name='email'> <br>
-      <label for='password'> Password </label>
-      <input type='password' name='password'> <br>
+
+        {%for message in messages%}
+        <h4>{{message}}</h4>
+        {%endfor%}
+
+        <h1> Welcome 
+        {% if user.is_authenticated %}
+            {{user.School_name}} ({{user.school_id}}) {{user.email}}
+            </h1>{{user.school_profile.locality}}
+            <br>
+            <img src="{{user.school_profile.profile_pics.url}}" alt="pol" width='100px' height='100px'><br>
+            <a href='logout'> Logout </a> || <a href='{% url "password_change" %}'> Change Password</a><br>
+            <a href='{% url "School_Profile_Update" %}'> Update profile data </a>
+        {%else%}
+             {% comment %} <a href='register'> Sign up</a> {% endcomment %}
+            {% comment %} || <a href='login'> Sign in</a>  {% endcomment %}
+            
+            <a href="{% provider_login_url 'google' %}">Login with Google</a>
+            <form method='post' action=''>
+              {% csrf_token %}
+              <label for='email'> Email </label>
+              <input type='email' name='email'> <br>
+              <label for='password'> Password </label>
+              <input type='password' name='password'> <br>
+                
+              
+              <button type='submit'> Sign in </button>
+            </form>
+        {%endif%}
+
         
-       
-        <button type='submit'> Sign in </button>
-        </form>
+  {%endfor%}
+        
