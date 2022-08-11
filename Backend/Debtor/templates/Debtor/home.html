@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 {% extends 'base.html' %}
 {%load static%}
 
@@ -7,6 +6,9 @@
     <link rel="stylesheet"  href="{% static 'css/landing_page.css'%}">
 {% endblock link%}
 
+{% for message in messages%}
+        <h1> {{message.success}}<h1>
+{% endfor %}
 {% block content%}
 
     <main>
@@ -14,7 +16,9 @@
             <div class="container1-box1">
                 <h2>Track and follow up with defaulters efficiently to enable faster collections</h2>
                 <p>Feature-rich, Hassle-free</p>
-                <button class="btn">Log In</button>
+                <a href="{%url 'login'%}">
+                    <button class="btn">Log In</button>
+                </a>
                 <a href="">
                     <button class="btn-1">View debt</button>
                 </a>
@@ -132,7 +136,7 @@
     </main>
 
 {% endblock content%}
-=======
+{% comment %} =======
 {% load socialaccount %}
 {%for message in messages%}
 <h4>{{message}}</h4>
@@ -153,7 +157,7 @@
     || <a href='login'> Sign in</a> 
     || <a href="{% provider_login_url 'google' %}">Login with Google</a>
 
-{%endif%}
+{%endif%} {% endcomment %}
 
 
 {% comment %} {% if user.is_authenticated %}
@@ -163,5 +167,5 @@
 
 
 {% endif %} {% endcomment %}
->>>>>>> 2a534e8dbd9300dd1f36c38cef76cd6b8fe877c5
+{% comment %} >>>>>>> 2a534e8dbd9300dd1f36c38cef76cd6b8fe877c5 {% endcomment %}
 

@@ -13,9 +13,6 @@
 {% endblock header%}
 {% block  content%}
 
-{%for message in messages%}
-    <h4>{{message}}</h4>
-{%endfor%} 
     <!-- image for desktop screen, invisible for mobile screen -->
     <div class="aside-img-container">
       <img src="{% static "assets/login-and-signup-image.jpg" %}" alt="" />
@@ -39,6 +36,9 @@
 
       <p>Create a new account</p>
       {% comment %} <form action=""> {% endcomment %}
+        {% comment %} {%for message in messages%}
+          <h4>{{message}}</h4>
+        {%endfor%}  {% endcomment %}
         <form method="post">
           {% csrf_token %}
           <div>
