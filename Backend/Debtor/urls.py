@@ -8,8 +8,9 @@ urlpatterns = [
     
     
     #Default authentication home
-    path('', views.land, name='land'), 
-
+    path('', views.land, name='land'),
+    
+    path('FAQs', views.faqs, name='faqs'),
     path('dashboard', views.dashboard, name='dashboard'),
     path('register', views.School_Register, name='register'),
     path('privacy&policy', views.privacy, name='p&p'),
