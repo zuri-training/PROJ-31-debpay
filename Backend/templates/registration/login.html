@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{%load static%}
+{% load socialaccount %}
+
+
+{% block link%}
+    <link rel="stylesheet"  href="{% static 'css/login.css'%}">
+{% endblock link%}
+
+{% block header%}
+    {% comment %} Empty header {% endcomment %}
+{% endblock header%}
+
+
+  {% block content%}  
+    {% comment %} {% if user.is_authenticated %}    
+      {{user.School_name}} ({{user.school_id}}) {{user.email}}
+      </h1>{{user.school_profile.locality}}
+      <br>
+      <img src="{{user.school_profile.profile_pics.url}}" alt="pol" width='100px' height='100px'><br>
+      <a href='logout'> Logout </a> || <a href='{% url "password_change" %}'> Change Password</a><br>
+      <a href='{% url "School_Profile_Update" %}'> Update profile data </a> {% endcomment %}
+
+    {% comment %} {%else%} {% endcomment %}
+      <div class="aside-img-container">
+          <img src="{% static "assets/login-and-signup-image.jpg" %}" alt="" />
+        </div>
+        <main>
+          <h1>Welcome Back!</h1>
+          <div class="mine">
+            <p class="me">Login to your account</p>
+          </div>
+          <div class="Login-in-options-container">
+            <a href="{% provider_login_url 'google' next="dashboard" %}">
+            <div class="Login-in-options-google">
+              <img src="{% static "assets/google-icon.svg" %}" class="google" alt="" />
+                  <span class="text">Login with Google</span>
+            </div>
+          </a>
+            <div class="Login-in-options-fb">
+              <img src="{% static "assets/fb-icon.svg" %}" class="fb" alt="fb" />
+              <span>Login with Facebook</span>
+            </div>
+          </div>
+
+          <div class="or">Or</div>
+
+          <p>Create a new account</p>
+             <h4>{{message}}</h4>
+          <form action="" method="post">
+            {% csrf_token %}
+            <div>
+              <label>Email address</label>
+              <input type="email" name="email" placeholder="email@example.com" class="email" />
+            </div>
+            <div>
+              <label>Password</label>
+              <input type="password" name="password" placeholder="*******" class="password" />
+            </div>
+            <div class="input-container">
+              <label class="checkbox-container">
+                <div>
+                  <input type="checkbox" name="checkbox" /> Remember me
+                </div>
+                <span class="checkmark">Forgot Password?</span>
+            </div>
+
+            <p>Don't have an account? <a href="{% url 'register'%}">Signup</a></p>
+            <div class="button-container">
+              <button type="submit">Login</button>
+            </div>
+          </form>
+        </main>
+      {% comment %} {% endif %} {% endcomment %}
+  {% endblock content%}

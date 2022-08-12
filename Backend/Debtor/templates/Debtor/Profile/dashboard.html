@@ -19,9 +19,15 @@
         <h1>
         {%for meet in meet %}
        <a href=" {%url 'EachMeeting' meet.id %} "> {{meet}} </a>
+<<<<<<< HEAD
         {%endfor%} </h1> {% endcomment %}
         
    <hr>
+=======
+        {%endfor%} </h1>
+         
+       <hr>
+>>>>>>> 0f624ea8adbf00d0dce8075b11626fb684bf595b
 
     
        {% comment %} <h4> email: {{user.email}} </h4>
@@ -49,6 +55,7 @@
                     {%endif%}  
             </div>
             <div>
+<<<<<<< HEAD
         <a href="{% url 'list' post.id %}"> {{post.title}} <a>
        
         <p> {{post.body|truncatewords:10}}</p>
@@ -56,6 +63,15 @@
      
         </div>
     </aside>
+=======
+            <a href="{% url 'list' post.id %}"> {{post.title}} <a>
+        
+            <p> {{post.body|truncatewords:5}}</p>
+        
+        
+            </div>
+        </aside>
+>>>>>>> 0f624ea8adbf00d0dce8075b11626fb684bf595b
         <hr>
 
         {%endfor%}

@@ -43,6 +43,7 @@ class DebtorUpdateForm(forms.ModelForm):
         
 #School registration form
 class SchoolRegForm(forms.Form):
+<<<<<<< HEAD
     School_name = forms.CharField(max_length=100)
     School_owner = forms.CharField(max_length=255)
     Reg_number = forms.CharField(max_length=255)
@@ -58,13 +59,22 @@ class SchoolRegForm(forms.Form):
     Session = forms.CharField(max_length=100)
     Password = forms.CharField(widget=forms.PasswordInput, min_length=5, max_length=20)
     Confirm_password = forms.CharField(widget=forms.PasswordInput, min_length=5, max_length=20)
+=======
+    # School_name = forms.CharField(max_length=100)
+    # School_owner = forms.CharField(max_length=255)
+    # Reg_number = forms.CharField(max_length=255)
+    username = forms.CharField(max_length=255, widget=forms.TextInput(attrs={"class": "name", "name":"fname", "placeholder":"Dave Shepherd"}))
+    email = forms.EmailField(max_length=255, widget=forms.EmailInput(attrs={"class": "email", "name":"email", "placeholder":"email@example.com"}))
+    Password = forms.CharField(widget=forms.PasswordInput(attrs={"placeholder":"*******", "class": "password", "name":"password",}), min_length=5, max_length=20)
+    # Confirm_password = forms.CharField(widget=forms.PasswordInput, min_length=5, max_length=20)
+>>>>>>> 0f624ea8adbf00d0dce8075b11626fb684bf595b
     
     #Validations
-    def clean_School_name(self):
-        School_name= self.cleaned_data['School_name']
-        if School.objects.filter(School_name__iexact=School_name).exists():
-            raise forms.ValidationError("School already exists")
-        return School_name
+    # def clean_School_name(self):
+    #     School_name= self.cleaned_data['School_name']
+    #     if School.objects.filter(School_name__iexact=School_name).exists():
+    #         raise forms.ValidationError("School already exists")
+    #     return School_name
     
     def clean_email(self):
         email= self.cleaned_data['email']
@@ -72,17 +82,17 @@ class SchoolRegForm(forms.Form):
             raise forms.ValidationError("Email already exists")
         return email
     
-    def clean_School_owner(self):
-        School_owner= self.cleaned_data['School_owner']
-        if School.objects.filter(School_owner__iexact=School_owner).exists():
-            raise forms.ValidationError("School_owner already exists")
-        return School_owner
+    # def clean_School_owner(self):
+    #     School_owner= self.cleaned_data['School_owner']
+    #     if School.objects.filter(School_owner__iexact=School_owner).exists():
+    #         raise forms.ValidationError("School_owner already exists")
+    #     return School_owner
     
-    def clean_Reg_number (self):
-        Reg_number = self.cleaned_data['Reg_number']
-        if School.objects.filter(Reg_number__iexact=Reg_number).exists():
-            raise forms.ValidationError("Reg_number already exists")
-        return Reg_number  
+    # def clean_Reg_number (self):
+    #     Reg_number = self.cleaned_data['Reg_number']
+    #     if School.objects.filter(Reg_number__iexact=Reg_number).exists():
+    #         raise forms.ValidationError("Reg_number already exists")
+    #     return Reg_number  
                       
     def clean_username(self):
          username  = self.cleaned_data['username']

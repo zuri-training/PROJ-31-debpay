@@ -5,8 +5,99 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>settings - notification preference</title>
+    <link rel="stylesheet" href="../css/settings(notificationPreference).css">
+
+    <!--Google font links-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!--font awesome link-->
+    <script src="https://kit.fontawesome.com/f44a167704.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    
+    <main>
+        <div id="section1">
+            <section id="menu">
+                <div class="logo">
+                    <img src="../assets/images/Logo1.png" alt="debpay logo">
+                </div>
+        
+                <!-- divider in the upper part of the menu -->
+                <hr class="solid">
+                <span class="angles-left"><i class="fa-solid fa-angles-left"></i></span>
+        
+                <!-- image placeholder and name -->
+                <div class="pictureholder">
+                    <img src="../assets/images/debpay Placeholder Amaka M.svg" alt="smiling woman">
+                    <h6>Linda Adeyemi</h6>
+                    <p>linadeyemi@gmail.com</p>
+                </div>
+                <div class="items">
+        
+                    <li><i class="fa-solid fa-border-all"></i></i><a href="#">Dashboard</a></li>
+                    <li><i class="fa fa-bars"></i><a href="#">Posts</a></li>
+                    <li><i class="fa-solid fa-folder"></i><a href="#">Current Debtors</a></li>
+                    <li><i class="fa fa-users"></i><a href="#">Team Members</a></li>
+        
+                    <hr class="solid1">
+        
+                    <li><i class="fa-solid fa-ellipsis"></i><a href="#">Settings</a></li>
+                    <li class="logout"><i class="fa fa-arrow-right-from-bracket"></i><a href="#">Logout</a></li>
+                </div>
+            </section>
+        </div>
+
+        <div id="section2">
+            <div id="search">
+                <input type="text" placeholder="Search for a question" id="search_bar"><img src="../assets/Icon(search bar).svg" id="searchIcon"> <i class="fa-solid fa-bell" id="bell"></i>
+            </div>
+            <hr>
+
+            <section id="body">
+                <div class="back-button">
+                    <a href="#">&larr;Back</a>
+                </div>
+                <div class="top_text">
+                    <h6>Mute notification</h6>
+                    <p>deyemi@gmail.com</p>
+                </div>
+
+                <div id="sub_section">
+                    <p>With new account</p>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <hr>
+                <div id="sub_section">
+                    <p>Who isn’t a verified school owner</p>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <hr>
+                <div id="sub_section">
+                    <p>Who have not verified their email</p>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <hr>
+                <div id="sub_section">
+                    <p>Who have not verified their phone number</p>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <hr>
+            </section>
+
+        </div>
+    </main>
 </body>
 </html>

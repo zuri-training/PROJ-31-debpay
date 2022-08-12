@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard_Team_Members</title>
+    <link rel="stylesheet" href="../css/dashboard_post.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <section id="menu">
+        <div class="logo">
+            <img src="../assets/images/Logo1.png" alt="debpay logo">
+        </div>
+
+        <!-- divider in the upper part of the menu -->
+        <hr class="solid">
+        <span class="angles-left"><i class="fa-solid fa-angles-left"></i></span>
+
+        <!-- image placeholder and name -->
+        <div class="pictureholder">
+            <img src="../assets/images/debpay Placeholder Amaka M.svg" alt="smiling woman">
+            <h6>Linda Adeyemi</h6>
+            <p>linadeyemi@gmail.com</p>
+        </div>
+        <div class="items">
+
+            <li><a href="#"><i class="fa-solid fa-border-all"></i>Dashboard</a></li>
+            <li><a href="#"><i class="fa fa-bars"></i>Posts</a></li>
+            <li><a href="#"><i class="fa-solid fa-folder"></i>Current Debtors</a></li>
+            <li><a class="active" href="#"><i class="fa fa-users"></i>Team Members</a></li>
+
+            <hr class="solid1">
+
+            <li><a href="#"><i class="fa-solid fa-ellipsis"></i>Settings</a></li>
+            <li class="logout"><a href="#"><i class="fa fa-arrow-right-from-bracket"></i>Logout</a></li>
+        </div>
+    </section>
+
+    <section id="interface">
+        <div class="navigation">
+            <div class="n1">
+                <div class="search">
+                    <input type="text" placeholder="Search for a debtor">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
+
+            <div class="profile">
+                <i class="fa-regular fa-bell"></i>
+            </div>
+        </div>
+
+    </section>
+
+    <script>
+        var navItems = document.querySelectorAll(".items");
+        for (var i = 0; i < navItems.length; i++) {
+           navItems[i].addEventListener("click", function() {
+              this.classList.add("active");
+           });
+        }
+     </script>
+
+</body>
+
+</html>

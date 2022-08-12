@@ -9,8 +9,10 @@ urlpatterns = [
     
     #Default authentication home
     path('', views.land, name='land'), 
+
     path('dashboard', views.dashboard, name='dashboard'),
     path('register', views.School_Register, name='register'),
+    path('privacy&policy', views.privacy, name='p&p'),
     path('logout', views.School_Logout, name='logout'),
     path('login', views.School_Login, name='login'),
     path('post_create', views.CreatePost, name='post_create'),
@@ -24,7 +26,7 @@ urlpatterns = [
     path('debtor_delete/<str:pk>', views.debtor_delete, name='debtor_delete'),
     path('debtor_all', views.debtor_all, name="debtor_all"),
     path('debtor_upd/<str:pk>', views.debtor_upd, name='debtor_upd'),
-    path('accounts/', include('django.contrib.auth.urls')),#Django built-in authentication system
+    # path('accounts/', include('django.contrib.auth.urls')),#Django built-in authentication system
     path('School_Profile_Update', views.School_Profile_Update, name='School_Profile_Update'), 
     path('ReplyComment/<str:pk>', views.ReplyComment, name="ReplyComment"),
     path('AllSchool', views.AllSchool, name='AllSchool'),
