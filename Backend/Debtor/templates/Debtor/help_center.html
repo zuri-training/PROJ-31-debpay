@@ -1,33 +1,11 @@
-{% extends %}
+{% extends 'base.html'%}
+{% load static %}
+
+{% block link%}
+    <link rel="stylesheet" href="{% url "css/help-centre.css" %}" />
+{% endblock link%}
 
 {% block content%}
-<header>
-    <div id="headerContainer">
-        <div class="headerBox1">
-                <img src="../assets/images/Debpay logo mask group with text.svg" alt="debpay logo">
-        </div>
-        <div class="headerBox2 ">
-            <nav>
-                <ul class="nav-menu">
-                    <li><a href="landing_page.html">Home</a></li>
-                    <li><a href="contact_us.html">Contact us</a></li>
-                    <li>
-                    <div class="dropdown">
-                        <a href="#" class="dropbtn">More info <i class="fa-solid fa-angle-down"></i></a>
-                        <div class="dropdown-content">
-                            <a href="#">How MYDEBTORS work</a><br><hr>
-                            <a href="FAQS.html">FAQs</a><br><hr>
-                            <a href="#">Help</a><br><hr>
-                            <a href="#">About Us</a>
-                        </div>
-                    </li>
-                    <li><button class="login_btn">Login</button></li>
-                    <li><button class="register_btn">Register</button></li>
-                </ul>
-            </nav>
-        </div>
-    </div>
-</header>
 
 <main>
     <div class="help-centre-container">
@@ -104,46 +82,5 @@
 
     </div>
 </main>
-<footer>
-    <div class="footer_container">
-    <div class="footer_container-box1">
-        <img src="../assets/images/Debpay logo mask group with text.svg" alt="debpay logo">
-    </div>
-    <div class="footer_container-box2">
-        <p>RESOURCES</p>
-            <a href="#">Technical Support</a>
-            <a href="#">Purchasing & licensing</a>
-            <a href="#">Debpay Community</a>
-            <a href="#">FAQs</a>
-    </div>
-    <div class="footer_container-box3">
-        <p>COMPANY</p>
-        <a href="#">Legals</a>
-        <a href="#">My Account</a>
-        <a href="#">Help and support</a>
-    </div>
-    <div class="footer_container-box4">
-        <p>ABOUT DEBPAY</p>
-        <a href="#">Location</a>
-        <a href="#">Events</a>
-        <a href="#">Blogs</a>
-        <a href="#">Contact Us</a>
-    </div>
-    </div>
-    <hr>
-    <div id="page_bottom">
-    <a href="#"><i class="fa-solid fa-globe"></i> English <i class="fa-solid fa-caret-down"></i></a>
-    <a href="Privacypolicy.html">Privacy policy</a>
-    <a href="#">Terms and conditions</a>
-    <a href="#">Impressum</a>
-    <a href="#">Copyright&copy;debpay2022</a>
-    <div id="icons">
-        <a href="#" title="social-icons"><i class="fa-brands fa-twitter"></i></a>
-        <a href="#" title="social-icons"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#" title="social-icons"><i class="fa-brands fa-facebook"></i></a>
-        <a href="#" title="social-icons"><i class="fa-brands fa-whatsapp"></i></a>
-    </div>
-    </div>
-</footer>
 
 {%endblock%}

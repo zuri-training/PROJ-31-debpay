@@ -1,4 +1,6 @@
-{% load socialaccount %}
+
+
+{% comment %} {% load socialaccount %}
 
 {%for message in messages%}
 <h4>{{message}}</h4>
@@ -15,11 +17,11 @@
             <img src="{{user.school_profile.profile_pics.url}}" alt="pol" width='100px' height='100px'><br>
             <a href='logout'> Logout </a> || <a href='{% url "password_change" %}'> Change Password</a><br>
             <a href='{% url "School_Profile_Update" %}'> Update profile data </a>
-        {%else%}
+        {%else%} {% endcomment %}
              {% comment %} <a href='register'> Sign up</a> {% endcomment %}
             {% comment %} || <a href='login'> Sign in</a>  {% endcomment %}
             
-            <a href="{% provider_login_url 'google' %}">Login with Google</a>
+            {% comment %} <a href="{% provider_login_url 'google' %}">Login with Google</a>
             <form method='post' action=''>
               {% csrf_token %}
               <label for='email'> Email </label>
@@ -35,3 +37,4 @@
         
   {%endfor%}
         
+ {% endcomment %}

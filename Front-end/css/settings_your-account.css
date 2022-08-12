@@ -27,6 +27,10 @@ input {
   margin-top: 22px;
   margin-bottom: 17px;
   padding: 6px;
+  background-image: url("../assets/search-icon.svg");
+  background-repeat: no-repeat;
+  background-position-x: 90%;
+  background-position-y: 50%;
 }
 .back-container {
   align-self: flex-start;
@@ -63,6 +67,7 @@ input {
   gap: 8px;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
+  margin-bottom: 10px;
 }
 .card-texts {
   width: 231px;

@@ -7,4 +7,39 @@
 html,
 body {
   height: 100vh;
+  font-family: "Josefin Sans";
+}
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.heading-container {
+  text-align: center;
+  margin-top: 160px;
+}
+h1 {
+  font-weight: 700;
+  font-size: 21.3268px;
+  line-height: 23px;
+  color: #007ea7;
+  margin-bottom: 10px;
+}
+.heading-container p {
+  width: 343px;
+  font-weight: 500;
+  font-size: 10.4872px;
+  line-height: 12px;
+  color: #4f4f4f;
+  margin-bottom: 104px;
+}
+input {
+  border: none;
+  border-bottom: 3.4772px solid #00171f;
+  width: 44.51px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 22.2541px;
+  line-height: 11px;
+  margin-right: 10.5px;
 }
