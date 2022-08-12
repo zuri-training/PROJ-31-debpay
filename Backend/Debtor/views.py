@@ -80,9 +80,9 @@ def land(request):
 def privacy(request):
     return render(request, 'Privacypolicy.html')
 
-#Privacy & Policy page view
+#FAQs page view
 def faqs(request):
-    return render(request, 'FAQS.html')
+    return render(request, 'FAQs.html')
 
 #School login view
 def School_Login(request):
