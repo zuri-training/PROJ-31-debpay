@@ -80,6 +80,10 @@ def land(request):
 def privacy(request):
     return render(request, 'Privacypolicy.html')
 
+#FAQs page view
+def faqs(request):
+    return render(request, 'FAQs.html')
+
 #School login view
 def School_Login(request):
     if request.method == 'GET':
