@@ -33,7 +33,8 @@ urlpatterns = [
     path("CreateMeeting", views.CreateMeeting, name="CreateMeeting"),
     path('EachMeeting/<str:pk>', views.EachMeeting, name="EachMeeting"),
     path('EachComment/<str:pk>', views.EachComment, name="EachComment"),
-    path('MeetingUpdate/<str:pk>', views.MeetingUpdate, name='MeetingUpdate')
+    path('MeetingUpdate/<str:pk>', views.MeetingUpdate, name='MeetingUpdate'),
+    path('dash', views.dash, name='dash')
  
 
 

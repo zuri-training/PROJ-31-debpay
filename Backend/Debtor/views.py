@@ -49,12 +49,24 @@ def School_Register(request):
         Reg_number = request.POST['Reg_number']
         password1 = request.POST['Password']
         password2 = request.POST['Confirm_password']
-       
-        
+        Registered_session = request.POST['Registered_session']
+        Permanent_address  = request.POST['Permanent_address']
+        Founded = request.POST['Founded']
+        Number_of_teachers = request.POST['Number_of_teachers']
+        Phone_numnber = request.POST['Phone_numnber']
+        current_address = request.POST['current_address']
+        Number_of_students  = request.POST['Number_of_students']
+        Session = request.POST['Session']
+
+
+
         if form.is_valid():
             if password1 == password2:
                 user = School.objects.create_user(email=email, password=password1, School_name=School_name, School_owner =School_owner ,
-                                                  username=username, Reg_number=Reg_number,
+                                                  username=username, Reg_number=Reg_number,  Registered_session= Registered_session,
+                                                    Permanent_address=Permanent_address,Founded=Founded, Number_of_teachers =  Number_of_teachers ,
+                                                         current_address=current_address ,Phone_numnber= Phone_numnber,
+                                                          Number_of_students= Number_of_students, Session=Session
                         )
                 user.is_active = False
                 user.save()
@@ -119,23 +131,48 @@ def School_Profile_Update(request):
     return render(request,'Debtor/Profile_Update.html', context ) 
     
        
-def dashboard(request):
+# def dashboard(request):
+#     run = request.GET.get('test') if request.GET.get('test') !=None else''
+#     fork = Post.objects.filter(Q(title__icontains=run)|
+#                                Q(body__icontains=run))
+#     lost =School_Profile.objects.all()
+#     local = Locality.objects.all()
+#     page = 'home'
+#     meet = Meeting.objects.filter(meeting_host=request.user)
+#     post = Post.objects.all()
+#     debtor = Debtor.objects.filter(school = request.user).aggregate( Total_Debt = Sum('debt'))
+#     post_mine = Post.objects.filter(school_post = request.user).count()
+#     debtors = Debtor.objects.filter(school = request.user).count()
+#     debtor_list = Debtor.objects.filter(school = request.user).count()
+#     post.image = request.FILES
+#     context ={'page':page,'run':run, 'meet':meet ,'local':local ,'lost':lost ,'fork':fork, 'debtor_list':debtor_list, 'mine':post_mine, 'post':post, 'debtors':debtors, 'debtor': debtor}
+#     return render(request, 'Debtor/profile.html', context)
+
+def dash (request):
+    page ='dash'
     run = request.GET.get('test') if request.GET.get('test') !=None else''
     fork = Post.objects.filter(Q(title__icontains=run)|
                                Q(body__icontains=run))
+    goat = fork.count()
+    context ={'fork':fork, 'page':page,'run':run, 'goat':goat }
+    return render(request, 'Debtor/profile.html', context) 
+    
+def dashboard(request):
+  
     lost =School_Profile.objects.all()
     local = Locality.objects.all()
     page = 'home'
     meet = Meeting.objects.filter(meeting_host=request.user)
-    post = Post.objects.all()
+    post = Post.objects.all() [:5]
+    
+    loin = post.count()
     debtor = Debtor.objects.filter(school = request.user).aggregate( Total_Debt = Sum('debt'))
     post_mine = Post.objects.filter(school_post = request.user).count()
     debtors = Debtor.objects.filter(school = request.user).count()
     debtor_list = Debtor.objects.filter(school = request.user).count()
     post.image = request.FILES
-    context ={'page':page,'run':run, 'meet':meet ,'local':local ,'lost':lost ,'fork':fork, 'debtor_list':debtor_list, 'mine':post_mine, 'post':post, 'debtors':debtors, 'debtor': debtor}
+    context ={'page':page, 'meet':meet ,'local':local ,'lost':lost , 'debtor_list':debtor_list, 'mine':post_mine, 'post':post, 'debtors':debtors, 'debtor': debtor}
     return render(request, 'Debtor/profile.html', context)
-
 
 
 
@@ -265,8 +302,9 @@ def user_debtor(request):
     
 def one_debtor(request, pk):
     debtor = Debtor.objects.get(id=pk)
+    post = Post.objects.filter(deptors_list = debtor)
     page = 'one'
-    context = {'debtor':debtor,'page':page}
+    context = {'debtor':debtor, 'post':post ,'page':page}
     return render(request, 'Debtor/profile.html', context)
     
     

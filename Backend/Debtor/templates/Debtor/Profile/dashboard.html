@@ -1,51 +1,62 @@
-<img class="lop"  src="{{user.school_profile.profile_pics.url}}">
-    <br><br>
-    <h2> School name  ({{user.School_name}})  </h2>
+<form action=' {%url "dash" %} '>
+ <input type="text" name="test" placeholder="search a post...." >
+  </form>
+  {%if debtors == 1 %}
+  <h5> Current debtor: {{debtors}} </h5> 
+  {%elif debtors == 0 %}
+  {%else%}
+  <h5> current debtors: {{debtors}} debtors </h5> 
+  {%endif%}
+  <hr>
+  <h1> {{debtor|title|slugify}} </h1> 
+  {{loin}}
+
+
+
   
-    <h1> {{debtor|title|slugify}} </h1>
-
-
-    <h5> Total debtors {{debtors}} debtors</h5> 
-    <h1>
+    {% comment %} <h1>
         My meeting :</h1>
         <h1>
         {%for meet in meet %}
        <a href=" {%url 'EachMeeting' meet.id %} "> {{meet}} </a>
-        {%endfor%} </h1>
-         
+        {%endfor%} </h1> {% endcomment %}
+        
    <hr>
 
     
-       <h4> email: {{user.email}} </h4>
+       {% comment %} <h4> email: {{user.email}} </h4>
        <h4> Registration number: {{user.Reg_number}} </h4>
        <h4> Username: {{user.username}} </h4>
        <h4> School_id  : {{user.School_id}} </h4>
        {% if user.school.profile.locality != None %}
        <h4> Locality  : {{user.school_profile.locality}} </h4>
-       {%endif%}
+       {%endif%} {% endcomment %}
        <a href= "{% url 'post_create' %}"> Create a post</a></h4>
        <hr>
        <h4> 
+ 
         {% for post in post %}
-        {% if request.user ==  post.school_post  %}
+   
         <aside>
             <div>
             {% if post.image %}
             <img src=" {{post.image.url}} " alt='king'>
             {%endif%}
             <h4>@ {{post.school_post}} </h4>
+            {% if request.user ==  post.school_post  %} 
             <a href="{% url 'upd' post.id%}"> Update <a> ||
                 <a href="{% url 'del' post.id%}"> Delete <a>
+                    {%endif%}  
             </div>
             <div>
         <a href="{% url 'list' post.id %}"> {{post.title}} <a>
        
-        <p> {{post.body|truncatewords:5}}</p>
+        <p> {{post.body|truncatewords:10}}</p>
        
      
         </div>
     </aside>
         <hr>
 
-        {%endif%}  
         {%endfor%}
+        <h4> <a href= "{% url 'Post_all' %}">View all post </a></h4> 

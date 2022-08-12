@@ -48,6 +48,14 @@ class SchoolRegForm(forms.Form):
     Reg_number = forms.CharField(max_length=255)
     username = forms.CharField(max_length=255)
     email = forms.EmailField(max_length=255)
+    Registered_session = forms.CharField(max_length=255) 
+    current_address = forms.CharField(max_length=255)  
+    Permanent_address = forms.CharField(max_length=255)         
+    Number_of_teachers = forms.IntegerField()
+    Phone_numnber = forms.IntegerField()
+    Number_of_students = forms.IntegerField()
+    Founded = forms.CharField(max_length=100)
+    Session = forms.CharField(max_length=100)
     Password = forms.CharField(widget=forms.PasswordInput, min_length=5, max_length=20)
     Confirm_password = forms.CharField(widget=forms.PasswordInput, min_length=5, max_length=20)
     
@@ -94,7 +102,12 @@ class SchoolProfileForm(forms.ModelForm):
 class SchoolUpdateForm(forms.ModelForm):
     class Meta:
         model = School
-        fields = ['School_name','username', 'Reg_number','School_owner', 'email' ]
+        fields = ['School_name','username', 'current_address', 
+                  'Number_of_teachers' , 'Founded', 'Number_of_students', 
+                  'current_address', 'Permanent_address' ,'Phone_numnber',
+                  'Reg_number','School_owner', 'email', 'Registered_session', ]
+       
+    
         
 #School profile update form
 class SchoolProfileUpdateForm(forms.ModelForm):
@@ -102,7 +115,6 @@ class SchoolProfileUpdateForm(forms.ModelForm):
             model = School_Profile
             fields = "__all__"  
             exclude = ['school']
-            
             
             
             

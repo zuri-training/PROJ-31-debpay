@@ -8,7 +8,13 @@ class PostFilter(django_filters.FilterSet):
         model = Post
         fields = "__all__"
         exclude = ['image', 'body', 'created', 'title', 'updated']
-        
+class FirstPostFilter(django_filters.FilterSet):
+    title = CharFilter(field_name='title', lookup_expr='icontains',label='Title')
+    class Meta:
+        model = Post
+        fields = "__all__"
+        exclude = ['image', 'body', 'created', 'school_post' , 'title','updated', 'deptors_list']
+
         
 class SchoolFilter(django_filters.FilterSet):
     class Meta:
@@ -19,4 +25,4 @@ class DebtorFilter(django_filters.FilterSet):
     student_name = CharFilter(field_name='student_name', lookup_expr='icontains', label='Student')
     class Meta:
         model = Debtor
-        fields = [ ]
+        fields = [ 'student_id', 'debt']

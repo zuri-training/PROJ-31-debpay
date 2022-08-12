@@ -1,0 +1,52 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+body {
+    padding: 1em;
+    background-color: aliceblue;
+    font-family: 'Josefin Sans', sans-serif;
+
+}
+
+img {
+    width: 5em;
+    border-radius: 1em;
+    padding-top: 5em;
+}
+
+
+.contain {
+    width: 56%;
+    background-color: white;
+    margin: 18em auto;
+    text-align: center;
+    padding-bottom: 4em;
+    border-radius: 2em;
+}
+
+h4 {
+    font-size: 1.4rem;
+    margin: 1em 0 0.5em;
+    color: #27AE60;
+}
+
+button {
+    background-color: black;
+    border: none;
+    width: 28em;
+    padding: 1em;
+    border-radius: 1em;
+    color: white;
+    font-size: 1rem;
+    background-color: #007EA7;
+    margin-bottom: 3em;
+}
+
+p{
+    margin: 1em 0 3em;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
