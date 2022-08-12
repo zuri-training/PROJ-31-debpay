@@ -13,7 +13,7 @@
        <a href=" {%url 'EachMeeting' meet.id %} "> {{meet}} </a>
         {%endfor%} </h1>
          
-   <hr>
+       <hr>
 
     
        <h4> email: {{user.email}} </h4>
@@ -38,13 +38,13 @@
                 <a href="{% url 'del' post.id%}"> Delete <a>
             </div>
             <div>
-        <a href="{% url 'list' post.id %}"> {{post.title}} <a>
-       
-        <p> {{post.body|truncatewords:5}}</p>
-       
-     
-        </div>
-    </aside>
+            <a href="{% url 'list' post.id %}"> {{post.title}} <a>
+        
+            <p> {{post.body|truncatewords:5}}</p>
+        
+        
+            </div>
+        </aside>
         <hr>
 
         {%endif%}  
