@@ -1,0 +1,149 @@
+{%extends 'base.html' %}
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debpay FAQs</title>
+    <link rel="stylesheet" href="{% static 'static/css/FAQs.css' %}">
+
+    <!--Google font links-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!--font awesome link-->
+    <script src="{% static 'https://kit.fontawesome.com/f44a167704.js' %}" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src='https://code.jquery.com/jquery-3.3.1.slim.min.js'  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src= 'https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js'  integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src='https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js'  integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</head>
+{%block content %}
+<body>
+ 
+    <main>
+        <div id="container">
+            <div class="box1">
+                <h3>Frequently Asked Questions</h3>
+            </div>
+            <div class="box2">
+                <input type="text" placeholder="Search for a question" id="search_bar">
+            </div>
+        </div>
+
+        <ul id="accordion">
+            <section style="background-color: #fff; margin-bottom: 20px; border-radius: 4px; padding: 10px;">
+                <li>
+                    <label for="first">Why should I use Debpay?<span>&#x3e;</span></label>
+                    <input type="radio" name="accordion" id="first">
+                    <div class="content">
+                        <p>With My Debtors platform, you get to have your money paid directly to you. Your epected money is tracked from the debtor,s pockets until you get it fully paid. You also get to have a complete logbook of all debts and debtors on one platform with due reminders.</p>
+                    </div>
+                </li>
+            </section>
+
+            <section style="background-color: #fff; margin-bottom: 20px; border-radius: 4px; padding: 10px;">
+                <li>
+                    <label for="second">What will it cost me to use My Debtors?<span>&#x3e;</span></label>
+                    <input type="radio" name="accordion" id="second">
+                    <div class="content">
+                        <p>There is absolutely no cost for our platform. It is totally free.</p>
+                    </div>
+                </li>
+            </section>
+
+            <section style="background-color: #fff; margin-bottom: 20px; border-radius: 4px; padding: 10px;">
+                <li>
+                    <label for="third">Will be inolved in the process of handling debts?<span>&#x3e;</span></label>
+                    <input type="radio" name="accordion" id="third">
+                    <div class="content">
+                        <p>The tracking of debts, reminders, contacting debtors will be fully handled by our financial and accountability team. There is little or no involvement for you as long as the situation is well balanced.</p>
+                    </div>
+                </li>
+            </section>
+
+            <section style="background-color: #fff; margin-bottom: 20px; border-radius: 4px; padding: 10px;">
+                <li>
+                    <label for="fourth">Can payments be done in installments?<span>&#x3e;</span></label>
+                    <input type="radio" name="accordion" id="fourth">
+                    <div class="content">
+                        <p>You can set timelines for payments to be in done in ways as agreed between you and your debtor.</p>
+                    </div>
+                </li>
+            </section>
+
+            <section style="background-color: #fff; margin-bottom: 20px; border-radius: 4px; padding: 10px;">
+                <li>
+                    <label for="fifth">Can i link my my bank account with My Debtors site?<span>&#x3e;</span></label>
+                    <input type="radio" name="accordion" id="fifth">
+                    <div class="content">
+                        <p>To make the process faster, you should link your bank account  to your debtor site. However you choose, payments will be vetted through our security team.</p>
+                    </div>
+                </li>
+            </section>
+
+            <section style="background-color: #fff; margin-bottom: 20px; border-radius: 4px; padding: 10px;">
+                <li>
+                    <label for="sixth">Is there a record of total debts and payments?<span>&#x3e;</span></label>
+                    <input type="radio" name="accordion" id="sixth">
+                    <div class="content">
+                        <p>Transcripts of all debts and credits will be provided to you monthly or yearly to suit your choice. This is to help you have an official information as regards payments and cleared or resoluted debts.</p>
+                    </div>
+                </li>
+            </section>
+        </ul>
+    </main>
+    <footer>
+        <div class="footer_container">
+            <div class="footer_container-box1">
+                <img src="{% static '../assets/images/Debpay logo mask group with text.svg' %}" alt="debpay logo">
+            </div>
+            <div class="footer_container-box2">
+                <p>RESOURCES</p>
+                    <a href="#">Technical Support</a>
+                    <a href="#">Purchasing & licensing</a>
+                    <a href="#">Debpay Community</a>
+                    <a href="#">FAQs</a>
+            </div>
+            <div class="footer_container-box3">
+                <p>COMPANY</p>
+                <a href="#">Legals</a>
+                <a href="#">My Account</a>
+                <a href="#">Help and support</a>
+            </div>
+            <div class="footer_container-box4">
+                <p>ABOUT DEBPAY</p>
+                <a href="#">Location</a>
+                <a href="#">Events</a>
+                <a href="#">Blogs</a>
+                <a href="#">Contact Us</a>
+            </div>
+        </div>
+        <hr>
+        <div id="page_bottom">
+            <div id="page_bottom1">
+                <a href="#">Impressum</a>
+                <a href="Privacypolicy.html">Privacy policy</a>
+                <a href="#">Terms and conditions</a>
+            </div>
+            <div id="page_bottom2">
+                <a href="#"><i class="fa-solid fa-globe"></i> English <i class="fa-solid fa-caret-down"></i></a>
+                <a href="#">Copyright&copy;debpay2022</a>
+            </div>
+            <div id="icons2">
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
+{%endblock%}

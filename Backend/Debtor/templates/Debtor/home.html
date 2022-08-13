@@ -1,37 +1,27 @@
-{% extends 'base.html' %}
+{%extends 'base.html' %}
 {%load static%}
 
-{% block link%}
-    <title>Login</title>
-    <link rel="stylesheet"  href="{% static 'css/landing_page.css'%}">
-{% endblock link%}
-
-{% for message in messages%}
-        <h1> {{message.success}}<h1>
-{% endfor %}
-{% block content%}
-
+{%block content%}
     <main>
         <div id="container1">
             <div class="container1-box1">
                 <h2>Track and follow up with defaulters efficiently to enable faster collections</h2>
                 <p>Feature-rich, Hassle-free</p>
-                <a href="{%url 'login'%}">
-                    <button class="btn">Log In</button>
-                </a>
-                <a href="">
+                <button class="btn0">
+                <a href="">Log In</a>
+                </button>
                     <button class="btn-1">View debt</button>
                 </a>
             </div>
             <div class="container1-box2">
-                <img src="{% static "assets/images/DEBPAY unsplash_PK_t0Lrh7MM(N).png" %}"  id="first_image">
+                <img src="{% static 'static/assets/images/DEBPAY unsplash_PK_t0Lrh7MM(N).png' %}"  id="first_image">
             </div>
         </div>
 
         <div id="container2">
             <div class="container2-box1">
                 <div>
-                    <img src="{% static "assets/images/debpay Rectangle.svg" %}" style="border: 1px solid white; background-color: white; border-radius: 12px;" id="small_image">
+                    <img src="{% static 'static/assets/images/debpay Rectangle.svg' %}" style="border: 1px solid white; background-color: white; border-radius: 12px;" id="small_image">
                 </div>
                 <div>
                     <h4>Automated tracking</h4>
@@ -42,7 +32,7 @@
 
             <div class="container2-box2">
                 <div>
-                    <img src="{% static "assets/images/debpay 3d 1.svg" %}" style="border: 1px solid white; background-color: white; border-radius: 12px;" id="small_image">
+                    <img src="{% static 'static/assets/images/debpay 3d 1.svg' %}" style="border: 1px solid white; background-color: white; border-radius: 12px;" id="small_image">
                 </div>
                 <div>
                     <h4>Stop Wasting Hours<br> On Manual Work</h4>
@@ -55,7 +45,7 @@
        <section id="container3">
             <div id="container3-A">
                 <div class="container3-A_box1">
-                    <img src="{% static "assets/images/Frame 570.png" %}" width="100%"
+                    <img src="{% static 'static/assets/images/Frame 570.png' %}" width="100%"
                     height="100%">
                 </div>
                 <div class="container3-A_box2">
@@ -70,14 +60,14 @@
                     <p>Schools can set up their unique account via a well detailed, User friendly, verification process. Secure, yet seamless</p>
                 </div>
                 <div class="container3-B_box2">
-                    <img src="{% static "assets/images/Frame 571.png" %}"  width="100%"
+                    <img src="{% static 'static/assets/images/Frame 571.png' %}"  width="100%"
                     height="100%">
                 </div>
             </div>
 
             <div id="container3-C">
                 <div class="container3-C_box1">
-                    <img src="{% static "assets/images/Frame 574.png" %}"  width="100%"
+                    <img src="{% static 'static/assets/images/Frame 574.png' %}"  width="100%"
                     height="100%">
                 </div>
                 <div class="container3-C_box2">
@@ -95,7 +85,7 @@
             <div id="container4_div">
                 <div class="container4_div-box1">
                     <div class="Userimg">
-                        <img src="{% static "assets/images/debpay Placeholder Segun K.svg" %}" alt="user image">
+                        <img src="{% static 'static/assets/images/debpay Placeholder Segun K.svg' %}" alt="user image" id="userImg">
                     </div>
                     <p>“Since we started using mydebtors, we have recovered close to 80% of the money owed us and we are
                         so happy about that.”</p>
@@ -103,7 +93,7 @@
                 </div>
                 <div class="container4_div-box2">
                     <div class="Userimg">
-                        <img src="{% static "assets/images/debpay Placeholder Amaka M.svg" %}" alt="user image">
+                        <img src="{% static 'static/assets/images/debpay Placeholder Amaka M.svg' %}" alt="user image" id="userImg">
                     </div>
                     <p>“Mydebtors have made it easier for us to manage and track defaulters. This has helped us save
                         time and resources in getting our money”</p>
@@ -111,7 +101,7 @@
                 </div>
                 <div class="container4_div-box3">
                     <div class="Userimg">
-                        <img src="{% static "assets/images/debpay Placeholder Yakubu U.svg" %}" alt="user image">
+                        <img src="{% static 'static/assets/images/debpay Placeholder Yakubu U.svg' %}" alt="user image" id="userImg">
                     </div>
                     <p>“We have several difficult debts to track and MyDebtors has systemized this in a very
                         professional way. It is more effective than our efforts and costs less.”</p>
@@ -129,43 +119,66 @@
                     <button class="btn-2">Get Started Now</button>
                 </div>
                 <div class="container5-box2">
-                    <img src="{% static "assets/images/debpay logo Mask group.svg" %}" alt="Debpay logo">
+                    <img src="{% static 'static/assets/images/debpay logo Mask group.svg' %}" alt="Debpay logo" id="bottom_logo">
                 </div>
             </div>
         </section>
     </main>
 
-{% endblock content%}
-{% comment %} =======
-{% load socialaccount %}
-{%for message in messages%}
-<h4>{{message}}</h4>
-{%endfor%}
-    <h1> Welcome 
-        {% if user.is_authenticated %}
-        {{user.School_name}} ({{user.School_id}}) {{user.email}}
-    </h1>{{user.school_profile.locality}}
-    <br>
-    <img src="{{user.school_profile.profile_pics.url}}" alt="pol" width='100px' height='100px'>
-    <a href='logout'> Logout </a> || <a href='{% url "password_change" %}'> Change Password</a>
-    || <a href='{% url "dashboard" %}'> Dashboard</a>
+    <footer>
+        <div class="footer_container">
+            <div class="footer_container-box1">
+                <img src="{% static 'static/assets/images/Debpay logo mask group with text.svg' %}" alt="debpay logo">
+            </div>
+            <div class="footer_container-box2">
+                <p>RESOURCES</p>
+                <a href="#">Technical Support</a>
+                <a href="#">Purchasing & licensing</a>
+                <a href="#">Debpay Community</a>
+                <a href="#">FAQs</a>
+            </div>
+            <div class="footer_container-box3">
+                <p>COMPANY</p>
+                <a href="#">Legals</a>
+                <a href="#">My Account</a>
+                <a href="#">Help and support</a>
+            </div>
+            <div class="footer_container-box4">
+                <p>ABOUT DEBPAY</p>
+                <a href="#">Location</a>
+                <a href="#">Events</a>
+                <a href="#">Blogs</a>
+                <a href="#">Contact Us</a>
+            </div>
+            <div id="icons1">
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+        </div>
+        <hr>
+        <div id="page_bottom">
+            <div id="page_bottom1">
+                <a href="#">Impressum</a>
+                <a href="Privacypolicy.html">Privacy policy</a>
+                <a href="#">Terms and conditions</a>
+            </div>
+            <div id="page_bottom2">
+                <a href="#"><i class="fa-solid fa-globe"></i> English <i class="fa-solid fa-caret-down"></i></a>
+                <a href="#">Copyright&copy;debpay2022</a>
+            </div>
+            <div id="icons2">
+                <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
 
-    || <a href='{% url "School_Profile_Update" %}'> Update profile data </a>
-    {%else%}
-    , Kindly register
-     <a href='register'> Sign up</a>
-    || <a href='login'> Sign in</a> 
-    || <a href="{% provider_login_url 'google' %}">Login with Google</a>
-
-{%endif%} {% endcomment %}
+</body>
+</html>
 
 
-{% comment %} {% if user.is_authenticated %}
-<p>Welcome you are logged in as {{ user.username }}
-
-{% else %}
-
-
-{% endif %} {% endcomment %}
-{% comment %} >>>>>>> 2a534e8dbd9300dd1f36c38cef76cd6b8fe877c5 {% endcomment %}
-
+{%endblock%}
