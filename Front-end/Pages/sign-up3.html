@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/sign-up.css" />
+    <link rel="stylesheet" href="../css/sign-up3.css" />
   </head>
   <body>
     <!-- image for desktop screen, invisible for mobile screen -->
@@ -16,26 +16,12 @@
       <img src="../assets/login-and-signup-image.jpg" alt="" />
     </div>
     <main>
-      <img src="../assets/logo-blue.svg" alt="Debpay logo">
-      <h1>Welcome!</h1>
-      <div class="sign-in-options-container">
-        <div class="sign-in-options-google">
-          <img src="../assets/google-icon.svg" alt="">
-          <span>Sign in with Google</span>
-        </div>
-        <div class="sign-in-options-fb">
-          <img src="../assets/fb-icon.svg" alt="">
-          <span>Sign in with Facebook</span>
-        </div>
-      </div>
-
-      <div class="or">Or</div>
-
-      <p>Create a new account</p>
+      <img src="../assets/logo-blue.svg" class="debpay-logo" alt="Debpay logo">
+      
       <form action="">
         <div>
-          <label>Full Name</label>
-          <input class="name" type="text" name="fname" placeholder="Dave Shepherd" />
+          <label>User Name</label>
+          <input class="name" type="text" name="username" placeholder="Dave Shepherd" />
         </div>
         <div>
           <label>Email address</label>
@@ -47,10 +33,28 @@
           />
         </div>
         <div>
+          <label>Phone number</label>
+          <input
+            type="number"
+            name="phone number"
+            placeholder="08023784997"
+            class="number"
+          />
+        </div>
+        <div>
           <label>Password</label>
           <input
             type="password"
             name="password"
+            placeholder="*******"
+            class="password"
+          />
+        </div>
+        <div>
+          <label>Confirm Password</label>
+          <input
+            type="password"
+            name="confirm password"
             placeholder="*******"
             class="password"
           />
