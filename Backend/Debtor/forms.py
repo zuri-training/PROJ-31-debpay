@@ -42,39 +42,39 @@ class DebtorUpdateForm(forms.ModelForm):
         exclude = ['school', ]   
         
 #School registration form
+# class SchoolRegForm(forms.Form):
+#     School_name = forms.CharField(max_length=100)
+#     School_owner = forms.CharField(max_length=255)
+#     Reg_number = forms.CharField(max_length=255)
+#     username = forms.CharField(max_length=255)
+#     email = forms.EmailField(max_length=255)
+#     Registered_session = forms.CharField(max_length=255) 
+#     current_address = forms.CharField(max_length=255)  
+#     Permanent_address = forms.CharField(max_length=255)         
+#     Number_of_teachers = forms.IntegerField()
+#     Phone_numnber = forms.IntegerField()
+#     Number_of_students = forms.IntegerField()
+#     Founded = forms.CharField(max_length=100)
+#     Session = forms.CharField(max_length=100)
+#     Password = forms.CharField(widget=forms.PasswordInput, min_length=5, max_length=20)
+#     Confirm_password = forms.CharField(widget=forms.PasswordInput, min_length=5, max_length=20)
+
+
 class SchoolRegForm(forms.Form):
-<<<<<<< HEAD
     School_name = forms.CharField(max_length=100)
-    School_owner = forms.CharField(max_length=255)
-    Reg_number = forms.CharField(max_length=255)
     username = forms.CharField(max_length=255)
     email = forms.EmailField(max_length=255)
-    Registered_session = forms.CharField(max_length=255) 
-    current_address = forms.CharField(max_length=255)  
-    Permanent_address = forms.CharField(max_length=255)         
-    Number_of_teachers = forms.IntegerField()
-    Phone_numnber = forms.IntegerField()
-    Number_of_students = forms.IntegerField()
-    Founded = forms.CharField(max_length=100)
-    Session = forms.CharField(max_length=100)
     Password = forms.CharField(widget=forms.PasswordInput, min_length=5, max_length=20)
     Confirm_password = forms.CharField(widget=forms.PasswordInput, min_length=5, max_length=20)
-=======
-    # School_name = forms.CharField(max_length=100)
-    # School_owner = forms.CharField(max_length=255)
-    # Reg_number = forms.CharField(max_length=255)
-    username = forms.CharField(max_length=255, widget=forms.TextInput(attrs={"class": "name", "name":"fname", "placeholder":"Dave Shepherd"}))
-    email = forms.EmailField(max_length=255, widget=forms.EmailInput(attrs={"class": "email", "name":"email", "placeholder":"email@example.com"}))
-    Password = forms.CharField(widget=forms.PasswordInput(attrs={"placeholder":"*******", "class": "password", "name":"password",}), min_length=5, max_length=20)
-    # Confirm_password = forms.CharField(widget=forms.PasswordInput, min_length=5, max_length=20)
->>>>>>> 0f624ea8adbf00d0dce8075b11626fb684bf595b
+ 
+
     
     #Validations
-    # def clean_School_name(self):
-    #     School_name= self.cleaned_data['School_name']
-    #     if School.objects.filter(School_name__iexact=School_name).exists():
-    #         raise forms.ValidationError("School already exists")
-    #     return School_name
+    def clean_School_name(self):
+        School_name= self.cleaned_data['School_name']
+        if School.objects.filter(School_name__iexact=School_name).exists():
+            raise forms.ValidationError("School already exists")
+        return School_name
     
     def clean_email(self):
         email= self.cleaned_data['email']
@@ -82,18 +82,6 @@ class SchoolRegForm(forms.Form):
             raise forms.ValidationError("Email already exists")
         return email
     
-    # def clean_School_owner(self):
-    #     School_owner= self.cleaned_data['School_owner']
-    #     if School.objects.filter(School_owner__iexact=School_owner).exists():
-    #         raise forms.ValidationError("School_owner already exists")
-    #     return School_owner
-    
-    # def clean_Reg_number (self):
-    #     Reg_number = self.cleaned_data['Reg_number']
-    #     if School.objects.filter(Reg_number__iexact=Reg_number).exists():
-    #         raise forms.ValidationError("Reg_number already exists")
-    #     return Reg_number  
-                      
     def clean_username(self):
          username  = self.cleaned_data['username']
          if School.objects.filter(username__iexact=username).exists():
@@ -108,14 +96,18 @@ class SchoolProfileForm(forms.ModelForm):
             exclude = ['school']
 
 
-#School update form
 class SchoolUpdateForm(forms.ModelForm):
     class Meta:
         model = School
-        fields = ['School_name','username', 'current_address', 
-                  'Number_of_teachers' , 'Founded', 'Number_of_students', 
-                  'current_address', 'Permanent_address' ,'Phone_numnber',
-                  'Reg_number','School_owner', 'email', 'Registered_session', ]
+        fields = ['School_name','username', 'email',  ]
+# #School update form
+# class SchoolUpdateForm(forms.ModelForm):
+#     class Meta:
+#         model = School
+#         fields = ['School_name','username', 'current_address', 
+#                   'Number_of_teachers' , 'Founded', 'Number_of_students', 
+#                   'current_address', 'Permanent_address' ,'Phone_numnber',
+#                   'Reg_number','School_owner', 'email', 'Registered_session', ]
        
     
         
@@ -124,7 +116,7 @@ class SchoolProfileUpdateForm(forms.ModelForm):
     class Meta:
             model = School_Profile
             fields = "__all__"  
-            exclude = ['school']
+            exclude = ['school',]
             
             
             
@@ -156,4 +148,22 @@ class MeetingCommentForm(forms.ModelForm):
 
         
 
-  
+# class School_info_twoForm(forms.ModelForm):
+#     class Meta:
+#             model = School_info_two
+#             fields = "__all__"  
+#             exclude = ['school',]
+            
+# class School_owner_infoForm(forms.ModelForm):
+#     class Meta:
+#             model = School_owner_info
+#             fields = "__all__"  
+#             exclude = ['school',]
+            
+            
+# class School_info_oneForm(forms.ModelForm):
+#     class Meta:
+#             model = School_info_one
+#             fields = "__all__"  
+#             exclude = ['school',]
+            

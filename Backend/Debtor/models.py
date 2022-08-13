@@ -44,6 +44,7 @@ class School (AbstractUser):
     def __str__(self):
         return self.School_name
 
+
 class UserVerification(models.Model):
     name = models.OneToOneField(School, on_delete=models.CASCADE)
     created = models.DateTimeField(auto_now_add = True)
@@ -53,16 +54,21 @@ class UserVerification(models.Model):
         
     def __str__(self):
         return f' {self.name} user verification'
+    
+    
+    
 class School_Profile (models.Model):
     school = models.OneToOneField(School, on_delete=models.CASCADE)
     profile_pics = models.ImageField(default='fixed.png', upload_to='profile_pics')
     School_owner_pics = models.ImageField(default='fixed.jpg', upload_to='school_owner_pics', null=True)
     locality = models.ForeignKey(Locality, on_delete=models.CASCADE,  blank=True, null=True)
     
-
-
     def __str__(self):
         return f'{self.school.School_name} Profile'
+    
+
+
+
 
 class Debtor (models.Model):
     student_name = models.CharField(max_length=100)

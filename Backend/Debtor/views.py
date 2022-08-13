@@ -39,14 +39,14 @@ def help_view(request):
 
 
 def School_Register(request):
-
-    # form = SchoolRegForm()
+    page = 'First'
+    form = SchoolRegForm()
     if request.method == 'POST':
         form = SchoolRegForm(request.POST)
         email = request.POST['email']
         username = request.POST['username']
         password1 = request.POST['Password']
-<<<<<<< HEAD
+
         password2 = request.POST['Confirm_password']
         Registered_session = request.POST['Registered_session']
         Permanent_address  = request.POST['Permanent_address']
@@ -66,29 +66,125 @@ def School_Register(request):
                                                     Permanent_address=Permanent_address,Founded=Founded, Number_of_teachers =  Number_of_teachers ,
                                                          current_address=current_address ,Phone_numnber= Phone_numnber,
                                                           Number_of_students= Number_of_students, Session=Session
-=======
-       
+
+)
         
         if form.is_valid():
                 user = School.objects.create_user(email=email, password=password1, username=username
->>>>>>> 0f624ea8adbf00d0dce8075b11626fb684bf595b
+
                         )
                 user.is_active = False
                 user.save()
                 #auth.login(request,user)
-                login(request, user, backend='django.contrib.auth.backends.ModelBackend')
+                # login(request, user, backend='django.contrib.auth.backends.ModelBackend')
                 messages.success(request, 'School created successfully, kindly wait till the admin verify your details')
-                return redirect('/')
+                return redirect('School_One')
         else:
             messages.error(request, 'password mismatch')
     else:
         form = SchoolRegForm()
-    context ={'form':form}
+    context ={'form':form, 'page':page}
     return render(request, 'Debtor/School_reg.html', context)
 
 
 
-   
+# def School_Register(request):
+#     page = 'First'
+#     form = SchoolRegForm()
+#     if request.method == 'POST':
+#         form = SchoolRegForm(request.POST)
+#         email = request.POST['email']
+#         username = request.POST['username']
+#         password1 = request.POST['Password']
+#         password2 = request.POST['Confirm_password']
+       
+
+
+#         if form.is_valid():
+#             if password1 == password2:
+#                 user = School.objects.create_user(email=email, password=password1, School_name=School_name, 
+#                                                   username=username, 
+
+# )
+        
+#         if form.is_valid():
+#                 user = School.objects.create_user(email=email, password=password1, username=username
+
+#                         )
+#                 user.is_active = False
+#                 user.save()
+#                 #auth.login(request,user)
+#                 login(request, user, backend='django.contrib.auth.backends.ModelBackend')
+#                 messages.success(request, 'School created successfully, kindly wait till the admin verify your details')
+#                 return redirect('School_One')
+#         else:
+#             messages.error(request, 'password mismatch')
+#     else:
+#         form = SchoolRegForm()
+#     context ={'form':form, 'page':page}
+#     return render(request, 'Debtor/School_reg.html', context)
+
+
+
+# def School_One(request):
+#     page = 'Second'
+#     form = School_info_oneForm()
+#     if request.method == 'POST':
+#         form = School_info_oneForm(request.POST, request.FILES)
+#         if form.is_valid():
+#             room = form.save(commit=False)
+#             room.school = request.user
+#             room.save()
+#             return redirect('School_Two')
+#     else:
+#         form = School_info_oneForm()
+#     context = {'form':form, 'page':page}
+#     return render(request, 'Debtor/School_reg.html', context)
+
+
+# def School_Two(request):
+#     page = 'Third'
+#     form = School_info_twoForm()
+#     if request.method == 'POST':
+#         form = School_info_twoForm(request.POST, request.FILES)
+#         if form.is_valid():
+#             room = form.save(commit=False)
+#             room.school = request.user
+#             room.save()
+#             return redirect('School_Three')
+#     else:
+#         form = School_info_twoForm()
+#     context = {'form':form, 'page':page}
+#     return render(request, 'Debtor/School_reg.html', context)
+
+
+# def School_Three(request):
+#     page = 'Fourth'
+#     form = School_owner_infoForm()
+#     if request.method == 'POST':
+#         form = School_owner_infoForm(request.POST, request.FILES)
+#         if form.is_valid():
+#             room = form.save(commit=False)
+#             room.school = request.user
+#             room.save()
+#             return redirect('/')
+#     else:
+#         form = School_owner_infoForm()
+#     context = {'form':form, 'page':page}
+#     return render(request, 'Debtor/School_reg.html', context)
+
+
+def help(request):
+    return render(request, 'Debtor/help-centre.html')
+
+def About_us(request):
+    return render(request, 'Debtor/About-us.html')
+
+def FAQ(request):
+    return render(request, 'Debtor/FAQ.html')
+
+def Contact(request):
+    return render(request, 'Debtor/contact_us.html')
 
 #Logout view for school
 def School_Logout(request):
@@ -99,16 +195,14 @@ def land(request):
     return render(request, 'Debtor/home.html')
 
 #Privacy & Policy page view
-def privacy(request):
+def Privacy(request):
     return render(request, 'Privacypolicy.html')
 
+
 #School login view
-def School_Login(request):
-    if request.method == 'GET':
-        if request.user.is_authenticated:
-            messages.success(request, 'successful logged in')
-            return redirect ('dashboard')
-        return render(request, 'registration/login.html')
+def Auth_School(request):
+    if request.user.is_authenticated:
+        return redirect ('/')
     else:
         if request.method == 'POST':
             email = request.POST['email']
@@ -124,7 +218,7 @@ def School_Login(request):
             else:
                 messages.error(request, 'user does not exist')
 
-        return render(request, 'registration/login.html')
+        return render(request, 'Debtor/login.html')
             
 
 #School Profile update view
@@ -144,7 +238,7 @@ def School_Profile_Update(request):
     context = {'p_form': p_form, 'u_form':u_form}
     return render(request,'Debtor/Profile_Update.html', context ) 
     
-<<<<<<< HEAD
+
        
 # def dashboard(request):
 #     run = request.GET.get('test') if request.GET.get('test') !=None else''
@@ -165,9 +259,8 @@ def School_Profile_Update(request):
 
 def dash (request):
     page ='dash'
-=======
 def dashboard(request):
->>>>>>> 0f624ea8adbf00d0dce8075b11626fb684bf595b
+
     run = request.GET.get('test') if request.GET.get('test') !=None else''
     fork = Post.objects.filter(Q(title__icontains=run)|
                                Q(body__icontains=run))

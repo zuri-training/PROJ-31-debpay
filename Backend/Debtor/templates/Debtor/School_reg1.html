@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{%static 'static/css/sign-up.css'%}" />
+  </head>
+  <body>
+    <!-- image for desktop screen, invisible for mobile screen -->
+    <div class="aside-img-container">
+      <img src="../assets/login-and-signup-image.jpg" alt="" />
+    </div>
+    <main>
+      <h1>Welcome!</h1>
+      <div class="sign-in-options-container">
+        <div class="sign-in-options-google">
+          <img src="../assets/google-icon.svg" alt="">
+          <span>Sign in with Google</span>
+        </div>
+        <div class="sign-in-options-fb">
+          <img src="../assets/fb-icon.svg" alt="">
+          <span>Sign in with Facebook</span>
+        </div>
+      </div>
+
+      <div class="or">Or</div>
+
+      <p>Create a new account</p>
+      <form action="">
+        <div>
+          <label>Full Name</label>
+          <input class="name" type="text" name="fname" placeholder="Dave Shepherd" />
+        </div>
+        <div>
+          <label>Email address</label>
+          <input
+            type="email"
+            name="email"
+            placeholder="email@example.com"
+            class="email"
+          />
+        </div>
+        <div>
+          <label>Password</label>
+          <input
+            type="password"
+            name="password"
+            placeholder="*******"
+            class="password"
+          />
+        </div>
+        <div></div>
+        <label
+          ><input type="checkbox" name="tos" /> I have read and agreed to the
+          <span class="tos--blue">terms and conditions</span>
+        </label>
+        <p>Already have an account? <a href=" {%url 'Auth_School' %} ">Login</a></p>
+        <div class="button-container">
+          <button type="submit">Register</button>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>

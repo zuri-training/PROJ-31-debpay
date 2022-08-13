@@ -6,15 +6,25 @@ urlpatterns = [
     path('help/', help_view, name='help'),
     # path('debtor_reg/', debtor_form_view, name='debtor_reg'),
     
-    
+    path('help', views.help, name='help'),
+    path('Privacy', views.Privacy, name='Privacy'),
+    path('About_us', views.About_us, name='About_us'),
+    path('FAQ', views.FAQ, name='FAQ'),
     #Default authentication home
     path('', views.land, name='land'), 
-
+    
+    # path('School_One', views.School_One, name='School_One'),
+    # path('School_Two', views.School_Two, name='School_Two'),
+    # path('School_Three', views.School_Three, name='School_Three'),
+    # path('School_login', views.School_Login, name='School_login'),
+    # path('School_login', views.School_Login, name='School_login'),
+    # path('privacy&policy', views.privacy, name='p&p'),
     path('dashboard', views.dashboard, name='dashboard'),
     path('register', views.School_Register, name='register'),
-    path('privacy&policy', views.privacy, name='p&p'),
+    path('Contact', views.Contact, name='Contact'),
+
     path('logout', views.School_Logout, name='logout'),
-    path('login', views.School_Login, name='login'),
+    path('Auth_School', views.Auth_School, name='Auth_School'),
     path('post_create', views.CreatePost, name='post_create'),
     path('debtor', views.debtor_reg, name='debtor_reg'),
     path('list/<str:pk>', views.post_list, name='list'),
@@ -26,7 +36,7 @@ urlpatterns = [
     path('debtor_delete/<str:pk>', views.debtor_delete, name='debtor_delete'),
     path('debtor_all', views.debtor_all, name="debtor_all"),
     path('debtor_upd/<str:pk>', views.debtor_upd, name='debtor_upd'),
-    # path('accounts/', include('django.contrib.auth.urls')),#Django built-in authentication system
+    path('accounts/', include('django.contrib.auth.urls')),#Django built-in authentication system
     path('School_Profile_Update', views.School_Profile_Update, name='School_Profile_Update'), 
     path('ReplyComment/<str:pk>', views.ReplyComment, name="ReplyComment"),
     path('AllSchool', views.AllSchool, name='AllSchool'),
