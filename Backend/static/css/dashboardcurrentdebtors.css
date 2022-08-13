@@ -1,0 +1,588 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+img#ellipse {
+    position: relative;
+    right: 0.8vw;
+    top: 0.5vh;
+}
+
+img#not {
+    position: relative;
+    top: 1vh;
+}
+
+img#search {
+    position: relative;
+    right: 3vw;
+    top: 0.5vw;
+}
+
+.logo #top{
+    width: ;
+    position: relative;
+    bottom: 3vw;
+}
+
+section.logo {
+    margin-bottom: 1em;
+    padding-bottom: C:\Users\user\Desktop\map\Project-31\VIEW DEBT\dashboardcurrentdebtors.html;
+    height: 7vh;
+}
+
+h1 {
+    display: inline-block;
+}
+
+caption {
+    /* display: inline-block; */
+    text-align: left;
+    line-height: 6em;
+    font-size: 0.9rem;
+    color: #828282;
+}
+
+button {
+    background-color: #007EA7;
+    margin-top: 2.5em;
+    padding: 0.5em;
+    font-size: 1rem;
+    width: 15.5em;
+    border: none;
+}
+
+caption button {
+    margin-left: 32em;
+    padding: 0.5em;
+    width: 9em;
+    font-family: 'Josefin Sans';
+}
+
+tr:nth-child(even) {
+    background-color: #FAFAFA;
+}
+
+tr:hover {
+    background-color: #D1F2FF;
+}
+
+
+td img {
+    margin-left: 2vw;
+}
+
+#deb {position: relative;bottom: 14vw;width: 10.5vw;}
+
+.up img{
+    position: relative;
+    top: 0.2em;
+    left: 1em;
+}
+
+.caption img {
+    position: relative;
+    top: 0.2em;
+    left: 1em;
+}
+
+table {
+    width: 90%;
+    margin: 0vw auto;
+    /* border: 1px solid black; */
+    box-shadow: 0px 0px 26px 0px lightgrey;
+}
+
+th,td {
+    padding: 0.8em;
+    text-align: center;
+    border-collapse: collapse;
+    /* border-bottom: 1px solid #ddd; */
+}
+
+th, button {
+    color: white;
+}
+
+
+button.up {
+    padding: 1em;
+    margin-left: 3.8vw;
+    font-family: 'Josefin Sans';
+}
+
+.head{
+    background-color: #007EA7;
+}
+
+input[type="text"] {
+    width: 62vw;
+    padding: 1em;
+    margin-bottom: 1em;
+    border-radius: 1em;
+    border: 1px solid lightgray;
+}
+section#REST {}
+
+.DASH {
+    padding: 2em 0em 0 0em;
+}
+
+div#log {
+    margin-top: 25vh;
+}
+
+
+body {
+    padding: 2em 2em;
+    font-size: 1rem;
+    font: 'Josefin Sans';
+}
+
+span {}
+
+.top {
+    display: flex;
+    padding: 2em 0em 1em;
+}
+
+#pic img {
+    border-radius: 50%;
+    outline: 1px solid #007EA7;
+    margin-right: 1em;
+}
+
+.hide{
+    visibility: hidden;
+}
+
+.DASH img{
+    width: 1.2vw;
+}
+
+.first{
+    margin-bottom: 5vw;
+}
+
+footer{
+    /* margin-top: 26vh; */
+}
+
+
+
+.container{
+    display: grid;
+    grid-template-areas:
+        "nav body body body";
+    grid-template-rows: 100%;
+    grid-template-columns: 20vw 25vw 25vw 25vw;
+}
+
+.nav{
+    grid-area: nav;
+    /* border-right: 1px solid darkgrey; */
+    box-shadow: 21px 0px 16px -20px lightgrey;
+    height: 100%;
+}
+
+
+.body{
+    grid-area: body;
+    padding: 1em;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+@media (max-width: 1200px) {
+    #pic img {
+        border-radius: 50%;
+        outline: 1px solid #007EA7;
+        margin-right: 1em;
+        margin-bottom: 1em;
+    }
+
+    body{
+        overflow:auto;
+    }
+    .top {
+        display: flex;
+        flex-direction: column;
+        padding: 2em 0em 1em;
+    }
+
+    caption button {
+        margin-left: 25em;
+        padding: 0.5em;
+        width: 9em;
+    }
+
+    caption {
+        text-align: left;
+        line-height: 6em;
+        font-size: 0.5rem;
+        color: #828282;
+    }
+}
+
+
+@media (max-width: 1024px) {
+    caption button {
+        margin-left: 24em;
+        padding: 0.5em;
+        width: 9em;
+    }
+    
+}
+@media (max-width: 912px) {
+    caption button {
+        margin-left: 21em;
+        padding: 0.5em;
+        width: 7em;
+    }
+    
+}
+
+@media (max-width: 834px) {
+    .container{
+        display: grid;
+        grid-template-areas:
+            "nav nav nav nav"
+            " body body body body";
+        grid-template-rows: 10vh 100vh;
+        grid-template-columns: 20vw 25vw 25vw 25vw;
+    }
+
+    .nav{
+        grid-area: nav;
+        /* border-right: 1px solid darkgrey; */
+        box-shadow: 21px 0px 16px -20px lightgrey;
+        height: 100%;
+        /* overflow: hidden; */
+    }
+
+    .hidden{
+        display: none;
+    }
+
+    .hide{
+        visibility: visible;;
+    }
+
+    input[type="text"] {
+        width: 76vw;
+        padding: 1em;
+        margin-bottom: 1em;
+        border-radius: 1em;
+        border: 1px solid lightgray;
+    }
+
+                      {
+        padding: 2em 2em;
+        font-size: 0.7rem;
+        font: 'Josefin Sans';
+    }
+
+    .nav {
+        grid-area: nav;
+        /* border-right: 1px solid darkgrey; */
+        box-shadow: 0px 0px ;
+        height: 100%;
+        /* overflow: hidden; */
+        display: flex;
+        gap: 75vw;
+    }
+
+    .hide {
+        visibility: visible;
+        padding-top: 4vh;
+    }
+
+    caption button {
+        margin-left: 28em;
+        padding: 0.5em;
+        width: 7em;
+    }
+
+    button.up {
+        width: 12em;
+        padding: 1em;
+        margin-left: 3.8vw;
+        font-family: 'Josefin Sans';
+    }
+
+    .search img {
+        position: relative;
+        right: 5vw;
+        top: 0.5vh;
+        width: 2vw;
+    }
+
+    caption button {
+        margin-left: 27em;
+        padding: 0.5em;
+        width: 7em;
+    }
+
+    @media (max-width: 540px) {
+        caption button {
+            margin-left: 15em;
+            padding: 0.5em;
+            width: 7em;
+        }
+
+        .nav {
+            grid-area: nav;
+            /* border-right: 1px solid darkgrey; */
+            box-shadow: 0px 0px;
+            height: 100%;
+            /* overflow: hidden; */
+            display: flex;
+            gap: 62vw;
+        }
+
+        table {
+            width: 100%;
+            margin: 0vw auto;
+            /* border: 1px solid black; */
+            box-shadow: 0px 0px 26px 0px lightgrey;
+        }
+
+        body {
+            padding: 2em 1em;
+            font-size: 1rem;
+            font: 'Josefin Sans';
+        }
+    }
+
+
+
+    
+
+
+    
+
+    
+    @media (max-width: 500px) {
+        caption button {
+            margin-left: 14em;
+            padding: 0.5em;
+            width: 7em;
+            font-size: 0.8rem;
+        }
+
+        button.up {
+            width: 12em;
+            padding: 1em;
+            margin-left: 3.8vw;
+            font-family: 'Josefin Sans';
+            font-size: 0.8rem;
+        }
+
+        input[type="text"] {
+            width: 87vw;
+            padding: 0.5em;
+            margin-bottom: 1em;
+            border-radius: 1em;
+            border: 1px solid lightgray;
+        }
+
+        .nav {
+            grid-area: nav;
+            /* border-right: 1px solid darkgrey; */
+            box-shadow: 0px 0px;
+            height: 100%;
+            /* overflow: hidden; */
+            display: flex;
+            gap: 62vw;
+        }
+        
+    }
+
+    @media (max-width: 414px) {
+        caption button {
+            margin-left: 9em;
+            padding: 0.5em;
+            width: 7em;
+            font-size: 0.8rem;
+        }
+
+        .nav {
+            grid-area: nav;
+            /* border-right: 1px solid darkgrey; */
+            box-shadow: 0px 0px;
+            height: 100%;
+            /* overflow: hidden; */
+            display: flex;
+            gap: 55vw;
+        }
+
+        input[type="text"] {
+            width: 83vw;
+            padding: 0.5em;
+            margin-bottom: 1em;
+            border-radius: 1em;
+            border: 1px solid lightgray;
+        }
+
+        .search img {
+            position: relative;
+            right: 7vw;
+            top: 0.5vh;
+            width: 3vw;
+        }
+
+        th, td {
+            padding: 0.8em;
+            text-align: center;
+            border-collapse: collapse;
+            /* border-bottom: 1px solid #ddd; */
+            font-size: 0.7rem;
+        }
+
+        table {
+            width: 100%;
+            margin: 0vw auto;
+            /* border: 1px solid black; */
+            box-shadow: 0px 0px 26px 0px lightgrey;
+        }
+
+        body {
+            padding: 2em 1em;
+            font-size: 0.7rem;
+            font: 'Josefin Sans';
+        }
+
+        .up img {
+            position: relative;
+            top: 0.2em;
+            left: 0em;
+        }
+
+        button.up {
+            width: 12em;
+            padding: 1em;
+            margin-left: 3vw;
+            font-family: 'Josefin Sans';
+            font-size: 0.8rem;
+        }
+
+       
+        
+    }
+    
+    @media (max-width: 412px) {
+            caption button {
+                margin-left: 11.5em;
+                padding: 0.5em;
+                width: 7em;
+                font-size: 0.8rem;
+            }
+
+            button.up {
+                width: 12em;
+                padding: 1em;
+                margin-left: 3vw;
+                font-family: 'Josefin Sans';
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (MAX-WIDTH: 393PX) {
+            caption button {
+                margin-left: 10.5em;
+                padding: 0.5em;
+                width: 7em;
+                font-size: 0.8rem;
+            }
+        }
+
+    @media (max-width: 390px) {
+        th, td {
+            padding: 0.8em;
+            text-align: center;
+            border-collapse: collapse;
+            /* border-bottom: 1px solid #ddd; */
+            font-size: 0.67rem;
+        }
+
+        caption button {
+            margin-left: 10em;
+            padding: 0.5em;
+            width: 7em;
+            font-size: 0.8rem;
+        }
+        
+    }
+
+    @media (max-width: 375px) {
+
+        .nav {
+            grid-area: nav;
+            /* border-right: 1px solid darkgrey; */
+            box-shadow: 0px 0px;
+            height: 100%;
+            /* overflow: hidden; */
+            display: flex;
+            gap: 51vw;
+        }
+
+        .search img {
+            position: relative;
+            right: -80vw;
+            top: -5.5vh;
+            width: 3vw;
+        }
+
+        th, td {
+            padding: 0.8em;
+            text-align: center;
+            border-collapse: collapse;
+            /* border-bottom: 1px solid #ddd; */
+            font-size: 0.62rem;
+        }
+
+        body {
+            padding: 2em 1em;
+            font-size: 0.7rem;
+            font: 'Josefin Sans';
+        }
+
+        td img {
+            margin-left: 5vw;
+            width: 0.7vw;
+        }
+
+        button.up {
+            width: 12em;
+            padding: 1em;
+            margin-left: 2.8vw;
+            font-family: 'Josefin Sans';
+            font-size: 0.7rem;
+        }
+        
+        caption button {
+            margin-left: 9em;
+            padding: 0.5em;
+            width: 7em;
+            font-size: 0.8rem;
+        }
+
+        table {
+            width: 100%;
+            margin: 0vw auto;
+            /* border: 1px solid black; */
+            box-shadow: 0px 0px 26px 0px lightgrey;
+        }
+    }
+
+    @media (max-width: 360px) {
+
+        caption button {
+            margin-left: 8em;
+            padding: 0.5em;
+            width: 7em;
+            font-size: 0.8rem;
+        }
+        
+    }

@@ -1,0 +1,189 @@
+{%extends 'base.html' %}
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+{%block content %}
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=div, initial-scale=1.0">
+
+
+
+  <!--Google font links-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link rel="stylesheet" href="{% static 'static/css/contact_us.css'%} ">
+  <title>Contact Us</title>
+
+
+  <!--font awesome link-->
+  <script src="{% static 'https://kit.fontawesome.com/f44a167704.js' %}" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  {% comment %} <header>
+    <div id="headerContainer">
+
+      <!-- Logo and navigation menu -->
+      <div class="headerBox1">
+        <img src="{% static '../assets/images/Debpay logo mask group with text.svg' %}" alt="debpay logo">
+      </div>
+      <div class="headerBox2">
+        <nav>
+          <ul class="nav-menu">
+            <li><a href="landing_page.html">Home</a></li>
+            <li><a href="contact_us.html">Contact us</a></li>
+            <div class="dropdown">
+              <a href="#" class="dropbtn">More info <i class="fa-solid fa-angle-down"></i></a>
+              <div class="dropdown-content">
+                <a href="#">How MYDEBTORS work</a><br>
+                <hr>
+                <a href="FAQS.html">FAQs</a><br>
+                <hr>
+                <a href="#">Help</a><br>
+                <hr>
+                <a href="#">About Us</a>
+              </div>
+            </div>
+            <li><button class="login_btn">Login</button></li>
+            <li><button class="register_btn">Register</button></li>
+          </ul>
+        </nav>
+            <!-- Bar icon for navigation -->
+    <a href="javascript:void(0);" class="icon" onclick="headerBox2()">
+      <i onclick="myFunction(this)" class="fa fa-plus-circle">
+      </i>
+    </a>
+      </div>
+      <script type="module" src="{% static 'https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js' %}"></script>
+      <script nomodule src="{% static 'https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js' %}"></script>
+    </div>
+  </header> {% endcomment %}
+
+  <main>
+    <div class="back-to-home">
+      <a href="/">&larr;Back to Home</a>
+    </div>
+    <div class="content">
+      <h2>Leave us a message</h2>
+      <p>Don't hesitate to contact us about any issues so we can resolve them together. You can also leave us a message
+        below.</p>
+    </div>
+
+    <!-- contact box holding the details -->
+    <div class="contact-details">
+      <h4>Contact Us</h4>
+
+      <span class="icon">
+        <ion-icon name="location-outline"></ion-icon>
+      </span>
+      <span class="title">No.56, alone estate, Ikeja, Lagos state</span>
+      <span class="icon">
+        <ion-icon name="mail-outline"></ion-icon>
+      </span>
+      <span class="title">daveshepard@gmail.com </span>
+      <span class="icon">
+        <ion-icon name="call-outline"></ion-icon>
+      </span>
+      <span class="title">+234 803 407 8987</span>
+      <span class="icon">
+        <ion-icon name="call-outline"></ion-icon>
+      </span>
+      <span class="title">+234 902 567 1409</span>
+
+      <!-- social media icons -->
+      <div class="social">
+        <a href="#" class="fa fa-twitter"></a>
+        <a href="#" class="fa fa-instagram"></a>
+        <a href="#" class="fa fa-facebook"></a>
+        <a href="#" class="fa fa-whatsapp"></a>
+      </div>
+    </div>
+
+    <!-- div for the form input to contact us -->
+    <div class="container">
+      <form action="/action_page.php">
+        <label for="fname">Full Name</label>
+        <input type="text" id="fname" name="fullname" placeholder="Dave Shepard">
+
+        <label for="lname">Email Address</label>
+        <input type="text" id="email" name="email" placeholder="daveshepard@gmail.com">
+
+        <label for="lname">Type a Subject</label>
+        <input type="text" id="subject" name="subject" placeholder="Contend Request">
+
+        <label for="message">Type a Message</label>
+        <textarea id="message" name="message" style="height:150px"></textarea>
+
+        <input type="submit" value="Send Message">
+      </form>
+    </div>
+
+    <!-- new section for call info and buttons -->
+    <div class="group-call">
+      <div class="chat-us">
+        <h4>Chat with us live</h4>
+        <p>You can chat with us live on this website.<br>
+          You'll need an internet or mobile phone connection.</p>
+        <button class="btn_chat">START LIVE CHAT</button>
+      </div>
+
+      <div class="call-us">
+        <h4>Call us from any phone</h4>
+        <p>Reach us directly through our customer care lines without any call charges</p>
+        <button class="btn_call">CALL US</button>
+      </div>
+    </div>
+
+    <!-- the bottom of the page - footer -->
+    <footer>
+      <div class="footer_container">
+        <div class="footer_container-box1">
+          <img src="{% static '../assets/images/Debpay logo mask group with text.svg' %}" alt="debpay logo">
+        </div>
+        <div class="footer_container-box2">
+          <p>RESOURCES</p>
+          <a href="#">Technical Support</a>
+          <a href="#">Purchasing & licensing</a>
+          <a href="#">Debpay Community</a>
+          <a href="#">FAQs</a>
+        </div>
+        <div class="footer_container-box3">
+          <p>COMPANY</p>
+          <a href="#">Legals</a>
+          <a href="#">My Account</a>
+          <a href="#">Help and support</a>
+        </div>
+        <div class="footer_container-box4">
+          <p>ABOUT DEBPAY</p>
+          <a href="#">Location</a>
+          <a href="#">Events</a>
+          <a href="#">Blogs</a>
+          <a href="#">Contact Us</a>
+        </div>
+      </div>
+      <hr>
+      <div id="page_bottom">
+        <a href="#"><i class="fa-solid fa-globe"></i> English <i class="fa-solid fa-caret-down"></i></a>
+        <a href="Privacypolicy.html">Privacy policy</a>
+        <a href="#">Terms and conditions</a>
+        <a href="#">Impressum</a>
+        <a href="#">Copyright&copy;debpay2022</a>
+        <div id="icons">
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </footer>
+</body>
+
+</html>
+
+{%endblock%}

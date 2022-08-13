@@ -14,4 +14,4 @@ admin.site.register(Message)
 admin.site.register(UserVerification)
 admin.site.register(Meeting)
 admin.site.register(Meeting_Comment)
-admin.site.register(Meeting_Comment_Reply)
+

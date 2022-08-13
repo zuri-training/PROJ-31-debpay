@@ -22,9 +22,17 @@ class School (AbstractUser):
         alphabet = "123456efghij",
         primary_key = True
     )
-    Reg_number = models.CharField(max_length=255)         
+    Reg_number = models.CharField(max_length=255)  
+    Registered_session = models.CharField(max_length=255, null=True)  
+    current_address = models.CharField(max_length=255, null=True)  
+    Permanent_address = models.CharField(max_length=255, null=True)         
     username = models.CharField(max_length=100)
     email = models.EmailField(max_length=255, unique=True)
+    Number_of_teachers = models.IntegerField(null=True)
+    Phone_numnber = models.IntegerField(null=True)
+    Number_of_students = models.IntegerField(null=True)
+    Founded = models.CharField(max_length=100, null=True)
+    Session = models.CharField(max_length=100, null=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     
@@ -36,6 +44,7 @@ class School (AbstractUser):
     def __str__(self):
         return self.School_name
 
+
 class UserVerification(models.Model):
     name = models.OneToOneField(School, on_delete=models.CASCADE)
     created = models.DateTimeField(auto_now_add = True)
@@ -45,16 +54,21 @@ class UserVerification(models.Model):
         
     def __str__(self):
         return f' {self.name} user verification'
+    
+    
+    
 class School_Profile (models.Model):
- 
     school = models.OneToOneField(School, on_delete=models.CASCADE)
     profile_pics = models.ImageField(default='fixed.png', upload_to='profile_pics')
+    School_owner_pics = models.ImageField(default='fixed.jpg', upload_to='school_owner_pics', null=True)
     locality = models.ForeignKey(Locality, on_delete=models.CASCADE,  blank=True, null=True)
-    debtor = models.ManyToManyField('Debtor', blank=True)
-
-
+    
     def __str__(self):
         return f'{self.school.School_name} Profile'
+    
+
+
+
 
 class Debtor (models.Model):
     student_name = models.CharField(max_length=100)
@@ -64,12 +78,15 @@ class Debtor (models.Model):
     sponsor_relationship = models.CharField(max_length=50)
     sponsor_name = models.CharField(max_length=255)
     sponsor_location = models.CharField(max_length=255)
-    debtor_image = models.ImageField(upload_to='debtors pics',default='fixed.jpeg', null=True)
+    debtor_image = models.ImageField(upload_to='debtors pics',default='fixed.jpg', null=True)
     debt = models.IntegerField()
     student_class =models.CharField(max_length=50)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
-
+    class Meta:
+        ordering = ['-updated', ]
+        
+        
     def __str__(self):
         return self.student_name
 

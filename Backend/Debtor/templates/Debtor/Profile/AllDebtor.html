@@ -5,24 +5,46 @@ img{
 }
 
 </style>
-<h1> All Debtors </h1>
-<h3> The number of the debtors in this world is {{total_debtor}}</h3>
+<aside>
+    <h4> <a href= "{% url 'debtor_reg' %}">Add Debtor </a></h4>
+    <div>
+<h1> Current Debtors </h1>
+    </div>
+    <div>
+        <h3> Filter </h3>
 <form>
 {{debtor_filter.form}}
+<button type='submit'> Search </button>
 </form>
+</div>
+</aside>
 <hr>
-{%for debtor in debtor %}
-    <div>
-        {%if debtor.debtor_image%}
-        <img src="{{debtor.debtor_image.url}}" alt="debtor">
-        {%endif%}
-    
-    <h1> <a href=" {% url 'each_debtor' debtor.id %} "> Student name: {{debtor.student_name}} </a> </h1>
-    <h3> Student id: {{debtor.student_id}} </h3>
-    <h3> Student Class:{{debtor.student_class}} </h3>
-    {% if request.user == debtor.school %}
-    <a href=" {%url 'debtor_upd' debtor.id %} "> Update debtor</a>
-    <a href=" {%url 'debtor_delete' debtor.id %} "> Delete debtor</a>
-    {% endif %}
-    </div> <hr>
-    {%endfor%}
+
+{%if debtor %}
+
+
+    <table>
+        <tr>
+            <th> Student id </th>
+            <th> Student name  </th>
+            <th> Amount </th>
+            <th> Update </th>
+            <th> Delete </th>
+
+        </tr>
+        {%for debtor in debtor %}
+        <tr>
+        <td> {{debtor.student_id}} </td>
+        <td> <a href=" {% url 'each_debtor' debtor.id %} "> {{debtor.student_name}} </a> </td>
+        <td> {{debtor.debt}} </td>
+        {% if request.user == debtor.school %}
+<td>  <a href=" {%url 'debtor_upd' debtor.id %} "> Update debtor</a> </td> 
+    <td>  <a href=" {%url 'debtor_delete' debtor.id %} "> Delete debtor</a> </td> 
+{% endif %}
+        </tr>
+        {%endfor%}
+</table>
+
+{%else%}
+No result found
+{%endif%}

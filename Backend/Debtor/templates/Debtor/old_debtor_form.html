@@ -1,0 +1,47 @@
+<style>
+    section{
+        display:grid;
+        grid-template-columns: 1fr 3fr;
+    }
+    img{
+        width:80px;
+        height:80px;
+        border-radius:100%;
+    }
+    .lop {
+        width:200px;
+        height:200px;
+    }
+    aside{
+        display:flex;
+    }
+
+  
+</style>
+
+<section>
+
+<div>
+{% include 'Debtor/Profile/side.html' %}
+</div>
+<div>
+{%if page == 'update' %}
+    <form method='post' enctype='multipart/form-data'>
+        {% csrf_token %}
+        {{form.as_p}}
+    
+        <button type='submit'> Update a Debtor </button>
+
+    </form>
+    {%else%}
+    <form method='post' enctype='multipart/form-data'>
+        {% csrf_token %}
+        {{form.as_p}}
+    
+        <button type='submit'> Create a Debtor </button>
+
+    </form>
+
+    {%endif%}
+</div>
+    

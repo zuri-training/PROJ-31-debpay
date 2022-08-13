@@ -1,0 +1,34 @@
+#navbarSupportedContent{
+    padding-right: 3%;    
+}
+#topNav{
+    background-color: #007EA7;
+    margin: 0;
+    padding: 0;
+    padding-left: 10px;
+}
+.nav-item a{
+    margin: 5px;
+}
+.btn-login{
+    background-color: white;
+    color: #007EA7;
+}
+#topNav img{
+    width: 50%;
+}
+
+#drop{
+    background-color: black;
+}
+.dropdown-menu a{
+    color: white;
+    margin: 0;
+}
+.nav-link {
+    color: white;
+}
+.active{
+    background-color: rgba(0, 0, 0, 0.619);
+    border-radius: 5px;
+}

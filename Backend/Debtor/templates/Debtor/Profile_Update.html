@@ -1,5 +1,32 @@
+<style>
+    section{
+        display:grid;
+        grid-template-columns: 1fr 3fr;
+    }
+    img{
+        width:80px;
+        height:80px;
+        border-radius:100%;
+    }
+    .lop {
+        width:200px;
+        height:200px;
+    }
+    aside{
+        display:flex;
+    }
 
-        <form method='post' action='' enctype='multipart/form-data'>
+  
+</style>
+
+<section>
+
+<div>
+{% include 'Debtor/Profile/side.html' %}
+</div>
+
+<div>   
+       <form method='post' action='' enctype='multipart/form-data'>
   
             {% csrf_token %}
             {{u_form.as_p}}
@@ -8,4 +35,4 @@
             <br>
             <button type='submit'> Update </button>
             </form>
-    
+        </div>

@@ -14,14 +14,26 @@ tr{
 
 {%else%}
 <img src="{{one_school.school_profile.profile_pics.url}}" alt="school image" >
+<img src="{{one_school.school_profile.School_owner_pics.url}}" alt="school_owner image" >
+{{ one_school.School_name}} 
+<br> <br>
 <h1> School name: {{ one_school.School_name}} </h1>
-<h1> School owner: {{ one_school.School_owner}} </h1>
+<h1> Proprietors: {{ one_school.School_owner}} </h1>
+<h1> Username: {{ one_school.username}} </h1>
+<h1> Phone_numnber: {{ one_school.Phone_numnber}} </h1>
+<h1> Number_of_students: {{ one_school.Number_of_students }} </h1>
+<h1> Number_of_teachers: {{ one_school.Number_of_teachers}} </h1>
+<h1> current_address: {{ one_school.current_address}} </h1>
+<h1>Permanent_address : {{ one_school.Permanent_address }} </h1>
 <h1> School locality: {{one_school.school_profile.locality}}</h1>
+<h1>Created : {{ one_school.created}} </h1>
+<h1> Last activity: {{one_school.updated}}</h1>
+
 {% if one_school_debtor %}
 <h2> {{one_school_debt|title|slugify}} </h2>
 <h1> School debtors:</h1>
 <table>
-
+ 
     <tr>
         <th> Student name </th>
         <th> Student id </th>

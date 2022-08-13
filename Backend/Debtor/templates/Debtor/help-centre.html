@@ -1,0 +1,184 @@
+{%extends 'base.html' %}
+{%load static%}
+{%block content %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Help Centre</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/help-centre.css" />
+  </head>
+  <body>
+    {% comment %} <header>
+      <div id="headerContainer">
+          <div class="headerBox1">
+                  <img src="../assets/images/Debpay logo mask group with text.svg" alt="debpay logo">
+          </div>
+          <div class="headerBox2 ">
+              <nav>
+                  <img src="../assets/Icon (Stroke).svg" class="harmburger-icon" alt="">
+                  <ul class="nav-menu" id="dropdown-menu">
+                      <li><a href="landing_page.html">Home</a></li>
+                      <li><a href="contact_us.html">Contact us</a></li>
+                      <li>
+                        <div class="dropdown">
+                          <a href="#" class="dropbtn">More info <i class="fa-solid fa-angle-down"></i></a>
+                          <div class="dropdown-content">
+                              <a href="#">How MYDEBTORS work</a><br><hr>
+                              <a href="FAQS.html">FAQs</a><br><hr>
+                              <a href="#">Help</a><br><hr>
+                              <a href="#">About Us</a>
+                          </div>
+                      </li>
+                      <li><button class="login_btn">Login</button></li>
+                      <li><button class="register_btn">Register</button></li>
+                  </ul>
+              </nav>
+          </div>
+      </div>
+  </header> {% endcomment %}
+
+    <main>
+      <div class="help-centre-container">
+        <h1>HELP CENTER</h1>
+        <input type="text" placeholder="What do you need help with?" />
+      </div>
+
+      <div class="hi-user-container">
+        <h2>Hi, User</h2>
+        <p>Recommended for you</p>
+      </div>
+   
+
+      <div class="faq-accordions">
+        <div>
+          <img src="../assets/Icon-(Stroke).svg" alt="" />
+          <p>Why should I use Debpay?</p>
+        </div>
+        <div>
+          <img src="../assets/Icon-(Stroke).svg" alt="" />
+          <p>Why will it cost me to use Debpay?</p>
+        </div>
+        <div>
+          <img src="../assets/Icon-(Stroke).svg" alt="" />
+          <p>Is there a record of total debts and payments?</p>
+        </div>
+        <div>
+          <img src="../assets/Icon-(Stroke).svg" alt="" />
+          <p>Can I link my bank account with my debtor's </p>
+        </div>
+        <div>
+          <img src="../assets/Icon-(Stroke).svg" alt="" />
+          <p>Why will it cost me to use Debpay?</p>
+        </div>
+        <div>
+          <img src="../assets/Icon-(Stroke).svg" alt="" />
+          <p>Why will it cost me to use Debpay?</p>
+        </div>
+      </div>
+
+      <div class="help-info">
+        <div>
+          <h1>Manage my accounts</h1>
+          <p>
+            I received an email stating that there was sign-in to my account
+          </p>
+          <p>How to reset your password</p>
+        </div>
+
+        <div>
+          <h1>Can't Login?</h1>
+          <p>How to reset your password</p>
+          <p>
+            (Name of the app) says "This app is not compatible with your
+            device?"
+          </p>
+        </div>
+
+        <div>
+          <h1>How to use</h1>
+          <p>How to create and edit profiles.</p>
+          <p>How to comment on posts.</p>
+        </div>
+
+        <div class="quick-links">
+          <h1>Quick Links</h1>
+          <p>Update Email <span>></span></p>
+          <p>Update password</p>
+          <p>About Us</p>
+          <p>Contact Us</p>
+        </div>
+      </div>
+
+      <div>
+        <!-- Chat section -->
+        <div class="chat-section">      
+        <h2 class="want-to-speak-with-us">Want to speak to us?</h2>
+          <div>
+            <h2>Call us from any phone.</h2>
+            <p>Reach us directly through our customer care lines without any call charges</p>
+            <button>CALL US</button>
+          </div>
+  
+          <div>
+            <h2>
+              Chat with us live
+            </h2>
+            <p>You can chat with us live on this website. You will need an internet or mobile phone connection</p>
+            <button>START LIVE CHAT</button>
+          </div>
+        </div>
+
+      </div>
+    </main>
+    <!-- <footer>
+      <div class="footer_container">
+        <div class="footer_container-box1">
+            <img src="../assets/images/Debpay logo mask group with text.svg" alt="debpay logo">
+        </div>
+        <div class="footer_container-box2">
+            <p>RESOURCES</p>
+                <a href="#">Technical Support</a>
+                <a href="#">Purchasing & licensing</a>
+                <a href="#">Debpay Community</a>
+                <a href="#">FAQs</a>
+        </div>
+        <div class="footer_container-box3">
+            <p>COMPANY</p>
+            <a href="#">Legals</a>
+            <a href="#">My Account</a>
+            <a href="#">Help and support</a>
+        </div>
+        <div class="footer_container-box4">
+            <p>ABOUT DEBPAY</p>
+            <a href="#">Location</a>
+            <a href="#">Events</a>
+            <a href="#">Blogs</a>
+            <a href="#">Contact Us</a>
+        </div>
+    </div>
+    <hr>
+    <div id="page_bottom">
+        <a href="#"><i class="fa-solid fa-globe"></i> English <i class="fa-solid fa-caret-down"></i></a>
+        <a href="Privacypolicy.html">Privacy policy</a>
+        <a href="#">Terms and conditions</a>
+        <a href="#">Impressum</a>
+        <a href="#">Copyright&copy;debpay2022</a>
+        <div id="icons">
+            <a href="#" title="social-icons"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" title="social-icons"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" title="social-icons"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" title="social-icons"><i class="fa-brands fa-whatsapp"></i></a>
+        </div>
+    </div>
+    </footer> -->
+    <script src="../j.s/menu.js"></script>
+  </body>
+</html>
+
+{%endblock %}

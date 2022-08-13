@@ -1,0 +1,43 @@
+<form action=' {%url "dash" %} '>
+    <input type="text" name="test" placeholder="search a post...." >
+     </form>
+  
+
+{{goat}} result found for {{run}}
+<hr>
+ {% for fork in fork %}
+   
+        <aside>
+            <div>
+             {% if fork.image %}
+            <img src=" {{fork.image.url}} " alt='king'>
+            {%endif%}
+             <h4>@ {{fork.school_post}} </h4>
+            {% if request.user ==  fork.school_post  %} 
+            <a href="{% url 'upd' fork.id%}"> Update <a> ||
+                <a href="{% url 'del' fork.id%}"> Delete <a>
+                    {%endif%}  
+            </div>
+            <div>
+        <a href="{% url 'list' fork.id %}"> {{fork.title}}</a>
+       
+        <p> {{fork.body|truncatewords:10}}</p>
+         </aside>
+        <hr>
+        {%endfor%}
+      
+
+{% comment %} {%for fork in fork %}
+<article>
+<div> 
+
+</div>
+
+<div> 
+
+</div>
+
+
+</article>
+
+{%endfor%} {% endcomment %}
