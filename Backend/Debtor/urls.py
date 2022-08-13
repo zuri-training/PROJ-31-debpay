@@ -11,14 +11,13 @@ urlpatterns = [
     path('About_us', views.About_us, name='About_us'),
     path('FAQ', views.FAQ, name='FAQ'),
     #Default authentication home
+
     path('', views.land, name='land'), 
     
-    # path('School_One', views.School_One, name='School_One'),
-    # path('School_Two', views.School_Two, name='School_Two'),
-    # path('School_Three', views.School_Three, name='School_Three'),
-    # path('School_login', views.School_Login, name='School_login'),
-    # path('School_login', views.School_Login, name='School_login'),
-    # path('privacy&policy', views.privacy, name='p&p'),
+   
+    path('', views.land, name='land'),
+    
+    path('FAQs', views.faqs, name='faqs'),
     path('dashboard', views.dashboard, name='dashboard'),
     path('register', views.School_Register, name='register'),
     path('Contact', views.Contact, name='Contact'),

@@ -88,92 +88,6 @@ def School_Register(request):
 
 
 
-# def School_Register(request):
-#     page = 'First'
-#     form = SchoolRegForm()
-#     if request.method == 'POST':
-#         form = SchoolRegForm(request.POST)
-#         email = request.POST['email']
-#         username = request.POST['username']
-#         password1 = request.POST['Password']
-#         password2 = request.POST['Confirm_password']
-       
-
-
-#         if form.is_valid():
-#             if password1 == password2:
-#                 user = School.objects.create_user(email=email, password=password1, School_name=School_name, 
-#                                                   username=username, 
-
-# )
-        
-#         if form.is_valid():
-#                 user = School.objects.create_user(email=email, password=password1, username=username
-
-#                         )
-#                 user.is_active = False
-#                 user.save()
-#                 #auth.login(request,user)
-#                 login(request, user, backend='django.contrib.auth.backends.ModelBackend')
-#                 messages.success(request, 'School created successfully, kindly wait till the admin verify your details')
-#                 return redirect('School_One')
-#         else:
-#             messages.error(request, 'password mismatch')
-#     else:
-#         form = SchoolRegForm()
-#     context ={'form':form, 'page':page}
-#     return render(request, 'Debtor/School_reg.html', context)
-
-
-
-# def School_One(request):
-#     page = 'Second'
-#     form = School_info_oneForm()
-#     if request.method == 'POST':
-#         form = School_info_oneForm(request.POST, request.FILES)
-#         if form.is_valid():
-#             room = form.save(commit=False)
-#             room.school = request.user
-#             room.save()
-#             return redirect('School_Two')
-#     else:
-#         form = School_info_oneForm()
-#     context = {'form':form, 'page':page}
-#     return render(request, 'Debtor/School_reg.html', context)
-
-
-# def School_Two(request):
-#     page = 'Third'
-#     form = School_info_twoForm()
-#     if request.method == 'POST':
-#         form = School_info_twoForm(request.POST, request.FILES)
-#         if form.is_valid():
-#             room = form.save(commit=False)
-#             room.school = request.user
-#             room.save()
-#             return redirect('School_Three')
-#     else:
-#         form = School_info_twoForm()
-#     context = {'form':form, 'page':page}
-#     return render(request, 'Debtor/School_reg.html', context)
-
-
-# def School_Three(request):
-#     page = 'Fourth'
-#     form = School_owner_infoForm()
-#     if request.method == 'POST':
-#         form = School_owner_infoForm(request.POST, request.FILES)
-#         if form.is_valid():
-#             room = form.save(commit=False)
-#             room.school = request.user
-#             room.save()
-#             return redirect('/')
-#     else:
-#         form = School_owner_infoForm()
-#     context = {'form':form, 'page':page}
-#     return render(request, 'Debtor/School_reg.html', context)
-
-
 def help(request):
     return render(request, 'Debtor/help-centre.html')
 
@@ -197,6 +111,11 @@ def land(request):
 #Privacy & Policy page view
 def Privacy(request):
     return render(request, 'Privacypolicy.html')
+
+
+#FAQs page view
+def faqs(request):
+    return render(request, 'FAQs.html')
 
 
 #School login view

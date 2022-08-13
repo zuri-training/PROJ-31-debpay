@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/sign-up.css" />
+    <link rel="stylesheet" href="../css/sign-up1.css" />
   </head>
   <body>
     <!-- image for desktop screen, invisible for mobile screen -->
@@ -16,7 +16,7 @@
       <img src="../assets/login-and-signup-image.jpg" alt="" />
     </div>
     <main>
-      <img src="../assets/logo-blue.svg" alt="Debpay logo">
+      <img src="../assets/logo-blue.svg" class="debpay-logo" alt="Debpay logo">
       <h1>Welcome!</h1>
       <div class="sign-in-options-container">
         <div class="sign-in-options-google">
@@ -34,35 +34,35 @@
       <p>Create a new account</p>
       <form action="">
         <div>
-          <label>Full Name</label>
+          <label>School Name</label>
           <input class="name" type="text" name="fname" placeholder="Dave Shepherd" />
         </div>
         <div>
-          <label>Email address</label>
+          <label>School owner</label>
           <input
-            type="email"
-            name="email"
-            placeholder="email@example.com"
-            class="email"
+            type="text"
+            name="School owner"
+            placeholder="Dave Shepherd" 
           />
         </div>
         <div>
-          <label>Password</label>
+          <label>Registration number</label>
           <input
-            type="password"
-            name="password"
-            placeholder="*******"
-            class="password"
+            type="number"
+            name="Reg no"
+            placeholder="27353792"
           />
         </div>
-        <div></div>
-        <label
-          ><input type="checkbox" name="tos" /> I have read and agreed to the
-          <span class="tos--blue">terms and conditions</span>
-        </label>
-        <p>Already have an account? <a href="#">Login</a></p>
+        <div>
+          <label>Registered session</label>
+          <input
+            type="text"
+            name="School owner"
+            placeholder="Dave Shepherd" 
+          />
+        </div>
         <div class="button-container">
-          <button type="submit">Register</button>
+          <button type="submit">Next</button>
         </div>
       </form>
     </main>
