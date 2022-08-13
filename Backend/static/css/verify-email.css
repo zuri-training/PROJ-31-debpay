@@ -7,4 +7,122 @@
 html,
 body {
   height: 100vh;
+  font-family: "Josefin Sans";
 }
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.heading-container {
+  text-align: center;
+  margin-top: 160px;
+}
+h1 {
+  font-weight: 700;
+  font-size: 21.3268px;
+  line-height: 23px;
+  color: #007ea7;
+  margin-bottom: 10px;
+}
+.heading-container p {
+  width: 343px;
+  font-weight: 500;
+  font-size: 10.4872px;
+  line-height: 12px;
+  color: #4f4f4f;
+  margin-bottom: 104px;
+}
+input {
+  border: none;
+  border-bottom: 3.4772px solid #00171f;
+  width: 44.51px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 22.2541px;
+  line-height: 11px;
+  margin-left: 10.5px;
+  margin-bottom: 10.6px;
+}
+.code-expiry-time {
+  align-self: flex-end;
+  text-align: right;
+  font-weight: 400;
+  font-size: 8.88617px;
+  line-height: 11px;
+  color: #1f1f1f;
+}
+.code-expiry-time span,
+.resend-code span {
+  color: #007ea7;
+  text-decoration: underline;
+}
+button {
+  padding: 13.8624px 20.7936px;
+  gap: 13.86px;
+  width: 247.79px;
+  background: #007ea7;
+  border-radius: 10.3968px;
+  border: none;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  color: #ffffff;
+  margin-top: 44px;
+  margin-bottom: 21px;
+}
+.resend-code {
+  font-weight: 500;
+  font-size: 14.2179px;
+  line-height: 16px;
+  color: #4f4f4f;
+}
+.resend-code span {
+  text-decoration: none;
+}
+
+/* modal */
+.modal {
+  width: 318px;
+  border: 1px solid #27ae60;
+  border-radius: 29px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 47px 17px 67px 17px;
+  text-align: center;
+}
+
+.modal img {
+  margin-bottom: 19px;
+}
+
+.modal span {
+  margin-bottom: 20.8px;
+  font-weight: 700;
+  font-size: 24px;
+}
+.modal button {
+  padding: 14px 29px;
+  margin: 0;
+  width: auto;
+}
+.modal p {
+  margin-bottom: 20px;
+  font-weight: 400;
+  font-size: 20px;
+}
+.success span,
+.success p {
+  color: #27ae60;
+}
+.failed span,
+.failed p {
+  color: #eb5757;
+}
+.failed {
+  border: 1px solid #eb5757;
+}
+
+/* modal */

@@ -1,0 +1,83 @@
+/* 'Inter'
+Josefin Sans */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body,
+html {
+  height: 100vh;
+}
+body {
+  font-family: "Josefin Sans", sans-serif;
+  display: flex;
+  flex-direction: row-reverse;
+}
+main {
+  width: 340px;
+  margin: 0 auto;
+}
+.aside-img-container img {
+  display: none;
+}
+.debpay-logo {
+  margin-bottom: -78px;
+}
+
+/* form {
+      max-width: 340px;
+    } */
+input {
+  padding: 10px 50px 10px 5px;
+  border: 1.5px solid rgba(46, 46, 46, 0.6);
+  border-radius: 8px;
+  outline: none;
+  margin: 10px 0; /* margin for spaces btw labels and inputs*/
+  width: 100%;
+}
+label {
+  display: block;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #292232;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin: 40px 0 10px 0;
+}
+
+button {
+  border: none;
+  padding: 10px 40px;
+  font-weight: bold;
+  color: #ffffff;
+  background: #007ea7;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+@media (min-width: 1024px) {
+  main {
+    width: 434px;
+  }
+  .aside-img-container {
+    max-width: 50%;
+  }
+  .aside-img-container img {
+    display: block;
+  }
+  .sign-in-options-container {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .sign-in-options-google {
+    margin-bottom: 0;
+    margin-right: 10px;
+  }
+}

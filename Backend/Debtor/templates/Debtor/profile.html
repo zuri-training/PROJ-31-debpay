@@ -1,5 +1,7 @@
+
 <style>
-    section{
+
+    #TheOri{
         display:grid;
         grid-template-columns: 1fr 3fr;
     }
@@ -15,11 +17,14 @@
     aside{
         display:flex;
     }
+    #TheOri div{
+        margin:10px;
+    }
 
   
 </style>
 
-<section>
+<section id="TheOri">
 
 <div>
 {% include 'Debtor/Profile/side.html' %}
@@ -27,7 +32,7 @@
 
 <div>
     
-    {% if page == 'home'%}
+    {% if page == 'home' %}
 {% comment %} Dashboard page {% endcomment %}
 
     {% include 'Debtor/Profile/dashboard.html' %}
@@ -102,11 +107,19 @@
     {%elif page == 'dash' %}
     {% include 'Debtor/Profile/dash.html' %}
 
+    {% elif  page == 'Total_meeting' %}
+    {% include 'Debtor/Profile/Total_meeting.html' %}
+
+    {% elif  page == 'A_meeting'%}
+    {% include 'Debtor/Profile/A_meeting.html' %} 
+
+    {% elif  page == 'contendant' %}
+    {% include 'Debtor/Profile/Contend.html' %}
        {%endif%}
 
 
        
-      
+     
 </div>
 
 </section>
