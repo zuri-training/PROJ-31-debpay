@@ -6,5 +6,33 @@
 
 # Technologies used and why?
 
+
+
+# Settings for local server
+
 # Deployment instructions 
 
+
+The following are the installed packages needed to run the server in the development stage:
+
+    django (pip install django)
+    shortuuid (pip install shortuuid)
+    pillow  (pip install pillow)
+    django-filter(pip install django-filter)
+    All auth (pip install django-allauth)
+
+SQlite database was used in the development stage
+
+Postgresql is prefered for deployment stage
+
+Package to be installed
+    psycopg2 (pip install psycopg2)
+    
+After changing the database, run the following command to power up the database
+
+    python manage.py makemigrations
+    python manage.py migrate
+    
+    
+ To run the server locally:
+    python manage.py runserver

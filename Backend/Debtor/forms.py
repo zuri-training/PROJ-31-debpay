@@ -2,12 +2,16 @@ from django import forms
 from .models import*
 from django.core.exceptions import ValidationError
 
-class ContendForm(forms.ModelForm):
+# class ContendForm(forms.ModelForm):
 
+#     class Meta:
+#         model = Contend
+#         fields = "__all__"
+
+class ContendForm(forms.ModelForm):
     class Meta:
         model = Contend
         fields = "__all__"
-
 class HelpForm(forms.ModelForm):
 
     class Meta:
@@ -40,32 +44,35 @@ class DebtorUpdateForm(forms.ModelForm):
         model = Debtor
         fields = '__all__'
         exclude = ['school', ]   
-        
-#School registration form
+ 
+ 
+
 # class SchoolRegForm(forms.Form):
 #     School_name = forms.CharField(max_length=100)
-#     School_owner = forms.CharField(max_length=255)
-#     Reg_number = forms.CharField(max_length=255)
 #     username = forms.CharField(max_length=255)
 #     email = forms.EmailField(max_length=255)
-#     Registered_session = forms.CharField(max_length=255) 
-#     current_address = forms.CharField(max_length=255)  
-#     Permanent_address = forms.CharField(max_length=255)         
-#     Number_of_teachers = forms.IntegerField()
-#     Phone_numnber = forms.IntegerField()
-#     Number_of_students = forms.IntegerField()
-#     Founded = forms.CharField(max_length=100)
-#     Session = forms.CharField(max_length=100)
 #     Password = forms.CharField(widget=forms.PasswordInput, min_length=5, max_length=20)
-#     Confirm_password = forms.CharField(widget=forms.PasswordInput, min_length=5, max_length=20)
+#     Confirm_password = forms.CharField(widget=forms.PasswordInput, min_length=5, max_length=20)        
 
 
+# School registration form
 class SchoolRegForm(forms.Form):
     School_name = forms.CharField(max_length=100)
+    School_owner = forms.CharField(max_length=255)
+    Reg_number = forms.CharField(max_length=255)
     username = forms.CharField(max_length=255)
     email = forms.EmailField(max_length=255)
+    Registered_session = forms.CharField(max_length=255) 
+    current_address = forms.CharField(max_length=255)  
+    Permanent_address = forms.CharField(max_length=255)         
+    Number_of_teachers = forms.IntegerField()
+    Contact_number = forms.IntegerField()
+    Number_of_students = forms.IntegerField()
+    Founded = forms.CharField(max_length=100)
+    Session = forms.CharField(max_length=100)
     Password = forms.CharField(widget=forms.PasswordInput, min_length=5, max_length=20)
     Confirm_password = forms.CharField(widget=forms.PasswordInput, min_length=5, max_length=20)
+
  
 
     
@@ -87,7 +94,27 @@ class SchoolRegForm(forms.Form):
          if School.objects.filter(username__iexact=username).exists():
              raise forms.ValidationError("Username not available")
          return username
+     
+    def clean_Reg_number(self):
+        Reg_number  = self.cleaned_data['Reg_number']
+        if School.objects.filter(Reg_number__iexact=Reg_number).exists():
+             raise forms.ValidationError("The Reg_number inputed is already in use")
+        return  Reg_number
+    
+    def clean_School_owner(self):
+        School_owner  = self.cleaned_data['School_owner']
+        if School.objects.filter(School_owner__iexact=School_owner).exists():
+             raise forms.ValidationError("You have a school already")
+        return School_owner
+    
+        
+    # def clean_Phone_number(self):
+    #     Phone_number  = self.cleaned_data['Phone_number']
+    #     if School.objects.filter(Phone_number__iexact=Phone_number).exists():
+    #          raise forms.ValidationError("Phone number belong to another user ")
+    #     return Phone_number
          
+          
 #School profile form used as an instance to update the school profile
 class SchoolProfileForm(forms.ModelForm):
     class Meta:
