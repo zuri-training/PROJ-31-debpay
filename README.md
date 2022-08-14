@@ -7,9 +7,13 @@
 # Technologies used and why?
 
 
+
 # Settings for local server
 
-The following are nstalled packages needed to run the server in the development stage:
+# Deployment instructions 
+
+
+The following are the installed packages needed to run the server in the development stage:
     django (pip install django)
     shortuuid (pip install shortuuid)
     pillow  (pip install pillow)

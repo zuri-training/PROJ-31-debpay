@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>settings (privacy & security</title>
+    <link rel="stylesheet" href="../css/settings_privacy&security.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.css">
+</head>
+
+<body>
+    <main>
+        <section id="menu">
+            <div class="logo">
+                <img src="../assets/images/Logo1.png" alt="debpay logo">
+            </div>
+
+            <!-- divider in the upper part of the menu -->
+            <hr class="solid">
+            <span class="angles-left"><i class="fa-solid fa-angles-left"></i></span>
+
+            <!-- image placeholder and name -->
+            <div class="pictureholder">
+                <img src="../assets/images/debpay Placeholder Amaka M.svg" alt="smiling woman">
+                <h6>Linda Adeyemi</h6>
+                <p>linadeyemi@gmail.com</p>
+            </div>
+
+            <div class="f297">
+                <a href="#"><i class="fa-solid fa-border-all"></i>Dashboard</a>
+                <a href="#"><i class="fa fa-bars"></i>Posts</a>
+                <a href="#"><i class="fa-solid fa-folder"></i>Current Debtors</a>
+                <a href="#"><i class="fa fa-users"></i>Team Members</a>
+
+                <hr class="solid1">
+
+                <a class="setting" href="#"><i class="fa-solid fa-ellipsis"></i>Settings</a>
+
+                <div class="accordion">
+                    <a href="">Your Account</a>
+
+                    <a href="">Notification</a>
+
+                    <div class="dropdown">
+                        <button class="dropbtn" onclick="myFunction()">Privacy and
+                            Security
+                            <i class="fa fa-caret-down"></i>
+                        </button>
+
+                        <div class="dropdown-content" id="myDropdown">
+                            <a class="col" href="#">Your Posts</a>
+                            <a class="col" href="#">Audience</a>
+                        </div>
+                    </div>
+
+                    <script>
+                        /* When the user clicks on the button, 
+                        toggle between hiding and showing the dropdown content */
+                        function myFunction() {
+                            document.getElementById("myDropdown").classList.toggle("show");
+                        }
+
+                        // Close the dropdown if the user clicks outside of it
+                        window.onclick = function (e) {
+                            if (!e.target.matches('.dropbtn')) {
+                                var myDropdown = document.getElementById("myDropdown");
+                                if (myDropdown.classList.contains('show')) {
+                                    myDropdown.classList.remove('show');
+                                }
+                            }
+                        }
+                    </script>
+
+                </div>
+                <a class="logout" href="#"><i class="fa fa-arrow-right-from-bracket"></i>Logout</a>
+            </div>
+        </section>'
+
+        <div id="interface">
+            <div class="navigation">
+                <input type="search" name="search" id="search" placeholder="Search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+
+            <div class="f311">
+                <h6>Privacy and Security</h6>
+                <p>deyemi@gmail.com</p>
+            </div>
+            <div class="card">
+                <div class="f275">
+                    <i class="fa-solid fa-bars"></i>
+                    <div class="f274">
+                        <h6>Your Posts</h6>
+                        <p>Manage the information associated with your pots.</p>
+                    </div>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="f275">
+                    <i class="fa-solid fa-users"></i>
+                    <div class="f274">
+                        <h6>Audience</h6>
+                        <p>Decide who sees your posts on Debpay</p>
+                    </div>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+
+</body>
+
+</html>
