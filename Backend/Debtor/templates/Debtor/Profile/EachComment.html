@@ -15,7 +15,7 @@
 <br>
 {%for rep_m in  rep_m %} 
 <small> replied by {{rep_m.responder}} </small> <br>
-<h1> {{rep_m}} </h1> <br>
+<h5> {{rep_m}} </h5> <br>
 <small> {{rep_m.created|timesince}} ago </small>
 {% if rep_m.image %}
 <img src=" {{rep_m.image.url}} " alt ="reply image">

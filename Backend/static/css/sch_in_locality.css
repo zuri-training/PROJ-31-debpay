@@ -1,9 +1,132 @@
 html, body{
     margin: 0;
-    height: 100%;
+    padding: 0;
     font-family: 'Josefin Sans', sans-serif;
-    overflow-x: hidden;
-    box-sizing: border-box;
+    color: #4F4F4F;
+}
+
+main{
+    display: flex;
+}
+
+#section1{
+    flex: 10%;
+}
+
+#section2{
+    flex: 90%;
+}
+
+#menu {
+    background: #FFFFFF;
+    width: 333px;
+    height: 1493px;
+    box-shadow: 0px 4px 23px rgba(0, 0, 0, 0.08);
+}
+
+#menu .logo {
+    display: flex;
+    align-items: center;
+    padding: 38px 85px 47.19px 66px;
+}
+
+hr.solid {
+    position: absolute;
+    width: 333px;
+    height: 0px;
+    left: 0px;
+    top: 124px;
+    border: 1px solid #BDBDBD;
+}
+
+#menu .angles-left {
+    position: absolute;
+    left: 317.67px;
+    right: 4.33px;
+    top: 110.33px;
+    color: #007EA7;
+    border-radius: 50%;
+    padding: 7px;
+    /* justify-items: center; */
+    width: 32px;
+    height: 32px;
+    transform: matrix(1, 0, 0, 1, 0, 0);
+    background: #FFFFFF;
+    box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.09);
+}
+
+#menu .pictureholder {
+    display: flex;
+    align-items: top;
+}
+
+#menu .pictureholder img {
+    width: 60px;
+    height: 60px;
+    margin: 32px 16px 50px 54px;
+}
+
+#menu .pictureholder h6 {
+    position: relative;
+    height: 22px;
+    font-size: 20px;
+    display: flex;
+    /* width: 100%; */
+    /* float: left; */
+    justify-content: center;
+    color: #4F4F4F;
+    margin: 45px 0px 4px 0px;
+}
+
+#menu .pictureholder p {
+    position: absolute;
+    font-weight: 400;
+    font-size: 16px;
+    display: block;
+    width: 176px;
+    line-height: 22px;
+    letter-spacing: 0.03em;
+    color: #4F4F4F;
+    padding: 64px 27px 40px 130px;
+}
+
+#menu .items li {
+    list-style: none;
+    padding: 20px 0;
+}
+
+#menu .items li i:hover {
+    color: #007EA7;
+    cursor: pointer;
+}
+
+#menu .items li a:hover {
+    color: #007EA7;
+    cursor: pointer;
+}
+
+#menu .items li i {
+    color: #BDBDBD;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    font-size: 20px;
+    margin: 0 15px 0 66px;
+}
+
+#menu .items li a {
+    text-decoration: none;
+    color: #4F4F4F;
+    font-weight: 400px;
+    width: 146px;
+    height: 24px;
+    line-height: 24px;
+    font-size: 20px;
+}
+
+#menu .items .logout {
+    margin-top: 600px;
 }
 
 #search{
@@ -53,4 +176,9 @@ html, body{
 
 #schools p{
     display: inline;
+}
+
+#threeDots{
+    float: right;
+    margin-top: 30px;
 }

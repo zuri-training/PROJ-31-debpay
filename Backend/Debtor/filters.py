@@ -26,3 +26,18 @@ class DebtorFilter(django_filters.FilterSet):
     class Meta:
         model = Debtor
         fields = [ 'student_id', 'debt']
+        
+        
+        
+class HelpFilter(django_filters.FilterSet):
+    class Meta:
+        model = Help
+        fields = "__all__"
+        
+        
+
+class DebtorFilter(django_filters.FilterSet):
+    class Meta:
+        model = Debtor
+        fields = ['student_name', 'student_id', 'sponsor_email']     
+        

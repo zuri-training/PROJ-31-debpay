@@ -1,3 +1,4 @@
+
 <form action=' {%url "dash" %} '>
  <input type="text" name="test" placeholder="search a post...." >
   </form>
@@ -14,19 +15,14 @@
 
 
   
-    {% comment %} <h1>
+ <h1>
         My meeting :</h1>
         <h1>
         {%for meet in meet %}
        <a href=" {%url 'EachMeeting' meet.id %} "> {{meet}} </a>
-<<<<<<< HEAD
-        {%endfor%} </h1> {% endcomment %}
-{% comment %}         
-   <hr>
 
-        {%hendfor%} </1>
-         
-       <hr> {% endcomment %}
+        {%endfor%} </h1> 
+
 
 
     
@@ -41,8 +37,17 @@
        <hr>
        <h4> 
  
-        {% for post in post %}
-   
+
+{% comment %} 
+            <a href="{% url 'list' post.id %}"> {{post.title}} <a>
+           
+            <p> {{post.body|truncatewords:10}}</p>
+           
+            <hr>  {% endcomment %}
+
+
+            {% for post in post %}
+
         <aside>
             <div>
             {% if post.image %}
@@ -54,15 +59,8 @@
                 <a href="{% url 'del' post.id%}"> Delete <a>
                     {%endif%}  
             </div>
-            <div>
-
-        <a href="{% url 'list' post.id %}"> {{post.title}} <a>
-       
-        <p> {{post.body|truncatewords:10}}</p>
-       
-     
-        </div>
-    </aside>
+        
+        <div>
 
             <a href="{% url 'list' post.id %}"> {{post.title}} <a>
         
@@ -71,8 +69,11 @@
         
             </div>
         </aside>
+            <hr>
+            {%endfor%}
+      
 
         <hr>
 
-        {%endfor%}
+      
         <h4> <a href= "{% url 'Post_all' %}">View all post </a></h4> 

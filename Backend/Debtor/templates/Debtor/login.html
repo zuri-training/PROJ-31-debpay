@@ -115,7 +115,8 @@
           <div class="or">Or</div>
       
           <p>Create a new account</p>
-          <form action="">
+          <form action="" method='post'>
+            {% csrf_token %}
             <div>
               <label>Email address</label>
               <input type="email" name="email" placeholder="email@example.com" class="email" />
@@ -138,6 +139,9 @@
             </div>
           </form>
         </main>
+        {%for messages in messages %}
+          {{messages}}
+        {%endfor%}
       </body>
       
       </html>

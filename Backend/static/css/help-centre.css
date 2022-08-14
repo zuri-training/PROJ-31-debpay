@@ -15,6 +15,42 @@ main {
 }
 /* header */
 
+.active {
+  background-color: rgba(0, 0, 0, 0.619);
+  border-radius: 5px;
+}
+
+#navbarSupportedContent {
+  padding-right: 3%;
+}
+#topNav {
+  background-color: #007ea7;
+  margin: 0;
+  padding: 0;
+  padding-left: 10px;
+}
+.nav-item a {
+  margin: 5px;
+}
+.btn-login {
+  background-color: white;
+  color: #007ea7;
+}
+#topNav img {
+  width: 50%;
+}
+
+#drop {
+  background-color: black;
+}
+.dropdown-menu a {
+  color: white;
+  margin: 0;
+}
+.nav-link {
+  color: white;
+}
+
 ul li {
   list-style: none;
   display: inline;
@@ -234,9 +270,8 @@ footer {
 
 .footer_container {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 10px;
+  align-items: center;
+  justify-content: center;
 }
 
 .footer_container h4 {
@@ -251,6 +286,7 @@ footer {
 }
 
 .footer_container a {
+  color: #fff;
   display: block;
   padding: 10px;
   margin-left: -10px;
@@ -266,8 +302,6 @@ footer {
 .footer_container-box2 {
   flex: 20%;
   text-align: left;
-  margin-top: -90px;
-  margin-bottom: 30px;
 }
 
 .footer_container-box3 {
@@ -283,20 +317,25 @@ footer {
 
 #page_bottom {
   display: flex;
-  align-items: flex-start;
-  /* margin-left: 50px; */
-  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 50px;
+  border-top: 1px solid #fff;
 }
 
 #page_bottom a {
   padding: 15px;
+  color: #fff;
 }
 
-#icons {
+#icons1 {
+  display: none;
+}
+
+#icons2 {
   display: flex;
   margin-right: 50px;
 }
-
 /* footer */
 
 @media (min-width: 1024px) {
@@ -350,5 +389,60 @@ footer {
   }
   .chat-section div > button {
     margin-right: 10px;
+  }
+}
+
+@media (max-width: 800px) {
+  .footer_container {
+    flex-direction: column;
+    padding: 10px;
+  }
+  .footer_container-box1 {
+    flex: 10%;
+    padding: 10px;
+    margin-left: -105px;
+    margin-top: -50px;
+  }
+  .footer_container-box2 {
+    flex: 20%;
+    padding: 10px;
+    margin-left: -135px;
+    margin-top: -190px;
+  }
+  .footer_container-box3 {
+    flex: 20%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-left: -175px;
+  }
+  .footer_container-box4 {
+    flex: 20%;
+    padding: 10px;
+    margin-left: -145px;
+  }
+  #icons1 {
+    display: flex;
+    margin-left: -205px;
+  }
+  #icons2 {
+    display: none;
+  }
+  #page_bottom {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+  }
+  #page_bottom a {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  #page_bottom1 {
+    display: flex;
+    justify-content: space-between;
+  }
+  #page_bottom2 {
+    display: flex;
+    justify-content: space-between;
   }
 }

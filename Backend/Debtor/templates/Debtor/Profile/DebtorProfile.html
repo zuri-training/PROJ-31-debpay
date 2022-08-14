@@ -1,6 +1,6 @@
-{% comment %} {% if debtor.debtor_image %}
+ {% if debtor.debtor_image %}
 <img src=" {{debtor.debtor_image.url}} " alt="debtor">
-{%endif%} {% endcomment %}
+{%endif%} 
 <h1> Debtor's Details </h1>
 {% if request.user == debtor.school %}
 <a href=" {%url 'debtor_upd' debtor.id %} "> Update debtor</a>

@@ -1,0 +1,19 @@
+<h1> Welcome {{request.user}} </h1>
+{%if  user_contend %}
+<h5> These are the contends from your student, kindly review their contends and get in touch with the student as soon as possible </h5>
+{%else%}
+{%endif%}
+<h5> You have no contends available </h5>
+<hr>
+{%for  user_contend in  user_contend %}
+<div>
+    <h3> Student ID : {{user_contend.student_id}} </h3>
+    <h3> Email : {{user_contend.email}} </h3>
+    <h3> School : {{user_contend.school}} </h3>
+    <h3> Contact information : {{user_contend.how_to_be_contacted}} </h3>
+    <h3> Complain: </h3> <p> {{user_contend.complain}} </p>
+   
+</div>
+<hr>
+
+{%endfor%}

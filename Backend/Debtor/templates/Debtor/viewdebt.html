@@ -1,0 +1,189 @@
+{%extends 'base.html' %}
+{%load static %}
+{%block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'static/viewdebt.css'%} ">
+
+    <!--Google font links-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+</head>
+<body>
+  {%if page == 'A' %}
+    <div class="contain">
+        <div class="header">
+
+
+            <div class="logo">
+                <img src="{% static 'static/img/Logo with Textt( White Color).svg' %}" alt="" id="img">
+
+            </div>
+
+
+     
+
+
+        <div class="form">
+          {% comment %} <form action=''> {% endcomment %}
+            <div>
+        
+                <h4>View Debt</h4>
+                <h5>Not sure if you are owing?</h5>
+
+                <p>That's Okay I got you covered. Please fill this form to retrieve your information.</p>
+
+                <form id='wash' action="{%url 'TheDebt' %}">
+                  {% comment %} {{next.form}} {% endcomment %}
+                     <input required type="text"  placeholder="Full Name" class="input1">
+                    <input required type="text" name='b' placeholder="Student's ID" class="input2">
+                    <input required type="text"  placeholder="Sponsor's email address" class="input3"> 
+                    <button class="show-modal">Submit</button>
+                </form>
+               
+            </div>                           
+        </div>
+
+
+        
+    </div>
+
+    <div class="overlay hidden"> 
+        <div class="modal">
+          <button class="close-modal">&times;</button>
+          <div class="contain">
+            <img src="{% static 'img/Hurray Icon.svg' %}" alt="">
+    
+            <h4>
+                Hurray! You have no debt
+            </h4>
+            <p>
+                We couldn't fins you in our Database. <br>
+                This means you have no debt.
+    
+            </p>
+    
+            <button> Proceed to Home</button>
+        </div>
+        
+        </div>
+      </div>
+      
+      <script>
+        const form = document.querySelector("form");
+        const input1 = document.querySelector(".input1");
+        const input2 = document.querySelector(".input2");
+        const input3 = document.querySelector(".input3");
+        const btn = document.querySelector("button");
+    
+        form.addEventListener("input", function () {
+          if (input1.value === "" && input2.value === "" && input3.value === "") {
+            // console.log('yes value is empty');
+            // btn.setAttribute('disabled', 'disabled');
+            btn.disabled = true;
+          } else if (input1.value === "" && input2.value !== "" && input3.value === "") {
+            // console.log('yes value is empty');
+            // btn.setAttribute('disabled', 'disabled');
+            btn.disabled = true;
+          } else if (input1.value !== "" && input2.value === "" && input3.value === "") {
+            // console.log('yes value is empty');
+            // btn.setAttribute('disabled', 'disabled');
+            btn.disabled = true;
+          } else if (input1.value === "" && input2.value === "" && input3.value !== "") {
+            // console.log('yes value is empty');
+            // btn.setAttribute('disabled', 'disabled');
+            btn.disabled = true;
+          }else if (input1.value !== "" && input2.value !== "" && input3.value === "") {
+            // console.log('yes value is empty');
+            // btn.setAttribute('disabled', 'disabled');
+            btn.disabled = true;
+        }else if (input1.value === "" && input2.value !== "" && input3.value !== "") {
+            // console.log('yes value is empty');
+            // btn.setAttribute('disabled', 'disabled');
+            btn.disabled = true;
+          }else {
+            btn.disabled = false;
+            // console.log('value is filled');
+            // btn.removeAttribute('disabled');
+          }
+        });
+        ////////////////////////////////////////////////////////////////////////
+      </script>
+      
+
+      
+
+</body>
+</html>
+{% elif page == 'B' %}
+{% if debt %}
+{%for debt in debt %}
+{% if debt.debtor_image %}
+<img width='100px' height='100px' src=" {{debt.debtor_image.url}} " alt="debtor">
+{%endif%} 
+<h1> Debtor's Details </h1>
+{% comment %} {% if request.user == debtor.school %}
+<a href=" {%url 'debtor_upd' debtor.id %} "> Update debtor</a>
+<a href=" {%url 'debtor_delete' debtor.id %} "> Delete debtor</a>
+{% endif %} {% endcomment %}
+<h1> Student name: {{debt.student_name}} </h1>
+<h3> Student id: {{debt.student_id}} </h3>
+<h3> Student School: {{debt.school}} </h3>
+<h3> Student Class:{{debt.student_class}} </h3>
+<h3> Sponsor name: {{debt.sponsor_name}} </h3>
+<h3> Sponsor email: {{debt.sponsor_email}} </h3>
+<h3> Sponsor location: {{debt.sponsor_location}} </h3>
+<h3> Sponsor relationship: {{debt.sponsor_relationship}} </h3>
+<h3> Debt: #{{debt.debt}} </h3>
+{% for post in post %}
+<h4> Note: </h4>
+<h5> {{post}} </h5>
+<small> {{post.body}} </small>
+
+{%endfor%}
+
+<a href=' {%url "Contend" %} '> Click here to contend </a>
+
+{% comment %} <h1>  <a href=" {%url 'each_debtor' debt.id %} " >   {{debt}} </a> </h1> {% endcomment %}
+
+{%endfor%}
+{%else%}
+<div> 
+  <div>
+    <button class="close-modal">&times;</button>
+    <div class="contain">
+      <img src="{% static 'static/img/Hurray Icon.svg' %}" alt="">
+
+      <h4>
+          Hurray! You have no debt
+      </h4>
+      <p>
+          We couldn't fins you in our Database. <br>
+          This means you have no debt.
+
+      </p>
+
+      <button> Proceed to Home</button>
+  </div>
+{%endif%}
+{%elif page == 'C'%}
+<form method='POST'>
+  <br>
+  <br>
+  {% csrf_token %}
+  {{form.as_p}}
+
+  <button type='submit'> Contend </button>
+</form>
+{%endif%}
+{%endblock%}
+!
