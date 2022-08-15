@@ -1,4 +1,6 @@
+{%extends 'base.html' %}
 {% load static %}
+{%block content%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,24 +18,7 @@
 </head>
 <body>
 
-    <header>
-        <div id="headerContainer">
-            <div class="headerBox1">
-                    <img src="{% static 'img/Logo with Textt( White Color).svg' %}" alt="">
-            </div>
-            <div class="headerBox2">
-                <nav>
-                    <ul>
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Contact us</a></li>
-                        <li><a href="#">More info</a></li>
-                        <li><a href="#">Login</a></li>
-                        <li><a href="#">Register</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-        </header>
+
 
     <h2>Privacy Policy</h2>
 
@@ -158,3 +143,4 @@
 
 </body>
 </html>
+{%endblock%}

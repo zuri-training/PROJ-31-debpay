@@ -166,31 +166,13 @@ class MeetingCommentForm(forms.ModelForm):
         exclude = ['updated', 'created', 'attendee', 'meeting' ]
         
         
-
-
-# class Metting_Comment_ReplyForm(forms.ModelForm):
-#     class Meta:
-#         model = MettingCommentReply
-#         fields = ['body', 'image']
-
         
-
-# class School_info_twoForm(forms.ModelForm):
-#     class Meta:
-#             model = School_info_two
-#             fields = "__all__"  
-#             exclude = ['school',]
-            
-# class School_owner_infoForm(forms.ModelForm):
-#     class Meta:
-#             model = School_owner_info
-#             fields = "__all__"  
-#             exclude = ['school',]
-            
-            
-# class School_info_oneForm(forms.ModelForm):
-#     class Meta:
-#             model = School_info_one
-#             fields = "__all__"  
-#             exclude = ['school',]
+class ChatForm(forms.ModelForm):
+    class Meta:
+        model = School_Chat
+        fields = "__all__"
+        exclude = ['sender', ]
+        
+        
+        
             

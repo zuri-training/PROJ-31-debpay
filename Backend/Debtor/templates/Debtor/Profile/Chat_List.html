@@ -1,0 +1,12 @@
+<h1> Title: {{chat}} </h1>
+
+<p> Body: {{chat.body}} </p>
+<small> sent by {{chat.sender}} </small>
+
+<a href=" {%url 'Chat_All' %} "> Go back </a>
+{%if chat.image %}
+
+<img src=' {{chat.image.url}} ' width=100px height=100px alt="Image">
+
+
+{%endif%}
