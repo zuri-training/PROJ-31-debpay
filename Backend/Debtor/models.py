@@ -50,7 +50,7 @@ class UserVerification(models.Model):
     created = models.DateTimeField(auto_now_add = True)
     
     class Meta:
-        ordering = ['created', ]
+        ordering = ['-created', ]
         
     def __str__(self):
         return f' {self.name} user verification'
@@ -175,7 +175,7 @@ class Meeting(models.Model):
     
 
 class Meeting_Comment(models.Model):
-    body = models.CharField(max_length=1000000000000000000)
+    body = models.TextField()
     image = models.ImageField(upload_to='MettingCommentImage', null=True, blank= True)
     attendee = models.ForeignKey(School, on_delete=models.CASCADE)
     meeting = models.ForeignKey(Meeting, on_delete=models.CASCADE)
@@ -190,7 +190,7 @@ class Meeting_Comment(models.Model):
     
     
 class Meeting_Comment_Reply(models.Model):
-    body = models.CharField(max_length=100000000000000)
+    body = models.TextField()
     image = models.ImageField(upload_to='Metting_Comment_Reply_image', null=True, blank= True)
     responder = models.ForeignKey(School, on_delete=models.CASCADE)
     comment = models.ForeignKey(Meeting_Comment, on_delete=models.CASCADE)
@@ -203,4 +203,17 @@ class Meeting_Comment_Reply(models.Model):
     def __str__(self):
         return self.body
     
+   
+class School_Chat(models.Model):
+    sender = models.ForeignKey(School, on_delete=models.CASCADE) 
+    recepient = models.ForeignKey(School, on_delete=models.CASCADE, related_name='receiver') 
+    body = models.TextField()
+    image = models.ImageField(upload_to='Chat_image', null=True, blank=True)
+    created = models.DateTimeField(auto_now_add=True)
     
+    class Meta:
+        ordering = ['-created', ]
+    
+    
+    def __str__(self):
+        return f' {self.sender} Chat '

@@ -218,6 +218,34 @@ def dashboard(request):
     return render(request, 'Debtor/profile.html', context)
 
 
+def Create_Chat(request):
+    page = 'Chat'
+    form = ChatForm()
+    if request.method =='POST':
+        form = ChatForm(request.POST, request.FILES)
+        if form.is_valid:
+            room = form.save(commit=False)
+            room.sender = request.user
+            room.save()
+            return redirect('Chat_All')
+    
+    context = {'form':form, 'page':page}
+    return render(request, 'Debtor/profile.html', context)
+
+def Chat_All(request):
+    chat_all = School_Chat.objects.filter(sender = request.user)
+    sec_chat = School_Chat.objects.filter(recepient = request.user)
+    page ='Chat_All'
+    context ={'page':page, 'sec_chat':sec_chat, 'chat_all':chat_all}
+    return render(request, 'Debtor/profile.html', context)
+
+def Chat_List(request, pk):
+    chat = School_Chat.objects.get(id=pk)
+    page = 'Chat_List'
+    
+    context ={'chat':chat, 'page':page}
+    return render(request, 'Debtor/profile.html', context)
+
 def Contendant(request):
     page = 'contendant'
     user_contend = Contend.objects.filter(school=request.user)

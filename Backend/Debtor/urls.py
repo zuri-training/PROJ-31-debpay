@@ -16,7 +16,9 @@ urlpatterns = [
     
    
     path('', views.land, name='land'),
-    
+    path('Create_Chat', views.Create_Chat, name='Create_Chat'),
+    path('Chat_List/<str:pk>', views.Chat_List, name='Chat_List'),
+    path('Chat_All', views.Chat_All, name='Chat_All'),
     # path('FAQs', views.FAQs, name='FAQs'),
     path('dashboard', views.dashboard, name='dashboard'),
     path('register', views.School_Register, name='register'),
