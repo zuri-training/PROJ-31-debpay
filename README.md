@@ -1,20 +1,18 @@
 # PROJ-31-debpay
 
-# Main Design 
-[Figma Design](https://www.figma.com/file/ZDHTMAdJWEHaDPlwLmzv3b/Pro-Team-31-Figma?node-id=0%3A1)
+# Main Design
 
+[Figma Design](https://www.figma.com/file/ZDHTMAdJWEHaDPlwLmzv3b/Pro-Team-31-Figma?node-id=0%3A1)
 
 # Technologies used and why?
 
-# Deployment instructions 
+# Deployment instructions
 
-
-
-Background
+**Background**
 
 This is a platform that allows schools in a certain locality to list a directory of people owing them - to help them avoid going to other schools. This platform aims at helping schools manage and track debtors seamlessly. Schools can easily see the debt history of a debtor, which makes debt record tracking easy. The platform also gives access to debtors to challenge and contend whenever a particular school puts up any information
 
-*Table of Contents*
+## Table of Contents
 
 Background
 Table of Contents
@@ -30,8 +28,7 @@ Design
 Documentation
 Acknowledgements
 
-
-*About*
+_About_
 
 Debpay is a web application that allows schools in a certain locality list the directory of the people owing them, so as to avoid the debtors registering in other schools with unresolved debts hanging on their records.
 
@@ -40,34 +37,34 @@ The major problem this project was created to solve is
 
 Debpay was created for schools to be able to track and put a record tag on people owing them, thereby limiting the debtors' chances of registering in another school (within the locality) with an unresolved debt.
 
-This project is solely aimed at schools within a particular locality, to help keep the aformentioned problem in check and also allows the tagged debtor to challenge and  contend the records a school uploads about them.
-
+This project is solely aimed at schools within a particular locality, to help keep the aformentioned problem in check and also allows the tagged debtor to challenge and contend the records a school uploads about them.
 
 ## Features
+
 We created the website to include features for both the authenticated user and the unauthenticated user
 
-
-*Unauthenticated user* An individual that has not registered to the website
+_Unauthenticated user_ An individual that has not registered to the website
 
 _The website Home page -Landing page._
- This page contains:
+This page contains:
+
 - A Hero section with a CTA to Login or Register
--A section where user can view debt without registering on the website
-•user enters full name, I.D and email
-•users who happen to have their name on the website's database gets an OTP for identity verification before the debt details can be viewed
-•users also get to contend or challenge the debt records.
+  -A section where user can view debt without registering on the website
+  •user enters full name, I.D and email
+  •users who happen to have their name on the website's database gets an OTP for identity verification before the debt details can be viewed
+  •users also get to contend or challenge the debt records.
 
 -Contact Us section
 -Help section
 -About Us section
-- FAQs section 
+
+- FAQs section
 - Privacy Policy
--A glance at what the website looks like for authenticated users
--Testimonials section
+  -A glance at what the website looks like for authenticated users
+  -Testimonials section
 - Footer section
 
-
-*Authenticated User*
+**Authenticated User**
 A user that has fully registered and has completed all the verification processes on the website
 
 -Login to the website
@@ -80,44 +77,39 @@ A user that has fully registered and has completed all the verification processe
 -Full Access to add, view,edit, delete debtors' data.
 -Comment on posts
 -Change Password
--Change app and account  Settings
+-Change app and account Settings
 -List of schools in locality
 -Help and Support
 -Log out
-[8/13, 5:16 PM] Maks: *Technologies Used*
 
+**Technologies Used**
 
-This project was created with *Visual Studio Code* and the following technologies were used:
+This project was created with _Visual Studio Code_ and the following technologies were used:
 
- _Design_ 
- *Figma* 
+**Design**
+_Figma_
 
-_Frontend_
-*HTML5*
-*CSS3*
-*JavaScript*
-*Bootstrap*
-
+**Frontend**
+_HTML5_
+_CSS3_
+_JavaScript_
+_Bootstrap_
 
 _Backend_
-*Python*
-*Django*
+_Python_
+_Django_
 
-
-
-_Database_
-*SQlite*
-
+**Database**
+Postgres
 
 _Project Management and Version Control_
-*GitHub*
-[8/13, 5:16 PM] Maks: *Product Specialisation*
+**GitHub**
 
-
+**Product Specialisation**
 Mobile
 Tablet
 Desktop
 
-*Project Status*
+**Project Status**
 
 Project is currently: in progress
