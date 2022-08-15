@@ -10,11 +10,11 @@
 
 
 
-[8/13, 5:16 PM] Maks: *Background*
+Background
 
 This is a platform that allows schools in a certain locality to list a directory of people owing them - to help them avoid going to other schools. This platform aims at helping schools manage and track debtors seamlessly. Schools can easily see the debt history of a debtor, which makes debt record tracking easy. The platform also gives access to debtors to challenge and contend whenever a particular school puts up any information
-[8/13, 5:16 PM] Maks: *Table of Contents*
 
+*Table of Contents*
 
 Background
 Table of Contents
@@ -29,11 +29,11 @@ Contributions
 Design
 Documentation
 Acknowledgements
-[8/13, 5:16 PM] Maks: *About*
 
+
+*About*
 
 Debpay is a web application that allows schools in a certain locality list the directory of the people owing them, so as to avoid the debtors registering in other schools with unresolved debts hanging on their records.
-
 
 The major problem this project was created to solve is
 -The issue of debtors having the opportunity to register in a different school, without clearing their debts from previous school(s).
@@ -41,11 +41,9 @@ The major problem this project was created to solve is
 Debpay was created for schools to be able to track and put a record tag on people owing them, thereby limiting the debtors' chances of registering in another school (within the locality) with an unresolved debt.
 
 This project is solely aimed at schools within a particular locality, to help keep the aformentioned problem in check and also allows the tagged debtor to challenge and  contend the records a school uploads about them.
-[8/13, 5:16 PM] Maks: *Features*
 
 
-
-
+## Features
 We created the website to include features for both the authenticated user and the unauthenticated user
 
 
@@ -67,9 +65,6 @@ _The website Home page -Landing page._
 -A glance at what the website looks like for authenticated users
 -Testimonials section
 - Footer section
-
-
-
 
 
 *Authenticated User*
@@ -122,6 +117,7 @@ _Project Management and Version Control_
 Mobile
 Tablet
 Desktop
-[8/13, 5:16 PM] Maks: *Project Status*
+
+*Project Status*
 
 Project is currently: in progress
