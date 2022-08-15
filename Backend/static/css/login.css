@@ -26,7 +26,6 @@ main {
 
 .aside-img-container img {
   display: none;
-  height: 100vh;
 }
 
 h1 {
@@ -86,7 +85,6 @@ a {
   background-color: #007ea7;
   border-radius: 12px;
   padding: 10px;
-
 }
 
 .Login-in-options-google,
@@ -95,7 +93,6 @@ a {
   align-items: center;
   justify-content: center;
   /* width: 200px; */
-
 }
 
 .or {
@@ -134,7 +131,6 @@ input {
   outline: none;
   margin: 10px 0;
   /* width: 100%; */
-
 }
 
 label {
@@ -177,7 +173,6 @@ label {
 
 .tos--blue {
   color: #007ea7;
-
 }
 
 .button-container {

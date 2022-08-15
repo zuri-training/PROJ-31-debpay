@@ -1,0 +1,28 @@
+
+<h1> Notifications sent by you ({{request.user}} ) </h1>
+{%for chat in chat_all %}
+
+<a href=" {%url 'Chat_List' chat.id %} ">  <small>
+    
+    From you to  {{chat.recepient}}  </small> </a> <br>
+    <p> {{chat.body|truncatewords:4}} </p> <br>
+ <small> {{chat.created|timesince}} ago </small>
+<hr>
+{%endfor%}
+<br>
+<br>
+<h1> Notifications received from other schools </h1>
+{%for chat in sec_chat %}
+
+<a href=" {%url 'Chat_List' chat.id %} ">  <small>
+    
+    From  {{chat.sender}} to  you    </small> </a> <br>
+   <p> {{chat.body|truncatewords:4}} </p> <br>
+ <small> {{chat.created|timesince}} ago </small>
+
+<hr>
+
+
+{%endfor%}
+
+

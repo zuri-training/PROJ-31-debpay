@@ -13,7 +13,7 @@ class Locality (models.Model):
         return self.local_government
 
 class School (AbstractUser):
-    School_owner = models.CharField(max_length=255)
+    School_owner = models.CharField(max_length=255, null=True)
     School_name = models.CharField(max_length=255)
     School_id = ShortUUIDField(
         length= 4,
@@ -22,14 +22,14 @@ class School (AbstractUser):
         alphabet = "123456efghij",
         primary_key = True
     )
-    Reg_number = models.CharField(max_length=255)  
+    Reg_number = models.CharField(max_length=255, null=True)  
     Registered_session = models.CharField(max_length=255, null=True)  
     current_address = models.CharField(max_length=255, null=True)  
     Permanent_address = models.CharField(max_length=255, null=True)         
     username = models.CharField(max_length=100)
     email = models.EmailField(max_length=255, unique=True)
     Number_of_teachers = models.IntegerField(null=True)
-    Phone_numnber = models.IntegerField(null=True)
+    Contact_number = models.IntegerField(null=True)
     Number_of_students = models.IntegerField(null=True)
     Founded = models.CharField(max_length=100, null=True)
     Session = models.CharField(max_length=100, null=True)
@@ -50,7 +50,7 @@ class UserVerification(models.Model):
     created = models.DateTimeField(auto_now_add = True)
     
     class Meta:
-        ordering = ['created', ]
+        ordering = ['-created', ]
         
     def __str__(self):
         return f' {self.name} user verification'
@@ -144,7 +144,7 @@ class Contend (models.Model):
 
 class Help (models.Model):
     title = models.CharField(max_length=255)
-    body = models.TextField(help_text='Enter help here')
+    body = models.TextField()
 
     def __str__(self):
         return self.title
@@ -175,7 +175,7 @@ class Meeting(models.Model):
     
 
 class Meeting_Comment(models.Model):
-    body = models.CharField(max_length=1000000000000000000)
+    body = models.TextField()
     image = models.ImageField(upload_to='MettingCommentImage', null=True, blank= True)
     attendee = models.ForeignKey(School, on_delete=models.CASCADE)
     meeting = models.ForeignKey(Meeting, on_delete=models.CASCADE)
@@ -190,7 +190,7 @@ class Meeting_Comment(models.Model):
     
     
 class Meeting_Comment_Reply(models.Model):
-    body = models.CharField(max_length=100000000000000)
+    body = models.TextField()
     image = models.ImageField(upload_to='Metting_Comment_Reply_image', null=True, blank= True)
     responder = models.ForeignKey(School, on_delete=models.CASCADE)
     comment = models.ForeignKey(Meeting_Comment, on_delete=models.CASCADE)
@@ -203,4 +203,17 @@ class Meeting_Comment_Reply(models.Model):
     def __str__(self):
         return self.body
     
+   
+class School_Chat(models.Model):
+    sender = models.ForeignKey(School, on_delete=models.CASCADE) 
+    recepient = models.ForeignKey(School, on_delete=models.CASCADE, related_name='receiver') 
+    body = models.TextField()
+    image = models.ImageField(upload_to='Chat_image', null=True, blank=True)
+    created = models.DateTimeField(auto_now_add=True)
     
+    class Meta:
+        ordering = ['-created', ]
+    
+    
+    def __str__(self):
+        return f' {self.sender} Chat '

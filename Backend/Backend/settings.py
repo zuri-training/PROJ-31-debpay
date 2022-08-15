@@ -83,13 +83,23 @@ WSGI_APPLICATION = 'Backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'z25TIEYwEe61JyM8XzER',
+        'HOST': 'containers-us-west-49.railway.app',
+        'PORT': '6641',
+        
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -157,5 +167,6 @@ SOCIALACCOUNT_PROVIDERS = {
 SITE_ID = 1 
 
 SOCIALACCOUNT_LOGIN_ON_GET=True
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = 'land'
 LOGOUT_REDIRECT_URL = 'land'
+LOGIN_REQUIRED_URL = 'Auth_School'

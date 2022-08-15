@@ -1,5 +1,6 @@
 {%extends 'base.html' %}
 {%load static %}
+{%block content %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,36 +32,44 @@
                 <a href="#">&larr;Back</a>
             </div>
              <h5>New Debtor</h5>
-            <form method='post' enctype='multipart/form-data'>
+            {% comment %} <form method='post' enctype='multipart/form-data'>
                 {% csrf_token %}
                 {{form.as_p}}
             
                 <button type='submit'> Create a Debtor </button>
                 <label>
-                    <inpu>
+                   
         
-            </form> 
-            <form action="">
-                <div class="sub_form">
+            </form>  {% endcomment %}
+            <form  method='post' enctype='multipart/form-data'>
+                {% csrf_token %}
+                {{form.as_p}}
+            
+                <button type='submit'> Create a Debtor </button>
+                <label>
+                   
+                {% comment %} <div class="sub_form">
                     <label for="fullName">Full Name</label>
                     {{form.student_name}}
                     {% comment %} <input type="text" name="fullName" placeholder="Okonta Chinecherem |" required> {% endcomment %}
-                </div>
+                {% comment %} </div>
                 <div class="sub_form">
                     <label for="text">Student Id</label>
-                    <input type="text" name="StudentId" placeholder="B11085647 |" required>
+                    {{form.student_id}} {% endcomment %}
+                    {% comment %} <input type="text" name="StudentId" placeholder="B11085647 |" required>
                 </div>
                 <div class="sub_form">
                     <label for="text">Amount Owed</label>
-                    <input type="text" name="Amount" placeholder="#47,000.00" required>
-                </div>
+                    {{form.debt}} {% endcomment %}
+                    {% comment %} <input type="text" name="Amount" placeholder="#47,000.00" required> {% endcomment %}
+                {% comment %} </div>
                 <div class="sub_form">
                     <label for="name">Sponsor's Name</label>
                     <input type="text" name="sponsorName" placeholder="Okonta Mariam |" required>
                 </div>
                 <div class="sub_form">
-                    <label for="telephone">Phone Number</label>
-                    <input type="tel" name="telephone" placeholder="080 568 |" required>
+                    <label for="telephone">Phone Number</label> {% endcomment %}
+                    {% comment %} <input type="tel" name="telephone" placeholder="080 568 |" required>
                 </div>
                 <div class="sub_form">
                     <label for="Email">Email Address</label>
@@ -73,8 +82,10 @@
             </form> 
             <div class="submit_btn">
                 <button type="submit">Save</button>
-            </div>
+            </div> {% endcomment %} 
         </section>
     </main>
 </body>
 </html>
+
+{%endblock%}

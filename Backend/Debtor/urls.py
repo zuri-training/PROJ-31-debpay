@@ -9,19 +9,26 @@ urlpatterns = [
     path('help', views.help, name='help'),
     path('Privacy', views.Privacy, name='Privacy'),
     path('About_us', views.About_us, name='About_us'),
-    path('FAQ', views.FAQ, name='FAQ'),
+    path('FAQs', views.FAQs, name='FAQs'),
     #Default authentication home
 
-    path('', views.land, name='land'), 
+    # path('', views.land, name='land'), 
     
    
     path('', views.land, name='land'),
-    
-    path('FAQs', views.faqs, name='faqs'),
+    path('Create_Chat', views.Create_Chat, name='Create_Chat'),
+    path('Chat_List/<str:pk>', views.Chat_List, name='Chat_List'),
+    path('Chat_All', views.Chat_All, name='Chat_All'),
+    # path('FAQs', views.FAQs, name='FAQs'),
     path('dashboard', views.dashboard, name='dashboard'),
     path('register', views.School_Register, name='register'),
     path('Contact', views.Contact, name='Contact'),
-
+    path('ViewDebt', views.ViewDebt, name='ViewDebt'),
+    path('TheDebt', views.TheDebt, name='TheDebt'),
+    path('Total_meeting', views.Total_meeting, name='Total_meeting'),
+    path('A_meeting/<str:pk>', views.A_meeting, name='A_meeting'),
+    path('Contend', views.contend, name='Contend'),
+    path('Contendant', views.Contendant, name='Contendant'),
     path('logout', views.School_Logout, name='logout'),
     path('Auth_School', views.Auth_School, name='Auth_School'),
     path('post_create', views.CreatePost, name='post_create'),

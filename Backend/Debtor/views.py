@@ -10,7 +10,7 @@ from django.contrib.auth import get_user_model
 from django.db.models import Avg, Min, Max, Sum
 from django.db.models import Q
 from .filters import*
-
+from django.contrib.auth.decorators import login_required
 
 #Just a test view to be deleted later
 def contend_view(request):
@@ -52,33 +52,32 @@ def School_Register(request):
         Permanent_address  = request.POST['Permanent_address']
         Founded = request.POST['Founded']
         Number_of_teachers = request.POST['Number_of_teachers']
-        Phone_numnber = request.POST['Phone_numnber']
+        Contact_number = request.POST['Contact_number']
         current_address = request.POST['current_address']
         Number_of_students  = request.POST['Number_of_students']
         Session = request.POST['Session']
+        
+        School_owner = request.POST['School_owner']
+        School_name  = request.POST['School_name']
+        Reg_number = request.POST['Reg_number']
 
 
 
         if form.is_valid():
             if password1 == password2:
-                user = School.objects.create_user(email=email, password=password1, School_name=School_name, School_owner =School_owner ,
+                user = School.objects.create_user(email=email, password=password1, School_name=School_name, School_owner =School_owner,
                                                   username=username, Reg_number=Reg_number,  Registered_session= Registered_session,
                                                     Permanent_address=Permanent_address,Founded=Founded, Number_of_teachers =  Number_of_teachers ,
-                                                         current_address=current_address ,Phone_numnber= Phone_numnber,
+                                                         current_address=current_address , Contact_number =  Contact_number,
                                                           Number_of_students= Number_of_students, Session=Session
 
 )
-        
-        if form.is_valid():
-                user = School.objects.create_user(email=email, password=password1, username=username
-
-                        )
                 user.is_active = False
                 user.save()
                 #auth.login(request,user)
                 # login(request, user, backend='django.contrib.auth.backends.ModelBackend')
                 messages.success(request, 'School created successfully, kindly wait till the admin verify your details')
-                return redirect('School_One')
+                return redirect('/')
         else:
             messages.error(request, 'password mismatch')
     else:
@@ -87,15 +86,47 @@ def School_Register(request):
     return render(request, 'Debtor/School_reg.html', context)
 
 
+def ViewDebt(request):
+    page ='A'
+    debt = Debtor.objects.filter(
+        Q(student_name__iexact=next)|
+          Q(student_id__iexact=next)|
+            Q(sponsor_email__iexact=next)
+    ) 
+    context ={'debt':debt, 'page':page ,'next': next}
+    return render(request, 'Debtor/viewdebt.html', context)
 
+def TheDebt(request):
+    B = request.GET.get('b') if request.GET.get('b') !=None else''
+    page = 'B'
+    debt = Debtor.objects.filter( Q(student_id__iexact=B) ) 
+    context ={'debt':debt, 'page': page}
+    return render(request, 'Debtor/viewdebt.html', context)
+
+
+def contend(request):
+    form = ContendForm()
+    page = 'C'
+    if request.method == 'POST':
+        form = ContendForm(request.POST)
+        if form.is_valid():
+            
+            form.save()
+            return redirect('/')
+    context = { 'form' :form, 'page':page}
+    return render(request, 'Debtor/viewdebt.html', context)
 def help(request):
     return render(request, 'Debtor/help-centre.html')
 
 def About_us(request):
     return render(request, 'Debtor/About-us.html')
 
-def FAQ(request):
-    return render(request, 'Debtor/FAQ.html')
+def FAQs(request):
+    searcher = request.GET.get("q") if request.GET.get("q") !=None else""
+    help = Help.objects.filter(Q (title__icontains=searcher)|
+                               Q (body__icontains=searcher))
+    context = {'help':help, 'searcher':searcher}
+    return render(request, 'FAQs.html', context)
 
 def Contact(request):
     return render(request, 'Debtor/contact_us.html')
@@ -158,38 +189,20 @@ def School_Profile_Update(request):
     return render(request,'Debtor/Profile_Update.html', context ) 
     
 
-       
-# def dashboard(request):
-#     run = request.GET.get('test') if request.GET.get('test') !=None else''
-#     fork = Post.objects.filter(Q(title__icontains=run)|
-#                                Q(body__icontains=run))
-#     lost =School_Profile.objects.all()
-#     local = Locality.objects.all()
-#     page = 'home'
-#     meet = Meeting.objects.filter(meeting_host=request.user)
-#     post = Post.objects.all()
-#     debtor = Debtor.objects.filter(school = request.user).aggregate( Total_Debt = Sum('debt'))
-#     post_mine = Post.objects.filter(school_post = request.user).count()
-#     debtors = Debtor.objects.filter(school = request.user).count()
-#     debtor_list = Debtor.objects.filter(school = request.user).count()
-#     post.image = request.FILES
-#     context ={'page':page,'run':run, 'meet':meet ,'local':local ,'lost':lost ,'fork':fork, 'debtor_list':debtor_list, 'mine':post_mine, 'post':post, 'debtors':debtors, 'debtor': debtor}
-#     return render(request, 'Debtor/profile.html', context)
 
 def dash (request):
-    page ='dash'
-def dashboard(request):
-
     run = request.GET.get('test') if request.GET.get('test') !=None else''
     fork = Post.objects.filter(Q(title__icontains=run)|
                                Q(body__icontains=run))
+    page ='dash'
     goat = fork.count()
-    context ={'fork':fork, 'page':page,'run':run, 'goat':goat }
+    context ={'fork':fork, 'page':page, 'goat':goat }
     return render(request, 'Debtor/profile.html', context) 
-    
+
+@login_required
 def dashboard(request):
-  
-    lost =School_Profile.objects.all()
+    user_contend = Contend.objects.filter(school=request.user)
+    lost =School_Profile.objects.all() 
     local = Locality.objects.all()
     page = 'home'
     meet = Meeting.objects.filter(meeting_host=request.user)
@@ -201,10 +214,43 @@ def dashboard(request):
     debtors = Debtor.objects.filter(school = request.user).count()
     debtor_list = Debtor.objects.filter(school = request.user).count()
     post.image = request.FILES
-    context ={'page':page, 'meet':meet ,'local':local ,'lost':lost , 'debtor_list':debtor_list, 'mine':post_mine, 'post':post, 'debtors':debtors, 'debtor': debtor}
+    context ={'page':page , 'meet':meet ,'local':local ,'lost':lost , 'debtor_list':debtor_list, 'mine':post_mine, 'post':post, 'debtors':debtors, 'debtor': debtor}
     return render(request, 'Debtor/profile.html', context)
 
 
+def Create_Chat(request):
+    page = 'Chat'
+    form = ChatForm()
+    if request.method =='POST':
+        form = ChatForm(request.POST, request.FILES)
+        if form.is_valid:
+            room = form.save(commit=False)
+            room.sender = request.user
+            room.save()
+            return redirect('Chat_All')
+    
+    context = {'form':form, 'page':page}
+    return render(request, 'Debtor/profile.html', context)
+
+def Chat_All(request):
+    chat_all = School_Chat.objects.filter(sender = request.user)
+    sec_chat = School_Chat.objects.filter(recepient = request.user)
+    page ='Chat_All'
+    context ={'page':page, 'sec_chat':sec_chat, 'chat_all':chat_all}
+    return render(request, 'Debtor/profile.html', context)
+
+def Chat_List(request, pk):
+    chat = School_Chat.objects.get(id=pk)
+    page = 'Chat_List'
+    
+    context ={'chat':chat, 'page':page}
+    return render(request, 'Debtor/profile.html', context)
+
+def Contendant(request):
+    page = 'contendant'
+    user_contend = Contend.objects.filter(school=request.user)
+    context = {'user_contend':user_contend, 'page':page}
+    return render(request, 'Debtor/profile.html', context)
 
 
 def CreatePost(request):
@@ -243,7 +289,8 @@ def post_list(request, pk):
 
 def Post_all(request):
     searcher = request.GET.get("search_post") if request.GET.get("search_post") !=None else""
-    post_search = Post.objects.filter(title__icontains=searcher)
+    post_search = Post.objects.filter(title__icontains=searcher) 
+    # post_search = Post.objects.filter(title__icontains=searcher)
     post = Post.objects.all()
     total_post = post.count()
     my_filter = PostFilter(request.GET, queryset=post)
@@ -366,10 +413,25 @@ def CreateMeeting(request):
     context = {'page':page, 'form':form}
     return render(request, 'Debtor/profile.html', context)
 
+
+def Total_meeting(request):
+    page = 'Total_meeting'
+    meeting = Meeting.objects.all()
+    context = {'page':page, 'meeting':meeting}
+    return render(request, 'Debtor/profile.html', context)
+
+
+def A_meeting(request, pk):
+    meeting = Meeting.objects.get(id=pk)
+    page = 'A_meeting'
+    context = {'page':page, 'meeting':meeting}
+    return render(request, 'Debtor/profile.html', context)
+    
+    
 def EachMeeting(request, pk):
     page = 'each_meeting'
     one_meeting = Meeting.objects.get(id=pk)
-    participants = one_meeting.participants.all()
+
     meeting_comment = Meeting_Comment.objects.filter(meeting = one_meeting)
     form =  MeetingCommentForm()
     if request.method == 'POST':
@@ -378,13 +440,14 @@ def EachMeeting(request, pk):
             room = form.save(commit=False)
             room.attendee = request.user
             room.meeting =  one_meeting
+        
             room.save()
-            room.participants.add(request.user)
+            
             return redirect('EachMeeting', one_meeting.id)
         
     else:
          form =  MeetingCommentForm()        
-    context = {'one_meeting':one_meeting, 'participants':participants , 'meeting_comment':meeting_comment , 'form':form , 'page': page}
+    context = {'one_meeting':one_meeting, 'meeting_comment':meeting_comment , 'form':form , 'page': page}
     return render(request, 'Debtor/profile.html', context)
 
 def EachComment(request, pk):

@@ -5,7 +5,8 @@ Josefin Sans */
   margin: 0;
   padding: 0;
 }
-body, html{
+body,
+html {
   height: 100vh;
 }
 body {
@@ -19,16 +20,14 @@ main {
 }
 .aside-img-container img {
   display: none;
-  height: 100vh;
 }
 h1 {
   color: #000000;
   text-align: center;
   font-size: 32px;
-  margin-top: 80px;
-
+  margin-top: 60px;
 }
-p{
+p {
   color: #4f4f4f;
   margin: 20px 0 15px 0;
   max-width: 340px;
@@ -37,46 +36,46 @@ p{
   font-size: 16px;
   line-height: 22px;
 }
-a{
+a {
   text-decoration: none;
   color: #007ea7;
 }
-.sign-in-options-container{
+.sign-in-options-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   margin-top: 58px;
 }
-.sign-in-options-google{
+.sign-in-options-google {
   border: 1px solid #282828;
   border-radius: 12px;
   padding: 10px;
   margin-bottom: 20px;
 }
-.sign-in-options-fb{
+.sign-in-options-fb {
   border: 1px solid #846767;
   color: #fef4f4;
-   background-color: #007ea7;
+  background-color: #007ea7;
   border-radius: 12px;
   padding: 10px;
 }
 
-.sign-in-options-google, .sign-in-options-fb{
+.sign-in-options-google,
+.sign-in-options-fb {
   display: flex;
   align-items: center;
   justify-content: center;
   /* width: 200px; */
-
 }
 
-.or{
+.or {
   position: relative;
   max-width: 500px;
   margin: 30px auto;
   text-align: center;
 }
-.or::before{
+.or::before {
   content: "";
   height: 2px;
   width: 130px;
@@ -85,10 +84,9 @@ a{
   position: absolute;
   top: 50%;
   left: 0;
-
 }
 
-.or::after{
+.or::after {
   content: "";
   height: 2px;
   width: 130px;
@@ -117,7 +115,9 @@ label {
   line-height: 20px;
   color: #292232;
 }
-.name, .email, .password{
+.name,
+.email,
+.password {
   width: 100%;
 }
 .email {
@@ -132,7 +132,7 @@ label {
   background-position-y: 50%;
   background-repeat: no-repeat;
 }
-.tos--blue{
+.tos--blue {
   color: #007ea7;
 }
 
@@ -154,23 +154,22 @@ button {
   line-height: 22px;
 }
 
-
 @media (min-width: 1024px) {
-  main{
+  main {
     width: 434px;
   }
-  .aside-img-container{
+  .aside-img-container {
     max-width: 50%;
   }
-  .aside-img-container img{
+  .aside-img-container img {
     display: block;
   }
-.sign-in-options-container{
-  flex-direction: row;
-  justify-content: space-around;
-}
-.sign-in-options-google{
-  margin-bottom: 0;
-  margin-right: 10px;
-}
+  .sign-in-options-container {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .sign-in-options-google {
+    margin-bottom: 0;
+    margin-right: 10px;
+  }
 }

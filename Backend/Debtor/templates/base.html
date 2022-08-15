@@ -49,19 +49,28 @@
                   <div class="dropdown-menu" id="drop" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href=" {%url 'help' %} ">help</a>
                     <a class="dropdown-item" href=" {%url 'About_us' %} ">About us</a>
-                    <a class="dropdown-item" href=" {%url 'FAQ' %} ">FAQ</a>
+                    <a class="dropdown-item" href=" {%url 'FAQs' %} ">FAQ</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href=" {%url 'Privacy' %} ">Privacy Policy</a>
                   </div>
                 </li>
                 <div class="dropdown-divider"></div>
+                {%if request.user.is_authenticated %}
                 <li class="nav-item">
-                    <a class="btn btn-login" href=" {%url 'Auth_School' %} " role="button">Login</a>
+                    <a class="btn btn-login" href=" {%url 'logout' %} " role="button">Logout</a>
                 </li>
+                <li class="nav-item">
+                  <a class="btn btn-login" href=" {%url 'dashboard' %} " role="button">Dashboard</a>
+              </li>
+                {%else%}
                   <div class="dropdown-divider"></div>
                 <li class="nav-item">
                     <a class="btn btn-outline-light" href=" {%url 'register' %} " role="button"> Register</a>
                 </li>
+                <li class="nav-item">
+                  <a class="btn btn-login" href=" {%url 'Auth_School' %} " role="button">Login</a>
+              </li>
+              {%endif%}
             </div>
           </nav>
     </header>

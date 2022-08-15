@@ -1,86 +1,223 @@
-
-
-{% extends 'base.html' %}
+{%load static %}
 {% load socialaccount %}
-{% load static %}
-
-{% block  link%}
-    <link rel="stylesheet" href="{% static 'static/css/sign-up.css' %}" />
-{% endblock link%}
-
-{% block header%}
-{% comment %} Empty header {% endcomment %}
-{% endblock header%}
-{% block  content%}
-
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{%static 'static/css/sign-up1.css'%}" />
+    <link rel="stylesheet" href="{% static 'static/css/sign-up2.css' %}" />
+    <link rel="stylesheet" href="{% static 'static/css/sign-up3.css'%}" />
+  </head>
+  <body>
     <!-- image for desktop screen, invisible for mobile screen -->
     <div class="aside-img-container">
       <img src="{% static 'static/assets/login-and-signup-image.jpg' %}" alt="" />
     </div>
     <main>
+      <img src="{% static 'static/assets/logo-blue.svg' %}" class="debpay-logo" alt="Debpay logo">
       <h1>Welcome!</h1>
       <div class="sign-in-options-container">
         <div class="sign-in-options-google">
-          <img src="{% static 'static/assets/google-icon.svg'  %}" alt="">
-          <span>
-            <a href="{% provider_login_url 'google' %}">Sign up with Google</a>
-            </span>
+          <img src="{% static 'static/assets/google-icon.svg' %}" alt="">
+          <span> <a href="{% provider_login_url 'google' %}">Sign up with Google</a></span>
         </div>
         <div class="sign-in-options-fb">
           <img src="{% static 'static/assets/fb-icon.svg' %}" alt="">
-          <span>Sign up with Facebook</span>
+          <span>Sign in with Facebook</span>
         </div>
       </div>
 
       <div class="or">Or</div>
 
       <p>Create a new account</p>
-{%if messages %}
-         {%for message in messages%}
-          <h4>{{message}}</h4>
-        {%endfor%}  
-        {%endif%}
-        <form method="post">
-          {% csrf_token %}
-          <div>
-            <label>Full Name</label>
-            {{ form.username }}
+      <form action="" method='POST' enctype=multipart/form-data>
+        {% csrf_token %}
+     {% for message in messages%}
+
+<h1 style=" color:red; "> {{message}} </h1> 
+<br>
+<br>
+{% if form.errors %}
+{% for field in form %}
+    {% for error in field.errors %} 
+       <div class="alert alert-danger">
+        <h1 style=" color:red; "> <strong>{{ error|escape }}</strong> </h1>
+       </div>
+    {% endfor %}
+{% endfor %}
+{% endif %}
+
+     {%endfor%}
+
+        <div>
+          <label>School Name</label>
+          {{form.School_name}}
+        
+          {% comment %} <input class="name" type="text" name="fname" placeholder="Dave Shepherd" /> {% endcomment %}
+        </div>
+        <div>
+          <label>School owner</label>
+          {{form.School_owner}}
+  
+          {% comment %} <input
+            type="text"
+            name="School owner"
+            placeholder="Dave Shepherd" 
+          /> {% endcomment %}
+        </div>
+        <div>
+          <label>Registration number</label>
+
+          {% comment %} <input
+            type="number"
+            name="Reg no"
+            placeholder="27353792"
+          /> {% endcomment %}
+          {{form.Reg_number}}
+        </div>
+        <div>
+            <label>Session</label>
+            {% comment %} <input
+              type="number"
+              name="Reg no"
+              placeholder="27353792"
+            /> {% endcomment %}
+            {{form.Session}}
+     
+          </div>
+        <div>
+          <label>Registered session</label>
+          {{form.Registered_session}}
+     
+          {% comment %} <input
+            type="text"
+            name="School owner"
+            placeholder="Dave Shepherd" 
+          /> {% endcomment %}
+        </div>
+        <div class="button-container">
+          <button type="submit"> Part Two </button>
+        </div>
+        <div>
+            <label>Current address</label>
+            {{form.current_address}}
+            {% csrf_token %}
+       
+            {% comment %} <input class="name" type="text" name="Current address" placeholder="Current address" /> {% endcomment %}
           </div>
           <div>
-            <label>Email Address</label>
-            {{ form.email }}
+            <label>Permanent address</label>
+            {{form.Permanent_address}}
+         
+            {% comment %} <input
+              type="text"
+              name="Permanent address"
+              placeholder="Permanent address" 
+            /> {% endcomment %}
+          </div>
+          <div>
+            <label>Number of teachers</label>
+            {{form.Number_of_teachers}}
+       
+            {% comment %} <input
+              type="number"
+              name="No of teachers"
+              placeholder="50"
+            /> {% endcomment %}
+          </div>
+          <div>
+            <label>Number of students</label>
+            {{form.Number_of_students}}
+        
+            {% comment %} <input
+              type="number"
+              name="No of students"
+              placeholder="150"
+            /> {% endcomment %}
+          </div>
+          <div>
+            <label>Year founded</label>
+            {% comment %} <input
+              type="number"
+              name="Year founded"
+              placeholder="2001"
+            /> {% endcomment %}
+            {{form.Founded}}
+            
+          </div>
+         
+          <div class="button-container">
+            <button type="submit">Part Three</button>
+          </div>
+          <div>
+            <label>User Name</label>
+            {{form.username}}
+     
+            {% comment %} <input class="name" type="text" name="username" placeholder="Dave Shepherd" /> {% endcomment %}
+          </div>
+          <div>
+            <label>Email address</label>
+            {% comment %} <input
+              type="email"
+              name="email"
+              placeholder="email@example.com"
+              class="email"
+            /> {% endcomment %}
+            {{form.email}}
+       
+          </div>
+          <div>
+            <label>Phone number</label>
+        {{form.Contact_number}}
+           
+            {% comment %} <input
+              type="number"
+              name="phone number"
+              placeholder="08023784997"
+              class="number"
+            /> {% endcomment %}
           </div>
           <div>
             <label>Password</label>
-            {{ form.Password }}
+            {{form.Password}}
+            
+            {% comment %} <input
+              type="password"
+              name="password"
+              placeholder="*******"
+              class="password"
+            /> {% endcomment %}
           </div>
+          <div>
+            <label>Confirm Password</label>
+            {{form.Confirm_password }}
+           
+            {% comment %} <input
+              type="password"
+              name="confirm password"
+              placeholder="*******"
+              class="password"
+            /> {% endcomment %}
+          </div>
+          <div></div>
           <label
             ><input type="checkbox" name="tos" /> I have read and agreed to the
             <span class="tos--blue">terms and conditions</span>
           </label>
-          <p>Already have an account? <a href="{%url 'Auth_School'%}">Login</a></p>
+          <p>Already have an account? <a href=" {%url 'Auth_School' %} ">Login</a></p>
           <div class="button-container">
             <button type="submit">Register</button>
           </div>
       </form>
     </main>
- 
-{% endblock content%}
+  </body>
+</html>
 
-{% comment %} {% load socialaccount %}
-<a href="{% provider_login_url 'google' %}">Sign up with Google</a>
-<style>
-    li{color:red; list-style:none;} 
-</style>
-{%for message in messages%}
-<h4>{{message}}</h4>
-{%endfor%} 
-<form method='post' action=''>
-  
-    {% csrf_token %}
-    {{form.as_p}}
- 
-    <br>
-    <button type='submit'> Sign up </button>
-    </form>
-    <a href='/'> Go back </a> {% endcomment %}
+
+
