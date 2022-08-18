@@ -144,11 +144,10 @@ USE_TZ = True
 
 # STATIC_URL = 'static/'
 # STATICFILES_DIR = os.path.join(BASE_DIR, 'static')
-PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = (BASE_DIR, 'static')
-STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 # Default primary key field type
@@ -157,8 +156,7 @@ STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL= '/media/'
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # The following are part of the social media authentication settings
 
