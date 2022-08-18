@@ -86,12 +86,7 @@ WSGI_APPLICATION = 'Backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+
 DATABASES = {
     # 'default': {
     #     'ENGINE': 'django.db.backends.postgresql',
@@ -148,6 +143,8 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATICFILES_DIRS = (BASE_DIR, 'static')
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+CSRF_TRUSTED_ORIGINS = ['https://debpay2.herokuapp.com', 'https://debpay2.herokuapp.com/admin']
 
 # STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 # Default primary key field type
