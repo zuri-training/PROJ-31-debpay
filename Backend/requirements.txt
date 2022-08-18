@@ -1,5 +1,5 @@
-django (pip install django)
-shortuuid (pip install shortuuid)
-pillow  (pip install pillow)
-django-filter(pip install django-filter)
-All auth (pip install django-allauth)
+django
+shortuuid
+pillow
+django-filter
+django-allauth
